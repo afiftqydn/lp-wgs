@@ -5,10 +5,8 @@ import { useLocation } from "react-router-dom";
 
 const NavbarMenu = [
   { id: 1, title: "Beranda", path: "/" },
-  { id: 2, title: "Layanan Kami", path: "/page2" },
-  { id: 3, title: "Tentang Kami", path: "/page3" },
-  { id: 4, title: "Gallery Kami", path: "/page4" },
-  { id: 5, title: "Kontak Kami", path: "/page5" },
+  { id: 2, title: "About", path: "/page2" },
+  { id: 3, title: "Contact", path: "/page3" },
 ];
 
 const Navbar = () => {
@@ -16,7 +14,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="relative z-20">
+  <nav className="bg-white bg-opacity-10 backdrop-blur-md border-b-4 border-green-600 shadow-lg">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}

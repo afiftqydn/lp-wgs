@@ -44,17 +44,6 @@ const Page4 = () => {
             </motion.h1>
           </div>
         </div>
-        {/* Hero Image */}
-        <div className="flex justify-center items-center">
-          <motion.img
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
-            src={Blob}
-            alt=""
-            className="absolute -bottom-32 w-[800px] md:w-[1500px] z-[1] hidden md:block"
-          />
-        </div>
       </div>
     </section>
   );

@@ -76,10 +76,15 @@ const Services = () => {
   return (
     <section className="bg-white">
       <div className="container pb-14 pt-16">
-        <h1 className="text-4xl font-bold text-left pb-10">
+        <motion.h1
+          className="text-4xl font-bold text-left pb-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut", delay:0.1 }}
+          viewport={{ once: true }}
+        >
           Produk Unggulan
-        </h1>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-8">
+        </motion.h1>        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-8">
           {ServicesData.map((service) => (
             <motion.div
               variants={SlideLeft(service.delay)}

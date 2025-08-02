@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
 import { useNavigate } from "react-router-dom"; 
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Blob from "../../assets/blob.svg";
@@ -33,8 +32,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-light overflow-hidden relative">
-      <Navbar/>
+    <section className="overflow-hidden relative bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
       <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[650px]">
         {/* Brand Info */}
         <div className="flex flex-col justify-center py-14 md:py-0 relative z-20">

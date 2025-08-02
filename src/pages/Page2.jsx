@@ -1,8 +1,4 @@
-import React from "react";
 import Navbar from "../components/Navbar/Navbar";
-import { IoIosArrowRoundForward } from "react-icons/io";
-import Blob from "../assets/blob.svg";
-import StudentSVG from "../assets/student.svg";
 import { animate, motion } from "framer-motion";
 
 export const FadeUp = (delay) => {
@@ -43,17 +39,6 @@ const Page2 = () => {
               Page <span className="text-secondary">Dua</span>
             </motion.h1>
           </div>
-        </div>
-        {/* Hero Image */}
-        <div className="flex justify-center items-center">
-          <motion.img
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
-            src={Blob}
-            alt=""
-            className="absolute -bottom-32 w-[800px] md:w-[1500px] z-[1] hidden md:block"
-          />
         </div>
       </div>
     </section>
