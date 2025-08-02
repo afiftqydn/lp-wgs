@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Blob from "../assets/blob.svg";
 import StudentSVG from "../assets/student.svg";
+import Footer from "../components/Footer/Footer";
 import { animate, motion } from "framer-motion";
 
 export const FadeUp = (delay) => {
@@ -45,6 +46,7 @@ const Page3 = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </section>
   );
 };

@@ -84,7 +84,7 @@ const Services = () => {
           viewport={{ once: true }}
         >
           Produk Unggulan
-        </motion.h1>        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-8">
+        </motion.h1>        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-8">
           {ServicesData.map((service) => (
             <motion.div
               variants={SlideLeft(service.delay)}

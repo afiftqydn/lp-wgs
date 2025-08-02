@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 import { animate, motion } from "framer-motion";
 
 export const FadeUp = (delay) => {
@@ -41,6 +42,7 @@ const Page2 = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </section>
   );
 };

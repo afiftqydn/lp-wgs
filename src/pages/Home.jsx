@@ -17,8 +17,8 @@ const Home = () => {
       <Services />
       {/* <Banner />
       <Subscribe />
-      <Banner2 />
-      <Footer /> */}
+      <Banner2 /> */}
+      <Footer />
     </main>
   );
 };
