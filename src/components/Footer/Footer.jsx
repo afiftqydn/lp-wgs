@@ -1,7 +1,8 @@
 import React from "react";
-import { FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaLinkedinIn, FaMapPin, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 import { motion } from "framer-motion";
+import { FaLocationPin, FaLocationPinLock, FaMapLocation } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -19,17 +20,17 @@ const Footer = () => {
         
         {/* Baris 1: Icons */}
         <div className="flex gap-5 text-gray-600 text-2xl">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600 transition-all">
+          <a href="https://www.instagram.com/wgskalbar/" className="hover:text-pink-600 transition-all">
             <FaInstagram />
           </a>
-          <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-all">
+          <a href="https://wa.me/085195522202" className="hover:text-green-500 transition-all">
             <FaWhatsapp />
           </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-all">
-            <FaYoutube />
+          <a href="https://maps.app.goo.gl/ynKHaWpymqiiz9be7?g_st=aw" className="hover:text-red-500 transition-all">
+            <FaLocationPin />
           </a>
-          <a href="https://wgs.id" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-all">
-            <TbWorldWww />
+          <a href="https://www.linkedin.com/company/pt-win-global-solusitama/" className="hover:text-blue-500 transition-all">
+            <FaLinkedin />
           </a>
         </div>
 

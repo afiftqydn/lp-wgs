@@ -5,8 +5,9 @@ import { useLocation } from "react-router-dom";
 
 const NavbarMenu = [
   { id: 1, title: "Beranda", path: "/" },
-  { id: 2, title: "About", path: "/page2" },
-  { id: 3, title: "Contact", path: "/page3" },
+  { id: 2, title: "Tentang Kami", path: "/page2" },
+  { id: 3, title: "Produk & Layanan", path: "/page3" },
+  { id: 4, title: "Hubungi Kami", path: "/page4" },
 ];
 
 const Navbar = () => {
