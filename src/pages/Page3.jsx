@@ -48,7 +48,7 @@ const productDetails = {
   koperasi: {
     title: "Koperasi Keuangan Syariah",
     image: "/kop.png", // Ganti dengan path gambar yang sesuai
-    description: "Sebagai startup lembaga keuangan modern berbasis syariah, kami memfasilitasi kebutuhan finansial melalui koperasi.",
+    description: "Sebagai lembaga keuangan modern berbasis syariah, kami memfasilitasi kebutuhan finansial melalui koperasi.",
     items: [
       "Pembiayaan mikro tanpa agunan hingga Rp 10 juta.",
       "Pembiayaan Aliansi Mikro hingga Rp 50 juta.",
