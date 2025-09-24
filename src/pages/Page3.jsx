@@ -50,9 +50,9 @@ const productDetails = {
     image: "/kop.png", // Ganti dengan path gambar yang sesuai
     description: "Sebagai startup lembaga keuangan modern berbasis syariah, kami memfasilitasi kebutuhan finansial melalui koperasi.",
     items: [
-      "Pembiayaan mikro tanpa agunan hingga Rp 10 juta (SUPERMI).",
-      "Pembiayaan Aliansi Mikro hingga Rp 50 juta (tanpa agunan).",
-      "Pembiayaan Usaha Mikro hingga Rp 100 juta (tanpa agunan)."
+      "Pembiayaan mikro tanpa agunan hingga Rp 10 juta.",
+      "Pembiayaan Aliansi Mikro hingga Rp 50 juta.",
+      "Pembiayaan Usaha Mikro hingga Rp 100 juta."
     ]
   },
   pomigor: {
@@ -83,7 +83,13 @@ const Page3 = () => {
 
   const handleCardClick = (productKey) => {
     setActiveProduct(productKey);
-    document.getElementById("product-details").scrollIntoView({ behavior: "smooth" });
+    // Solusi: Gunakan setTimeout untuk memastikan scroll terjadi setelah render
+    setTimeout(() => {
+      const element = document.getElementById("product-details");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 0);
   };
 
   const renderProductDetail = () => {

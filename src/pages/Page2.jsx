@@ -20,10 +20,10 @@ export const FadeUp = (delay = 0) => ({
 });
 
 const subsidiaries = [
-  { name: "Koperasi Simpan Pinjam Syariah", tagline: "Bhumi Pasundan Sejahtera", logo: "/src/assets/koperasi.png" },
-  { name: "Palm Nusa Khatulistiwa", tagline: "(POMIGOR)", logo: "/src/assets/pomigor.png" },
-  { name: "WGS Entertainment", tagline: "Industri Kreatif & Hiburan", logo: "/src/assets/cropped_circle_image.png" },
-  { name: "Agrikultur Global Khatulistiwa", tagline: "Pertanian & Perkebunan", logo: "/src/assets/agrikultur.png" },
+  { name: "Koperasi Simpan Pinjam Syariah", tagline: "Bhumi Pasundan Sejahtera", logo: "/slideshow/koperasi.png" },
+  { name: "Palm Nusa Khatulistiwa", tagline: "(POMIGOR)", logo: "/slideshow/pomigor.png" },
+  { name: "WGS Entertainment", tagline: "Industri Kreatif & Hiburan", logo: "/slideshow/cropped_circle_image.png" },
+  { name: "Agrikultur Global Khatulistiwa", tagline: "Pertanian & Perkebunan", logo: "/slideshow/agrikultur.png" },
 ];
 
 const coreValues = [

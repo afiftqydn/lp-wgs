@@ -20,13 +20,13 @@ const Footer = () => {
         
         {/* Baris 1: Icons */}
         <div className="flex gap-5 text-gray-600 text-2xl">
-          <a href="https://www.instagram.com/wgskalbar/" className="hover:text-pink-600 transition-all">
+          <a href="https://www.instagram.com/wgs_officiall/" className="hover:text-pink-600 transition-all">
             <FaInstagram />
           </a>
           <a href="https://wa.me/085195522202" className="hover:text-green-500 transition-all">
             <FaWhatsapp />
           </a>
-          <a href="https://maps.app.goo.gl/ynKHaWpymqiiz9be7?g_st=aw" className="hover:text-red-500 transition-all">
+          <a href="https://maps.app.goo.gl/5vJCetAhY2mNLxdg8" className="hover:text-red-500 transition-all">
             <FaLocationPin />
           </a>
           <a href="https://www.linkedin.com/company/pt-win-global-solusitama/" className="hover:text-blue-500 transition-all">
