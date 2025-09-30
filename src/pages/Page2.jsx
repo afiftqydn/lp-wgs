@@ -20,10 +20,10 @@ export const FadeUp = (delay = 0) => ({
 });
 
 const subsidiaries = [
-  { name: "Koperasi Simpan Pinjam Syariah", tagline: "Bhumi Pasundan Sejahtera", logo: "/slideshow/koperasi.png" },
-  { name: "Palm Nusa Khatulistiwa", tagline: "(POMIGOR)", logo: "/slideshow/pomigor.png" },
-  { name: "WGS Entertainment", tagline: "Industri Kreatif & Hiburan", logo: "/slideshow/cropped_circle_image.png" },
-  { name: "Agrikultur Global Khatulistiwa", tagline: "Pertanian & Perkebunan", logo: "/slideshow/agrikultur.png" },
+  { name: "PT. Palm Nusa Khatulistiwa", tagline: "Industri, Grosir dan Retail", logo: "/pnk.png" },
+  { name: "PT. Agrikultur Global Khatulistiwa", tagline: "Pertanian, Perkebunan, Peternakan", logo: "/agri_logo.png" },
+  { name: "PT. WGS Entertainment", tagline: "Industri Kreatif & Hiburan", logo: "/entertaint.png" },
+  { name: "KSPS Bhumi Pasundan Sejahtera", tagline: "Koperasi Simpan Pinjam Syariah", logo: "/koperasi.png" },
 ];
 
 const coreValues = [
@@ -64,7 +64,7 @@ const Page2 = () => {
   };
 
   return (
-    <section className="bg-slate-50 overflow-hidden relative">
+    <section className="overflow-hidden relative bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
       <Navbar />
 
       {/* Hero Section - Tentang Kami */}
@@ -76,17 +76,17 @@ const Page2 = () => {
               initial="initial"
               whileInView="whileInView"
               viewport={{ once: true }}
-              className="text-4xl lg:text-5xl font-bold mb-6 text-gray-800"
+              className="text-4xl lg:text-5xl font-bold mb-6 text-white"
             >
               Membangun Ekosistem, Memberdayakan{" "}
-              <span className="text-secondary">Masyarakat</span>
+              <span className="text-white">Masyarakat</span>
             </motion.h1>
             <motion.p
               variants={FadeUp(0.2)}
               initial="initial"
               whileInView="whileInView"
               viewport={{ once: true }}
-              className="text-gray-600 leading-relaxed"
+              className="text-gray-200 leading-relaxed"
             >
               PT <strong>Win Global Solusitama (WGS)</strong> adalah holding
               company yang berfokus pada pengembangan ekonomi kerakyatan
@@ -153,7 +153,7 @@ const Page2 = () => {
       </div>
 
       {/* Section Anak Perusahaan */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-[#cce6c4]">
         <div className="container mx-auto px-6 text-center">
           <motion.h2
             variants={FadeUp(0.1)}
@@ -181,12 +181,12 @@ const Page2 = () => {
                 initial="initial"
                 whileInView="whileInView"
                 viewport={{ once: true }}
-                className="group bg-slate-50 p-6 rounded-xl border border-transparent transition-all duration-300 hover:border-secondary hover:shadow-lg hover:-translate-y-2"
+                className="group bg-[#e1f2d8] p-6 rounded-xl border border-transparent transition-all duration-300 hover:border-secondary hover:shadow-lg hover:-translate-y-2"
               >
                 <img
                   src={sub.logo}
                   alt={`Logo ${sub.name}`}
-                  className="w-16 h-16 object-contain mx-auto mb-4 transition-transform duration-300 group-hover:scale-110"
+                  className="w-28 h-28 lg:w-32 lg:h-32 object-contain mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
                 />
                 <h3 className="font-bold text-gray-800 text-lg">{sub.name}</h3>
                 <p className="text-sm text-gray-500">{sub.tagline}</p>
@@ -196,55 +196,79 @@ const Page2 = () => {
         </div>
       </div>
 
-      {/* SECTION BARU: LEGALITAS & DATA PERUSAHAAN (TANPA GAMBAR) */}
-      <div className="py-16">
-        <div className="container mx-auto px-6">
-          <motion.h2
-            variants={FadeUp(0.1)}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-center text-gray-800 mb-10"
-          >
-            Legalitas & Data <span className="text-secondary">Perusahaan</span>
-          </motion.h2>
-          <div className="max-w-3xl mx-auto">
-            <motion.div
-              variants={FadeUp(0.2)}
+        {/* SECTION BARU: LEGALITAS & DATA PERUSAHAAN */}
+        <div className="py-16">
+          <div className="container mx-auto px-6">
+            <motion.h2
+              variants={FadeUp(0.1)}
               initial="initial"
               whileInView="whileInView"
               viewport={{ once: true }}
-              className="space-y-6 text-gray-700 leading-relaxed"
+              className="text-3xl font-bold text-center text-white mb-10"
             >
-              <p>
-                PT. Win Global Solusitama didirikan dengan niat tulus untuk memberikan sumbangsih bagi kemaslahatan umat. Sebagai perusahaan startup di bidang keuangan modern berbasis syariah, kami berkomitmen untuk menjaga amanah dan kepercayaan yang diberikan kepada kami.
-              </p>
-              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                <h3 className="font-bold text-xl mb-3 text-gray-800">Informasi Resmi Perusahaan</h3>
-                <ul className="space-y-2">
-                  <li className="flex justify-between items-center border-b pb-2">
-                    <span className="font-semibold">Nama Perusahaan</span>
-                    <span>PT Win Global Solusitama</span>
-                  </li>
-                  <li className="flex justify-between items-center border-b pb-2">
-                    <span className="font-semibold">Nomor Induk Berusaha (NIB)</span>
-                    <span>2111220112493</span>
-                  </li>
-                  <li className="flex justify-between items-center border-b pb-2">
-                    <span className="font-semibold">NPWP</span>
-                    <span>61.815.042.9-017.000</span>
-                  </li>
-                  <li className="flex justify-between items-center border-b pb-2">
-                    <span className="font-semibold">Alamat Kantor</span>
-                    <span>Gedung ITS Nifaro Park, (Lantai 6 Unit 10), Jl. Raya, Pasar Minggu, No.18 Kota Adm, Jakarta Selatan, DKI Jakarta, 12510</span>
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
+              Legalitas & Data <span className="text-white">Perusahaan</span>
+            </motion.h2>
+            <div className="max-w-3xl mx-auto">
+              <motion.div
+                variants={FadeUp(0.2)}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true }}
+                className="space-y-6 text-gray-100 leading-relaxed"
+              >
+                <p>
+                  PT Win Global Solusitama resmi berdiri berdasarkan Akta Notaris dan telah disahkan oleh Kementerian Hukum & HAM Republik Indonesia. Dengan legalitas yang lengkap, kami berkomitmen untuk menjalankan usaha sesuai dengan peraturan yang berlaku.
+                </p>
+                <div className="bg-[#e1f2d8] p-6 rounded-lg shadow-md border border-gray-200">
+                  <h3 className="font-bold text-xl mb-3 text-gray-800 text-center py-2">Informasi Resmi Perusahaan</h3>
+                  <ul className="text-gray-800 space-y-2">
+                    <li className="flex justify-between items-center border-b pb-2">
+                      <span className="font-semibold">Nama Perusahaan</span>
+                      <span>PT Win Global Solusitama</span>
+                    </li>
+                    <li className="flex justify-between items-center border-b pb-2">
+                      <span className="font-semibold">Akta Pendirian</span>
+                      <span>Akta No. 9, 07 Februari 2023 oleh Notaris Jihan Khoirini, S.H., M.Kn.</span>
+                    </li>
+                    <li className="flex justify-between items-center border-b pb-2">
+                      <span className="font-semibold">SK Kemenkumham</span>
+                      <span>Nomor AHU-0010292.AH.01.01.Tahun 2023 (08 Februari 2023)</span>
+                    </li>
+                    <li className="flex justify-between items-center border-b pb-2">
+                      <span className="font-semibold">Nomor Induk Berusaha (NIB)</span>
+                      <span>2111220112493</span>
+                    </li>
+                    <li className="flex justify-between items-center border-b pb-2">
+                      <span className="font-semibold">NPWP</span>
+                      <span>61.815.042.9-017.000</span>
+                    </li>
+                    {/* <li className="flex justify-between items-center border-b pb-2">
+                      <span className="font-semibold">Modal Dasar & Disetor</span>
+                      <span>Rp 1.000.000.000 (10.000 lembar saham)</span>
+                    </li> */}
+                    {/* <li className="flex justify-between items-center border-b pb-2">
+                      <span className="font-semibold">Alamat Kantor</span>
+                      <span>Nifarro Park, ITS Tower Lt. 6 Unit 10, Jl. Raya Pasar Minggu No.18, Pejaten Timur, Pasar Minggu, Jakarta Selatan, 12510</span>
+                    </li> */}
+                    {/* <li className="flex justify-between items-center border-b pb-2">
+                      <span className="font-semibold">Direksi</span>
+                      <span>H. Hendra Firmansyah</span>
+                    </li>
+                    <li className="flex justify-between items-center border-b pb-2">
+                      <span className="font-semibold">Komisaris Utama</span>
+                      <span>Mohammad Rusfi</span>
+                    </li>
+                    <li className="flex justify-between items-center">
+                      <span className="font-semibold">Komisaris</span>
+                      <span>Ponco Heru Sutanto</span>
+                    </li> */}
+                  </ul>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
-      </div>
-      {/* Akhir SECTION BARU */}
+        {/* Akhir SECTION BARU */}
 
 
       <Footer />

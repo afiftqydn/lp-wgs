@@ -65,7 +65,7 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden left-0 w-full bg-white shadow-lg py-5 mt-2 z-30 rounded-lg"
+          className="lg:hidden left-0 w-full bg-[#cae2bf] shadow-lg py-5 mt-2 z-30 rounded-lg"
         >
           <ul className="flex flex-col items-center gap-5">
             {NavbarMenu.map((menu) => {
