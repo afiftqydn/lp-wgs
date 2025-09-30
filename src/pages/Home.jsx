@@ -5,19 +5,18 @@ import Banner from "../components/Banner/Banner";
 import Navbar from "../components/Navbar/Navbar";
 import Subscribe from "../components/Subscribe/Subscribe";
 import Banner2 from "../components/Banner/Banner2";
+import SliderCarousel from "../components/SliderCarousel/SliderCarousel";
 import Footer from "../components/Footer/Footer";
 
 
 const Home = () => {
   return (
-    
-    <main className="overflow-x-hidden bg-white text-dark">
+  
+    <main className="overflow-hidden relative bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
       <Navbar/>
+      <SliderCarousel />
       <Hero />
       <Services />
-      {/* <Banner />
-      <Subscribe />
-      <Banner2 /> */}
       <Footer />
     </main>
   );

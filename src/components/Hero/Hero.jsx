@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom"; 
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Blob from "../../assets/blob.svg";
-import IhramPNG from "../../assets/hero-haji.png";
-import { animate, motion } from "framer-motion";
+import BadgesWGS from "/wgs_logo.png";
+import { motion } from "framer-motion";
 
 export const FadeUp = (delay) => {
   return {
@@ -32,49 +32,58 @@ const Hero = () => {
   };
 
   return (
-    <section className="overflow-hidden relative bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
-      <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[650px]">
+    <section className="overflow-hidden relative">
+      <div className="container grid grid-cols-1 md:grid-cols-2 items-center min-h-[650px] mt-0 md:mt-[-120px]">
+        
         {/* Brand Info */}
-        <div className="flex flex-col justify-center py-14 md:py-0 relative z-20">
-          <div className="text-center md:text-left space-y-10 lg:max-w-[400px]">
+        <div className="flex flex-col justify-center py-10 md:py-0 relative z-20 order-2 md:order-1">
+          <div className="text-center md:text-left space-y-6 max-w-xl mx-auto md:mx-0">
             <motion.h1
               variants={FadeUp(0.6)}
               initial="initial"
               animate="animate"
-              className="text-2xl lg:text-4xl font-bold !leading-snug"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug break-words text-light"
             >
-              Solusi Pembiayaan Syariah untuk Semua, <span className="text-secondary">Insya Allah "Ada Solusinya"</span>
+              Membangun Ekonomi Syariah yang Inklusif dan Berkeadilan
             </motion.h1>
+
+            <motion.p
+              variants={FadeUp(0.7)}
+              initial="initial"
+              animate="animate"
+              className="text-base text-gray-200 leading-relaxed"
+            >
+              Hadir dari Kalimantan Barat, kami menawarkan pembiayaan syariah, 
+              solusi keuangan modern, serta program kemanusiaan untuk tumbuh 
+              bersama masyarakat.
+            </motion.p>
+
             <motion.div
               variants={FadeUp(0.8)}
               initial="initial"
               animate="animate"
               className="flex justify-center md:justify-start"
             >
-              <button onClick={handleClick} className="primary-btn flex items-center gap-2 group">
+              <button
+                onClick={handleClick}
+                className="primary-btn flex items-center gap-2 group"
+              >
                 Selengkapnya
                 <IoIosArrowRoundForward className="text-xl group-hover:translate-x-2 group-hover:-rotate-45 duration-300" />
               </button>
             </motion.div>
           </div>
         </div>
+
         {/* Hero Image */}
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center mt-6 md:mt-0 order-1 md:order-2">
           <motion.img
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
-            src={IhramPNG}
-            alt=""
-            className="w-[400px] xl:w-[600px] relative z-10 drop-shadow"
-          />
-          <motion.img
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
-            src={Blob}
-            alt=""
-            className="absolute -bottom-32 w-[800px] md:w-[1500px] z-[1] hidden md:block"
+            src={BadgesWGS}
+            alt="Logo WGS"
+            className="w-60 sm:w-80 md:w-[400px] xl:w-[600px] relative z-10 drop-shadow"
           />
         </div>
       </div>

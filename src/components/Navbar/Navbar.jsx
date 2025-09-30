@@ -15,21 +15,15 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-  <nav className="bg-white bg-opacity-10 backdrop-blur-md border-b-4 border-green-600 shadow-lg">
+  <nav className="bg-[#cae2bf] text-dark">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        className="container py-5 flex justify-between items-center"
+        className="container py-2 flex justify-between items-center"
       >
         {/* Logo section */}
         <div className="flex items-center space-x-3">
-          <img src="/LOGO_WGS.png" alt="Logo" className="w-20 h-18" />
-          <div className="flex flex-col">
-            <h1 className="font-bold text-2xl">Win Global</h1>
-            <h1 className="font-bold text-2xl">
-              <span className="text-secondary">Solusitama</span>
-            </h1>
-          </div>
+          <img src="/wgsgrup.png" alt="Logo"   className="h-16 object-contain" />
         </div>
 
         {/* Desktop Menu */}
@@ -93,6 +87,8 @@ const Navbar = () => {
           </ul>
         </motion.div>
       )}
+    <div className="w-full h-1 shadow"></div>
+
     </nav>
   );
 };

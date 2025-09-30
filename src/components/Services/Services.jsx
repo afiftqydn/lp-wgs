@@ -24,9 +24,9 @@ const ServicesData = [
   },
   {
     id: 3,
-    title: "Koperasi Bumi Pasundan Sejahtera",
-    link: "/koperasi", // Ubah link ke path yang diinginkan
-    desc: "Mitra keuangan syariah yang siap mendukung kesejahteraan anggota melalui layanan pembiayaan, simpanan, dan program pemberdayaan ekonomi berbasis koperasi.",
+    title: "Corporate Social Responsibility (CSR)",
+    link: "/csr", // Ubah link ke path yang diinginkan
+    desc: "Dengan produk WGS, Anda turut mendukung program sosial seperti santunan yatim piatu, inkubator ekonomi syariah, renovasi fasilitas umum, dan wakaf Al-Qur’an bagi para Tahfiz di Indonesia.",
     icon: <MdHandshake />,
     delay: 0.4,
   },
@@ -58,7 +58,7 @@ const Services = () => {
   };
 
   return (
-    <section className="bg-white">
+    <section className="bg-[#cce6c4]">
       <div className="container pb-14 pt-16">
         <motion.h1
           className="text-4xl font-bold text-left pb-10"
@@ -77,7 +77,7 @@ const Services = () => {
               initial="initial"
               whileInView={"animate"}
               viewport={{ once: true }}
-              className="bg-[#f4f4f4] rounded-2xl flex flex-col gap-4 items-center justify-center p-4 py-7 hover:bg-white hover:scale-110 duration-300 hover:shadow-2xl cursor-pointer"
+              className="bg-[#e1f2d8] rounded-2xl flex flex-col gap-4 items-center justify-center p-4 py-7 hover:bg-white hover:scale-110 duration-300 hover:shadow-2xl cursor-pointer"
               onClick={() => handleItemClick(service.link)} // Panggil fungsi saat diklik
             >
               <div className="text-4xl mb-1"> {service.icon}</div>
