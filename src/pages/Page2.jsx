@@ -152,7 +152,8 @@ const Page2 = () => {
       {/* Akhir Hero Section BARU */}
 
       {/* Section Anak Perusahaan (Tidak Berubah) */}
-      <div className="py-16 bg-[#cce6c4]">
+      <div className="py-16 bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
+      <div className="container py-16 bg-[#cce6c4] rounded-3xl shadow-md">
         <div className="container mx-auto px-6 text-center">
           <motion.h2
             variants={FadeUp(0.1)}
@@ -194,6 +195,7 @@ const Page2 = () => {
           </div>
         </div>
       </div>
+      </div>
 
         {/* SECTION LEGALITAS & DATA PERUSAHAAN (Tidak Berubah) */}
         <div className="py-16">
@@ -218,7 +220,7 @@ const Page2 = () => {
                 <p>
                   PT Win Global Solusitama resmi berdiri berdasarkan Akta Notaris dan telah disahkan oleh Kementerian Hukum & HAM Republik Indonesia. Dengan legalitas yang lengkap, kami berkomitmen untuk menjalankan usaha sesuai dengan peraturan yang berlaku.
                 </p>
-                <div className="bg-[#e1f2d8] p-6 rounded-lg shadow-md border border-gray-200">
+                <div className="bg-[#e1f2d8] p-6 rounded-2xl shadow-md border border-gray-200">
                   <h3 className="font-bold text-xl mb-3 text-gray-800 text-center py-2">Informasi Resmi Perusahaan</h3>
                   <ul className="text-gray-800 space-y-2">
                     <li className="flex justify-between items-center border-b pb-2">

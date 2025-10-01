@@ -89,7 +89,7 @@ const Navbar = () => {
         </motion.div>
       )}
     <div className="w-full h-1 shadow"></div>
-
+      <div className="h-1 w-full bg-green-600"></div>
     </nav>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import { motion } from "framer-motion";
+import Footer from "../components/Footer/Footer";
 
 // Asumsikan FadeUp sudah didefinisikan di sini atau diimpor
 export const FadeUp = (delay) => {
@@ -26,7 +27,7 @@ export const FadeUp = (delay) => {
 const productDetails = {
   hajiUmroh: {
     title: "Haji & Umroh",
-    image: "/haji.png", // Ganti dengan path gambar yang sesuai
+    image: "/haji.png",
     description: "PT. WGS memfasilitasi umat muslim untuk beribadah haji & umroh maupun perjalanan lainnya (non muslim) dengan pelayanan terbaik. Berbagai inovasi telah dilakukan oleh PT. WGS, salah satunya Pembiayaan Haji dan Umroh. Niat yang sudah matang Insyaa Allah menjadi dorongan tersendiri untuk mulai melangkah menuju Tanah Suci.",
     items: [
       "Pelayanan terbaik untuk haji & umroh.",
@@ -36,7 +37,7 @@ const productDetails = {
   },
   multiGuna: {
     title: "Pembiayaan Multi Guna",
-    image: "pbyn.png", // Ganti dengan path gambar yang sesuai
+    image: "pbyn.png",
     description: "Kami menyediakan pembiayaan multi guna untuk berbagai keperluan, seperti:",
     items: [
       "KPR & Renovasi Rumah",
@@ -47,7 +48,7 @@ const productDetails = {
   },
   csr: {
     title: "Corporate Social Responsibility (CSR)",
-    image: "/csr.png", // Ganti dengan path gambar yang sesuai
+    image: "/csr.png",
     description: "Dengan menggunakan produk WGS, Anda turut serta dalam kegiatan sosial kami. Hal ini sejalan dengan moto CERIA yang Amanah, serta didasari niat tulus untuk memberikan sumbangsih bagi kemaslahatan umat.",
     items: [
       "Menyantuni 10.000 anak Yatim dan Piatu dari SD hingga Perguruan Tinggi.",
@@ -63,7 +64,6 @@ const Page3 = () => {
 
   const handleCardClick = (productKey) => {
     setActiveProduct(productKey);
-    // Solusi: Gunakan setTimeout untuk memastikan scroll terjadi setelah render
     setTimeout(() => {
       const element = document.getElementById("product-details");
       if (element) {
@@ -84,7 +84,7 @@ const Page3 = () => {
         variants={FadeUp(0.2)}
         initial="initial"
         animate="animate"
-        className="mt-20 p-8 bg-white rounded-lg shadow-lg flex flex-col md:flex-row items-center md:items-start gap-8"
+        className="mt-20 p-8 bg-[#cae2bf] rounded-lg shadow-lg flex flex-col md:flex-row items-center md:items-start gap-8"
       >
         <div className="w-full md:w-1/3">
           <img src={detail.image} alt={detail.title} className="w-full h-auto rounded-lg shadow-md" />
@@ -103,55 +103,61 @@ const Page3 = () => {
   };
 
   return (
-    <section className="bg-light overflow-hidden relative">
+    // PERUBAHAN DI SINI: tambahkan flex-col dan min-h-screen
+    <section className="bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover overflow-hidden relative flex flex-col min-h-screen">
       <Navbar />
-      <div className="container min-h-[650px] py-10 md:py-20">
-        {/* Judul Section */}
-        <motion.div
-          variants={FadeUp(0.6)}
-          initial="initial"
-          animate="animate"
-          className="text-center space-y-4 mb-10"
-        >
-          <h1 className="text-3xl lg:text-5xl font-bold !leading-snug">
-            Produk & <span className="text-secondary">Layanan</span>
-          </h1>
-          <p className="text-sm text-gray-600 max-w-xl mx-auto">
-            WGS menawarkan berbagai solusi keuangan modern berbasis syariah untuk memenuhi kebutuhan Anda.
-          </p>
-        </motion.div>
 
-        {/* Bagian Produk: Kartu yang bisa diklik */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 cursor-pointer">
-          
-          {Object.keys(productDetails).map((key, index) => (
-            <motion.div
-              key={key}
-              variants={FadeUp(0.8 + index * 0.2)}
-              initial="initial"
-              animate="animate"
-              className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center hover:bg-gray-100 transition-colors"
-              onClick={() => handleCardClick(key)}
-            >
-              <img src={productDetails[key].image} alt={productDetails[key].title} className="h-24 w-auto object-contain mb-4 rounded-md" />
-              <h3 className="text-xl font-bold mb-2">{productDetails[key].title}</h3>
-              <p className="text-gray-600">
-                {key === 'hajiUmroh' && "WGS memfasilitasi umat muslim untuk beribadah haji dan umroh, termasuk pembiayaan."}
-                {key === 'multiGuna' && "Solusi pembiayaan untuk berbagai kebutuhan pribadi dan keluarga, dari rumah hingga pendidikan."}
-                {key === 'koperasi' && "Kami memfasilitasi pembiayaan untuk usaha mikro dan aliansi mikro, tanpa agunan."}
-                {key === 'pomigor' && "Fasilitas peminjaman mesin POM minyak goreng kepada pelaku usaha kecil menengah."}
-                {key === 'csr' && "Setiap transaksi produk WGS mendukung program-program kemanusiaan dan sosial."}
-              </p>
-            </motion.div>
-          ))}
+      {/* PERUBAHAN DI SINI: tambahkan flex-grow */}
+      <div className="flex-grow">
+        <div className="container min-h-[650px] py-10 md:py-20">
+          {/* Judul Section */}
+          <motion.div
+            variants={FadeUp(0.6)}
+            initial="initial"
+            animate="animate"
+            className="text-center space-y-4 mb-10"
+          >
+            <h1 className="text-3xl text-white lg:text-5xl font-bold !leading-snug">
+              Produk & <span className="text-white">Layanan</span>
+            </h1>
+            <p className="text-xl text-gray-200 max-w-xl mx-auto">
+              WGS menawarkan berbagai solusi keuangan modern berbasis syariah untuk memenuhi kebutuhan Anda.
+            </p>
+          </motion.div>
+
+          {/* Bagian Produk: Kartu yang bisa diklik */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 cursor-pointer">
+            {Object.keys(productDetails).map((key, index) => (
+              <motion.div
+                key={key}
+                variants={FadeUp(0.8 + index * 0.2)}
+                initial="initial"
+                animate="animate"
+                className="bg-[#cae2bf] p-6 rounded-lg shadow-lg flex flex-col items-center text-center hover:bg-[#a8c79b] transition-colors"
+                onClick={() => handleCardClick(key)}
+              >
+                <img src={productDetails[key].image} alt={productDetails[key].title} className="h-24 w-auto object-contain mb-4 rounded-md" />
+                <h3 className="text-xl font-bold mb-2">{productDetails[key].title}</h3>
+                <p className="text-gray-600">
+                  {key === 'hajiUmroh' && "WGS memfasilitasi umat muslim untuk beribadah haji dan umroh, termasuk pembiayaan."}
+                  {key === 'multiGuna' && "Solusi pembiayaan untuk berbagai kebutuhan pribadi dan keluarga, dari rumah hingga pendidikan."}
+                  {key === 'koperasi' && "Kami memfasilitasi pembiayaan untuk usaha mikro dan aliansi mikro, tanpa agunan."}
+                  {key === 'pomigor' && "Fasilitas peminjaman mesin POM minyak goreng kepada pelaku usaha kecil menengah."}
+                  {key === 'csr' && "Setiap transaksi produk WGS mendukung program-program kemanusiaan dan sosial."}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bagian Detail Produk */}
+          <div id="product-details">
+            {renderProductDetail()}
+          </div>
         </div>
-        
-        {/* Bagian Detail Produk */}
-        <div id="product-details">
-          {renderProductDetail()}
-        </div>
-        
       </div>
+
+      {/* Footer di luar div flex-grow */}
+      <Footer />
     </section>
   );
 };

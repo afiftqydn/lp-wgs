@@ -3,8 +3,8 @@
   <defs>
     <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#82a136" />   <!-- hijau muda -->
-      <stop offset="50%" stop-color="#286d2f" />  <!-- hijau medium -->
-      <stop offset="100%" stop-color="#003b26" /> <!-- hijau tua -->
+      <stop offset="50%" stop-color="#184b1dff" />  <!-- hijau medium -->
+      <stop offset="100%" stop-color="#002015ff" /> <!-- hijau tua -->
     </linearGradient>
   </defs>
   

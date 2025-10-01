@@ -19,7 +19,7 @@ const NewsGrid = ({ articles }) => {
           variants={FadeUp(index * 0.1)}
           initial="initial"
           animate="animate"
-          className="bg-white rounded-xl border border-gray-100 shadow-lg transition-shadow duration-300 hover:shadow-xl overflow-hidden"
+          className="bg-[#cae2bf] rounded-xl border border-gray-100 shadow-lg transition-shadow duration-300 hover:shadow-xl overflow-hidden"
         >
           {/* Tambahkan placeholder gambar agar kartu terlihat lebih menarik */}
           <div className="h-40 bg-gray-200 w-full object-cover">

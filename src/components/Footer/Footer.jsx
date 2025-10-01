@@ -13,7 +13,7 @@ const Footer = () => {
       className="bg-[#cae2bf] mt-0"
     >
       {/* Garis Hijau di Atas */}
-      <div className="h-0.5 w-full bg-green-600"></div>
+      <div className="h-1 w-full bg-green-600"></div>
 
       {/* Isi Footer */}
       <div className="container mx-auto px-6 py-5 flex flex-col items-center justify-center gap-2 text-center">

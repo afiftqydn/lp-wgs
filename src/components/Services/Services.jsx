@@ -49,7 +49,7 @@ const Services = () => {
   };
 
   return (
-    <section className="bg-[#cce6c4]">
+    <section className="bg-[#cce6c4] rounded-t-3xl">
       <div className="container pb-14 pt-16">
         <motion.h1
           className="text-4xl font-bold text-left pb-10"
