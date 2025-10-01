@@ -40,10 +40,10 @@ const CenteredCarousel = () => {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "0px",
+    centerPadding: "30px",
     slidesToShow: 3,
     speed: 600,
-    arrows: false,
+    arrows: true,
     dots: true,
     autoplay: true,
     autoplaySpeed: 1500,
@@ -51,15 +51,15 @@ const CenteredCarousel = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          centerPadding: "40px",
+          slidesToShow: 1,
+          centerPadding: "60px",
         }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          centerPadding: "40px",
+          centerPadding: "60px",
         }
       }
     ]

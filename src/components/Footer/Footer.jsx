@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-5 flex flex-col items-center justify-center gap-2 text-center">
         
         {/* Baris 1: Icons */}
-        {/* <div className="flex gap-5 text-gray-600 text-2xl">
+        <div className="flex gap-5 text-gray-600 text-2xl">
           <a href="https://www.instagram.com/wgs_officiall/" className="hover:text-pink-600 transition-all">
             <FaInstagram />
           </a>
@@ -32,7 +32,7 @@ const Footer = () => {
           <a href="https://www.linkedin.com/company/pt-win-global-solusitama/" className="hover:text-blue-500 transition-all">
             <FaLinkedin />
           </a>
-        </div> */}
+        </div>
 
         {/* Baris 2: Copyright */}
         <div className="text-base md:text-lg text-gray-600">

@@ -45,26 +45,6 @@ const productDetails = {
       "Pembelian Emas"
     ]
   },
-  koperasi: {
-    title: "Koperasi Keuangan Syariah",
-    image: "/kop.png", // Ganti dengan path gambar yang sesuai
-    description: "Sebagai lembaga keuangan modern berbasis syariah, kami memfasilitasi kebutuhan finansial melalui koperasi.",
-    items: [
-      "Pembiayaan mikro tanpa agunan hingga Rp 10 juta.",
-      "Pembiayaan Aliansi Mikro hingga Rp 50 juta.",
-      "Pembiayaan Usaha Mikro hingga Rp 100 juta."
-    ]
-  },
-  pomigor: {
-    title: "Pomigor (POM Mini Minyak Goreng)",
-    image: "/pom.jpg", // Ganti dengan path gambar yang sesuai
-    description: "Kami menyediakan fasilitas peminjaman mesin POM MINYAK GORENG kepada pelaku usaha kecil menengah dengan sistem bagi hasil. InSyaa Allah PT. WGS akan istiqomah menjaga semua kepercayaan dan amanah yang diberikan kepada kami.",
-    items: [
-      "Fasilitas peminjaman mesin Pomigor.",
-      "Sistem bagi hasil yang adil.",
-      "Mendukung pelaku UMKM untuk berwirausaha."
-    ]
-  },
   csr: {
     title: "Corporate Social Responsibility (CSR)",
     image: "/csr.png", // Ganti dengan path gambar yang sesuai

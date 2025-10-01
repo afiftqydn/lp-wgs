@@ -7,6 +7,7 @@ const NavbarMenu = [
   { id: 1, title: "Beranda", path: "/" },
   { id: 2, title: "Tentang Kami", path: "/page2" },
   { id: 3, title: "Produk & Layanan", path: "/page3" },
+  { id: 5, title: "Gelleri & Berita", path: "/page5" },
   { id: 4, title: "Hubungi Kami", path: "/page4" },
 ];
 

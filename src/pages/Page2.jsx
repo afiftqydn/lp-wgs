@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Fungsi utilitas FadeUp
 export const FadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
   whileInView: {
@@ -22,16 +23,8 @@ export const FadeUp = (delay = 0) => ({
 const subsidiaries = [
   { name: "PT. Palm Nusa Khatulistiwa", tagline: "Industri, Grosir dan Retail", logo: "/pnk.png" },
   { name: "PT. Agrikultur Global Khatulistiwa", tagline: "Pertanian, Perkebunan, Peternakan", logo: "/agri_logo.png" },
-  { name: "PT. WGS Entertainment", tagline: "Industri Kreatif & Hiburan", logo: "/entertaint.png" },
+  { name: "PT. Alfarizi Media Nusantara", tagline: "Industri Kreatif & Hiburan", logo: "/entertaint.png" },
   { name: "KSPS Bhumi Pasundan Sejahtera", tagline: "Koperasi Simpan Pinjam Syariah", logo: "/koperasi.png" },
-];
-
-const coreValues = [
-  { name: "Cepat", description: "Responsif dalam memberikan solusi dan layanan." },
-  { name: "Efektif", description: "Menghasilkan dampak maksimal dengan sumber daya yang ada." },
-  { name: "Ramah", description: "Mengutamakan pelayanan yang tulus dan bersahabat." },
-  { name: "Ikhlas", description: "Bekerja dengan niat tulus untuk kemaslahatan bersama." },
-  { name: "Amanah", description: "Menjaga kepercayaan sebagai pilar utama dalam setiap tindakan." },
 ];
 
 const slideshowImages = [
@@ -45,10 +38,11 @@ const slideshowImages = [
 const Page2 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Logic Slideshow
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slideshowImages.length);
-    }, 3000);
+    }, 4000); // Diperpanjang jadi 4 detik
 
     return () => clearInterval(interval);
   }, []);
@@ -67,92 +61,97 @@ const Page2 = () => {
     <section className="overflow-hidden relative bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
       <Navbar />
 
-      {/* Hero Section - Tentang Kami */}
-      <div className="container mx-auto px-6 pt-24 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1">
-            <motion.h1
-              variants={FadeUp(0.1)}
-              initial="initial"
-              whileInView="whileInView"
-              viewport={{ once: true }}
-              className="text-4xl lg:text-5xl font-bold mb-6 text-white"
-            >
-              Membangun Ekosistem, Memberdayakan{" "}
-              <span className="text-white">Masyarakat</span>
-            </motion.h1>
-            <motion.p
-              variants={FadeUp(0.2)}
-              initial="initial"
-              whileInView="whileInView"
-              viewport={{ once: true }}
-              className="text-gray-200 leading-relaxed"
-            >
-              PT <strong>Win Global Solusitama (WGS)</strong> adalah holding
-              company yang berfokus pada pengembangan ekonomi kerakyatan
-              berbasis syariah. Melalui sinergi beragam lini usaha, kami
-              berkomitmen untuk menciptakan pertumbuhan yang berkelanjutan dan
-              memberikan kontribusi nyata bagi kesejahteraan umat.
-            </motion.p>
-          </div>
+      {/* Hero Section BARU - CENTERED, FULL BACKGROUND SLIDESHOW */}
+      <div className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        
+        {/* 1. Background Slideshow Penuh */}
+        <motion.div
+          className="absolute inset-0 w-full h-full"
+          variants={FadeUp(0)}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true }}
+        >
+          <AnimatePresence>
+            <motion.img
+              key={slideshowImages[currentIndex]}
+              src={slideshowImages[currentIndex]}
+              alt="Tim WGS Bekerja"
+              // Gambar full cover, gelap, dan transisi
+              className="w-full h-full object-cover absolute top-0 left-0 filter brightness-[.4] transition-all duration-1000" 
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+            />
+          </AnimatePresence>
+          
+          {/* Overlay (opsional, tapi disarankan) */}
+          <div className="absolute inset-0 bg-black/20"></div>
+        </motion.div>
 
-          <motion.div
-            className="order-1 md:order-2 relative w-full aspect-video md:aspect-[4/3] rounded-2xl overflow-hidden shadow-lg"
+        {/* 2. Konten Teks di Tengah (Center Horizontal & Vertical) */}
+        <div className="relative z-10 text-center container mx-auto px-6 max-w-4xl">
+          <motion.h1
             variants={FadeUp(0.3)}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true }}
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-4 text-white drop-shadow-lg"
           >
-            <AnimatePresence>
-              <motion.img
-                key={slideshowImages[currentIndex]}
-                src={slideshowImages[currentIndex]}
-                alt="Tim WGS Bekerja"
-                className="w-full h-full object-cover absolute top-0 left-0 rounded-2xl"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1, ease: "easeInOut" }}
-              />
-            </AnimatePresence>
+            Membangun Ekosistem, Memberdayakan{" "}
+            <span className="text-gray-300">Masyarakat</span>
+          </motion.h1>
+          <motion.p
+            variants={FadeUp(0.6)}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="text-lg md:text-xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed drop-shadow-md"
+          >
+            PT Win Global Solusitama berkomitmen menciptakan pertumbuhan yang berkelanjutan dan memberikan kontribusi nyata bagi kesejahteraan umat melalui sinergi ekonomi kerakyatan berbasis syariah.
+          </motion.p>
+        </div>
 
-            <button
-              onClick={handlePrev}
-              className="absolute top-1/2 left-3 z-10 -translate-y-1/2 bg-white/50 p-2 rounded-full shadow-md hover:bg-white/80 transition-transform duration-300 hover:scale-110"
-              aria-label="Previous slide"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={handleNext}
-              className="absolute top-1/2 right-3 z-10 -translate-y-1/2 bg-white/50 p-2 rounded-full shadow-md hover:bg-white/80 transition-transform duration-300 hover:scale-110"
-              aria-label="Next slide"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+        {/* 3. Tombol Navigasi dan Indikator */}
+        <button
+          onClick={handlePrev}
+          className="absolute top-1/2 left-6 z-20 -translate-y-1/2 bg-white/30 p-3 rounded-full shadow-lg hover:bg-white/50 transition duration-300 hover:scale-110 hidden md:block"
+          aria-label="Previous slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        
+        <button
+          onClick={handleNext}
+          className="absolute top-1/2 right-6 z-20 -translate-y-1/2 bg-white/30 p-3 rounded-full shadow-lg hover:bg-white/50 transition duration-300 hover:scale-110 hidden md:block"
+          aria-label="Next slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
 
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {slideshowImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentIndex === index
-                      ? "bg-secondary scale-125"
-                      : "bg-gray-300 hover:bg-gray-400"
-                  }`}
-                />
-              ))}
-            </div>
-          </motion.div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+          {slideshowImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ring-2 ring-white ${
+                currentIndex === index
+                  ? "bg-secondary scale-125"
+                  : "bg-white/50 hover:bg-white"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
+      {/* Akhir Hero Section BARU */}
 
-      {/* Section Anak Perusahaan */}
+      {/* Section Anak Perusahaan (Tidak Berubah) */}
       <div className="py-16 bg-[#cce6c4]">
         <div className="container mx-auto px-6 text-center">
           <motion.h2
@@ -196,7 +195,7 @@ const Page2 = () => {
         </div>
       </div>
 
-        {/* SECTION BARU: LEGALITAS & DATA PERUSAHAAN */}
+        {/* SECTION LEGALITAS & DATA PERUSAHAAN (Tidak Berubah) */}
         <div className="py-16">
           <div className="container mx-auto px-6">
             <motion.h2
@@ -242,26 +241,6 @@ const Page2 = () => {
                       <span className="font-semibold">NPWP</span>
                       <span>61.815.042.9-017.000</span>
                     </li>
-                    {/* <li className="flex justify-between items-center border-b pb-2">
-                      <span className="font-semibold">Modal Dasar & Disetor</span>
-                      <span>Rp 1.000.000.000 (10.000 lembar saham)</span>
-                    </li> */}
-                    {/* <li className="flex justify-between items-center border-b pb-2">
-                      <span className="font-semibold">Alamat Kantor</span>
-                      <span>Nifarro Park, ITS Tower Lt. 6 Unit 10, Jl. Raya Pasar Minggu No.18, Pejaten Timur, Pasar Minggu, Jakarta Selatan, 12510</span>
-                    </li> */}
-                    {/* <li className="flex justify-between items-center border-b pb-2">
-                      <span className="font-semibold">Direksi</span>
-                      <span>H. Hendra Firmansyah</span>
-                    </li>
-                    <li className="flex justify-between items-center border-b pb-2">
-                      <span className="font-semibold">Komisaris Utama</span>
-                      <span>Mohammad Rusfi</span>
-                    </li>
-                    <li className="flex justify-between items-center">
-                      <span className="font-semibold">Komisaris</span>
-                      <span>Ponco Heru Sutanto</span>
-                    </li> */}
                   </ul>
                 </div>
               </motion.div>
@@ -269,7 +248,6 @@ const Page2 = () => {
           </div>
         </div>
         {/* Akhir SECTION BARU */}
-
 
       <Footer />
     </section>
