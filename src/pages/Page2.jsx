@@ -26,49 +26,48 @@ const subsidiaries = [
   { 
     id: "sub-1", 
     name: "PT. Palm Nusa Khatulistiwa", 
-    tagline: "Industri, Grosir dan Retail", 
+    tagline: "Industri, Grosir & Ritel", 
     logo: "/pnk.png",
-    description: "PT. Palm Nusa Khatulistiwa bergerak di bidang industri hilir kelapa sawit, grosir, dan retail. Perusahaan ini berfokus pada pengolahan produk turunan sawit dan distribusinya ke pasar domestik maupun internasional. Visinya adalah menjadi pemain utama di industri CPO dan produk turunannya.",
+    description: "PT. Palm Nusa Khatulistiwa berfokus pada industri hilir kelapa sawit dengan produk grosir dan ritel. Melalui unit usahanya, perusahaan mendukung pengolahan dan distribusi produk turunan kelapa sawit untuk memenuhi kebutuhan domestik maupun internasional.",
     items: [
-      "Produksi minyak kelapa sawit mentah (CPO)",
-      "Pengolahan produk turunan seperti minyak goreng dan margarin",
-      "Jaringan distribusi grosir dan retail yang luas"
+      "Produk grosir dan ritel berbasis kelapa sawit",
+      "Distribusi minyak goreng kemasan",
+      "Penyediaan fasilitas peminjaman mesin POM Minyak Goreng (POMIGOR) bagi UMKM"
     ]
   },
   { 
     id: "sub-2", 
     name: "PT. Agrikultur Global Khatulistiwa", 
-    tagline: "Pertanian, Perkebunan, Peternakan", 
+    tagline: "Pertanian, Perkebunan, Peternakan & Perikanan", 
     logo: "/agri_logo.png",
-    description: "PT. Agrikultur Global Khatulistiwa merupakan perusahaan yang berfokus pada sektor pertanian, perkebunan, dan peternakan. Perusahaan ini mengembangkan inovasi teknologi untuk meningkatkan hasil produksi dan efisiensi, serta berkomitmen pada praktik agrikultur yang berkelanjutan dan ramah lingkungan.",
+    description: "PT. Agrikultur Global Khatulistiwa bergerak di sektor pertanian, perkebunan, peternakan, dan perikanan. Perusahaan ini mengembangkan model usaha yang berorientasi pada keberlanjutan, pemberdayaan petani lokal, serta menjaga ketahanan pangan nasional.",
     items: [
-      "Pengelolaan lahan perkebunan berkelanjutan",
-      "Pemberdayaan petani lokal dan UMKM",
-      "Inovasi teknologi untuk peningkatan hasil panen"
+      "Pengelolaan lahan pertanian dan perkebunan",
+      "Peternakan skala kecil hingga besar",
+      "Pengembangan sektor perikanan berbasis masyarakat"
     ]
   },
   { 
     id: "sub-3", 
     name: "PT. Alfarizi Media Nusantara", 
-    tagline: "Industri Kreatif & Hiburan", 
+    tagline: "Media, Event Organizer & Digital Marketing", 
     logo: "/entertaint.png",
-    description: "PT. Alfarizi Media Nusantara adalah perusahaan di bidang industri kreatif dan hiburan. Perusahaan ini mengelola berbagai proyek, mulai dari produksi konten digital, event organizer, hingga manajemen artis. Misinya adalah menjadi wadah bagi talenta kreatif lokal untuk berkarya dan bersaing di kancah nasional.",
+    description: "PT. Alfarizi Media Nusantara merupakan perusahaan yang bergerak di bidang media online, penyelenggaraan event, dan digital marketing. Perusahaan ini juga mengembangkan podcast serta program kreatif untuk mendukung transformasi digital di Indonesia.",
     items: [
-      "Produksi film, musik, dan konten digital",
-      "Pengembangan event dan promosi",
-      "Manajemen talenta dan artis"
+      "Media online dengan berbagai konten informatif",
+      "Event organizer untuk kegiatan korporasi dan publik",
+      "Layanan digital marketing & podcast kreatif"
     ]
   },
   { 
     id: "sub-4", 
-    name: "KSPS Bhumi Pasundan Sejahtera", 
-    tagline: "Koperasi Simpan Pinjam Syariah", 
+    name: "Koperasi Jasa Syariah Bhumi Pasundan Sejahtera", 
+    tagline: "Pembiayaan & Koperasi Syariah", 
     logo: "/koperasi.png",
-    description: "KSPS Bhumi Pasundan Sejahtera adalah koperasi yang berlandaskan prinsip syariah, menawarkan layanan simpan pinjam untuk anggotanya. Tujuannya adalah membantu pemberdayaan ekonomi masyarakat, khususnya UMKM, dengan menyediakan akses pembiayaan yang mudah, adil, dan sesuai dengan prinsip-prinsip Islam.",
+    description: "Koperasi Jasa Syariah Bhumi Pasundan Sejahtera berfokus pada layanan pembiayaan syariah yang adil, ringan, dan fleksibel. Melalui program mitra guna, pembiayaan haji & umroh, serta program CSR, koperasi ini mendukung pertumbuhan UMKM dan kesejahteraan anggota.",
     items: [
-      "Pembiayaan syariah untuk UMKM",
-      "Layanan simpan pinjam yang amanah dan transparan",
-      "Pelatihan dan pendampingan ekonomi bagi anggota"
+      "Program Mitra Guna berbasis syariah",
+      "Pembiayaan haji & umroh",
     ]
   },
 ];
@@ -96,19 +95,23 @@ const Page2 = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Logic SCROLL TO ID
   useEffect(() => {
     if (location.hash) {
-      const id = location.hash.substring(1); 
-      const element = document.getElementById(id);
+      const idFromHash = location.hash.substring(1);
+      const foundSubsidiary = subsidiaries.find(sub => sub.id === idFromHash);
       
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+      if (foundSubsidiary) {
+        setActiveSubsidiary(foundSubsidiary);
+        setTimeout(() => {
+          const element = document.getElementById("subsidiary-details-wrapper");
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+          }
+        }, 100); 
       }
     }
   }, [location.hash]);
 
-  // Fungsi untuk menangani klik pada kartu
   const handleCardClick = (subsidiary) => {
     setActiveSubsidiary(subsidiary);
     setTimeout(() => {
@@ -119,7 +122,6 @@ const Page2 = () => {
     }, 100);
   };
 
-  // Fungsi untuk merender detail anak perusahaan
   const renderSubsidiaryDetail = () => {
     const detail = activeSubsidiary;
     if (!detail) {
@@ -317,7 +319,6 @@ const Page2 = () => {
           </div>
           <div className="h-8"></div>
 
-          {/* Kondisi di sini yang akan menampilkan seluruh wrapper */}
           {activeSubsidiary && (
             <div id="subsidiary-details-wrapper" className="container py-16 bg-[#cae2bf] rounded-3xl shadow-md">
               <div className="container mx-auto px-6">

@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FadeUp } from '../../pages/Page5'; // Asumsi FadeUp diimport dari Page5
+import { FadeUp } from '../../pages/Page5';
 import { IoIosArrowRoundForward } from "react-icons/io";
+// Hapus import { Link } dari 'react-router-dom';
 
 const NewsGrid = ({ articles }) => {
   return (
@@ -21,20 +22,28 @@ const NewsGrid = ({ articles }) => {
           animate="animate"
           className="bg-[#cae2bf] rounded-xl border border-gray-100 shadow-lg transition-shadow duration-300 hover:shadow-xl overflow-hidden"
         >
-          {/* Tambahkan placeholder gambar agar kartu terlihat lebih menarik */}
-          <div className="h-40 bg-gray-200 w-full object-cover">
-            <img 
-              src={article.imgSrc || "https://via.placeholder.com/600x400?text=WGS+News"} 
-              alt={article.title} 
-              className="w-full h-full object-cover"
-            />
-          </div>
+          {/* Ubah Link ke <a> untuk navigasi eksternal */}
+          <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" className="block">
+            <div className="h-40 bg-gray-200 w-full object-cover">
+              <img 
+                src={article.imgSrc || "https://via.placeholder.com/600x400?text=WGS+News"} 
+                alt={article.title} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </a>
           
           <div className="p-6">
             <div className="text-sm font-medium text-secondary mb-2">{article.date}</div>
             <h2 className="text-xl font-bold text-gray-800 mb-3">{article.title}</h2>
             <p className="text-gray-600 mb-4 line-clamp-3">{article.summary}</p>
-            <a href={`/news/${article.id}`} className="text-secondary font-semibold flex items-center hover:underline">
+            {/* Ubah Link ke <a> untuk navigasi eksternal */}
+            <a 
+              href={article.sourceUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-secondary font-semibold flex items-center hover:underline"
+            >
               Baca Selengkapnya <IoIosArrowRoundForward className="w-6 h-6 ml-1" />
             </a>
           </div>
