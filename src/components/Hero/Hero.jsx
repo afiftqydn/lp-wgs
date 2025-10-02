@@ -28,7 +28,7 @@ export const FadeUp = (delay) => {
 const Hero = () => {
   const navigate = useNavigate(); 
   const handleClick = () => {
-    navigate("/page3"); 
+    navigate("/page2"); 
   };
 
   return (
@@ -44,18 +44,16 @@ const Hero = () => {
               animate="animate"
               className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug break-words text-light"
             >
-              Membangun Ekonomi Syariah yang Inklusif dan Berkeadilan
+              PT WIN GLOBAL SOLUSITAMA
             </motion.h1>
 
             <motion.p
               variants={FadeUp(0.7)}
               initial="initial"
               animate="animate"
-              className="text-base text-gray-200 leading-relaxed"
+              className="text-xl text-base text-gray-200 leading-relaxed"
             >
-              Hadir dari Kalimantan Barat, kami menawarkan pembiayaan syariah, 
-              solusi keuangan modern, serta program kemanusiaan untuk tumbuh 
-              bersama masyarakat.
+              PT Win Global Solusitama (WGS) merupakan startup dari Kalimantan Barat yang bergerak di bidang pembiayaan syariah, solusi keuangan, serta pengembangan program kemanusiaan dan keumatan. Fokus utamanya adalah mendorong pemberdayaan ekonomi dan sosial melalui layanan keuangan inklusif.
             </motion.p>
 
             <motion.div

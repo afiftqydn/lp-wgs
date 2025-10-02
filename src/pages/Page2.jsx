@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from 'react-router-dom';
 
 // Fungsi utilitas FadeUp
 export const FadeUp = (delay = 0) => ({
@@ -20,11 +21,56 @@ export const FadeUp = (delay = 0) => ({
   viewport: { once: true },
 });
 
+// Pastikan data subsidiaries ini LENGKAP dengan properti 'items'
 const subsidiaries = [
-  { name: "PT. Palm Nusa Khatulistiwa", tagline: "Industri, Grosir dan Retail", logo: "/pnk.png" },
-  { name: "PT. Agrikultur Global Khatulistiwa", tagline: "Pertanian, Perkebunan, Peternakan", logo: "/agri_logo.png" },
-  { name: "PT. Alfarizi Media Nusantara", tagline: "Industri Kreatif & Hiburan", logo: "/entertaint.png" },
-  { name: "KSPS Bhumi Pasundan Sejahtera", tagline: "Koperasi Simpan Pinjam Syariah", logo: "/koperasi.png" },
+  { 
+    id: "sub-1", 
+    name: "PT. Palm Nusa Khatulistiwa", 
+    tagline: "Industri, Grosir dan Retail", 
+    logo: "/pnk.png",
+    description: "PT. Palm Nusa Khatulistiwa bergerak di bidang industri hilir kelapa sawit, grosir, dan retail. Perusahaan ini berfokus pada pengolahan produk turunan sawit dan distribusinya ke pasar domestik maupun internasional. Visinya adalah menjadi pemain utama di industri CPO dan produk turunannya.",
+    items: [
+      "Produksi minyak kelapa sawit mentah (CPO)",
+      "Pengolahan produk turunan seperti minyak goreng dan margarin",
+      "Jaringan distribusi grosir dan retail yang luas"
+    ]
+  },
+  { 
+    id: "sub-2", 
+    name: "PT. Agrikultur Global Khatulistiwa", 
+    tagline: "Pertanian, Perkebunan, Peternakan", 
+    logo: "/agri_logo.png",
+    description: "PT. Agrikultur Global Khatulistiwa merupakan perusahaan yang berfokus pada sektor pertanian, perkebunan, dan peternakan. Perusahaan ini mengembangkan inovasi teknologi untuk meningkatkan hasil produksi dan efisiensi, serta berkomitmen pada praktik agrikultur yang berkelanjutan dan ramah lingkungan.",
+    items: [
+      "Pengelolaan lahan perkebunan berkelanjutan",
+      "Pemberdayaan petani lokal dan UMKM",
+      "Inovasi teknologi untuk peningkatan hasil panen"
+    ]
+  },
+  { 
+    id: "sub-3", 
+    name: "PT. Alfarizi Media Nusantara", 
+    tagline: "Industri Kreatif & Hiburan", 
+    logo: "/entertaint.png",
+    description: "PT. Alfarizi Media Nusantara adalah perusahaan di bidang industri kreatif dan hiburan. Perusahaan ini mengelola berbagai proyek, mulai dari produksi konten digital, event organizer, hingga manajemen artis. Misinya adalah menjadi wadah bagi talenta kreatif lokal untuk berkarya dan bersaing di kancah nasional.",
+    items: [
+      "Produksi film, musik, dan konten digital",
+      "Pengembangan event dan promosi",
+      "Manajemen talenta dan artis"
+    ]
+  },
+  { 
+    id: "sub-4", 
+    name: "KSPS Bhumi Pasundan Sejahtera", 
+    tagline: "Koperasi Simpan Pinjam Syariah", 
+    logo: "/koperasi.png",
+    description: "KSPS Bhumi Pasundan Sejahtera adalah koperasi yang berlandaskan prinsip syariah, menawarkan layanan simpan pinjam untuk anggotanya. Tujuannya adalah membantu pemberdayaan ekonomi masyarakat, khususnya UMKM, dengan menyediakan akses pembiayaan yang mudah, adil, dan sesuai dengan prinsip-prinsip Islam.",
+    items: [
+      "Pembiayaan syariah untuk UMKM",
+      "Layanan simpan pinjam yang amanah dan transparan",
+      "Pelatihan dan pendampingan ekonomi bagi anggota"
+    ]
+  },
 ];
 
 const slideshowImages = [
@@ -37,15 +83,73 @@ const slideshowImages = [
 
 const Page2 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const location = useLocation();
+
+  const [activeSubsidiary, setActiveSubsidiary] = useState(null);
 
   // Logic Slideshow
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slideshowImages.length);
-    }, 4000); // Diperpanjang jadi 4 detik
+    }, 4000); 
 
     return () => clearInterval(interval);
   }, []);
+
+  // Logic SCROLL TO ID
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.substring(1); 
+      const element = document.getElementById(id);
+      
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+      }
+    }
+  }, [location.hash]);
+
+  // Fungsi untuk menangani klik pada kartu
+  const handleCardClick = (subsidiary) => {
+    setActiveSubsidiary(subsidiary);
+    setTimeout(() => {
+      const element = document.getElementById("subsidiary-details-wrapper");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
+  // Fungsi untuk merender detail anak perusahaan
+  const renderSubsidiaryDetail = () => {
+    const detail = activeSubsidiary;
+    if (!detail) {
+      return null;
+    }
+
+    return (
+      <motion.div
+        key={detail.id}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex flex-col md:flex-row items-center md:items-start gap-8"
+      >
+        <div className="w-full md:w-1/3">
+          <img src={detail.logo} alt={detail.name} className="w-full h-auto rounded-lg shadow-md" />
+        </div>
+        <div className="w-full md:w-2/3">
+          <h2 className="text-3xl font-bold mb-4 text-center md:text-left text-primary">{detail.name}</h2>
+          <p className="text-gray-700 mb-6 text-center md:text-left">{detail.description}</p>
+          {detail.items && (
+            <ul className="list-disc list-inside space-y-2 text-gray-700 mx-auto md:mx-0">
+              {detail.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </motion.div>
+    );
+  };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -58,13 +162,10 @@ const Page2 = () => {
   };
 
   return (
-    <section className="overflow-hidden relative bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
+    <section className="bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover overflow-hidden relative flex flex-col min-h-screen">
       <Navbar />
 
-      {/* Hero Section BARU - CENTERED, FULL BACKGROUND SLIDESHOW */}
       <div className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-        
-        {/* 1. Background Slideshow Penuh */}
         <motion.div
           className="absolute inset-0 w-full h-full"
           variants={FadeUp(0)}
@@ -77,7 +178,6 @@ const Page2 = () => {
               key={slideshowImages[currentIndex]}
               src={slideshowImages[currentIndex]}
               alt="Tim WGS Bekerja"
-              // Gambar full cover, gelap, dan transisi
               className="w-full h-full object-cover absolute top-0 left-0 filter brightness-[.4] transition-all duration-1000" 
               initial={{ opacity: 0, scale: 1.05 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -85,12 +185,9 @@ const Page2 = () => {
               transition={{ duration: 1.5, ease: "easeInOut" }}
             />
           </AnimatePresence>
-          
-          {/* Overlay (opsional, tapi disarankan) */}
           <div className="absolute inset-0 bg-black/20"></div>
         </motion.div>
 
-        {/* 2. Konten Teks di Tengah (Center Horizontal & Vertical) */}
         <div className="relative z-10 text-center container mx-auto px-6 max-w-4xl">
           <motion.h1
             variants={FadeUp(0.3)}
@@ -113,7 +210,6 @@ const Page2 = () => {
           </motion.p>
         </div>
 
-        {/* 3. Tombol Navigasi dan Indikator */}
         <button
           onClick={handlePrev}
           className="absolute top-1/2 left-6 z-20 -translate-y-1/2 bg-white/30 p-3 rounded-full shadow-lg hover:bg-white/50 transition duration-300 hover:scale-110 hidden md:block"
@@ -149,55 +245,90 @@ const Page2 = () => {
           ))}
         </div>
       </div>
-      {/* Akhir Hero Section BARU */}
-
-      {/* Section Anak Perusahaan (Tidak Berubah) */}
-      <div className="py-16 bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
-      <div className="container py-16 bg-[#cce6c4] rounded-3xl shadow-md">
-        <div className="container mx-auto px-6 text-center">
-          <motion.h2
-            variants={FadeUp(0.1)}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-gray-800 mb-4"
-          >
-            Ekosistem Bisnis <span className="text-secondary">Kami</span>
-          </motion.h2>
-          <motion.p
-            variants={FadeUp(0.2)}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
-            className="text-gray-600 max-w-2xl mx-auto mb-10"
-          >
-            Melalui sinergi anak perusahaan, WGS menghadirkan solusi terintegrasi di berbagai sektor — mulai dari keuangan, pertanian, hingga industri kreatif — untuk membangun ekonomi kerakyatan yang kuat dan mandiri.
-          </motion.p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {subsidiaries.map((sub, index) => (
-              <motion.div
-                key={sub.name}
-                variants={FadeUp(0.3 + index * 0.1)}
+      
+      <div className="flex-grow">
+        <div className="py-16 bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
+          <div className="bg-[#cae2bf] container py-16 rounded-3xl shadow-md">
+            <div className="container mx-auto px-6">
+              <motion.h2
+                variants={FadeUp(0.1)}
                 initial="initial"
                 whileInView="whileInView"
                 viewport={{ once: true }}
-                className="group bg-[#e1f2d8] p-6 rounded-xl border border-transparent transition-all duration-300 hover:border-secondary hover:shadow-lg hover:-translate-y-2"
+                className="text-3xl font-bold text-gray-800 mb-6 text-center"
               >
-                <img
-                  src={sub.logo}
-                  alt={`Logo ${sub.name}`}
-                  className="w-28 h-28 lg:w-32 lg:h-32 object-contain mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
-                />
-                <h3 className="font-bold text-gray-800 text-lg">{sub.name}</h3>
-                <p className="text-sm text-gray-500">{sub.tagline}</p>
-              </motion.div>
-            ))}
+                Selayang Pandang <span className="text-secondary"></span>
+              </motion.h2>
+              <motion.p
+                variants={FadeUp(0.2)}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true }}
+                className="text-gray-800 max-w-2xl mx-auto text-l text-justify"
+              >
+                PT Win Global Solusitama (WGS) merupakan startup dari Kalimantan Barat yang bergerak di bidang pembiayaan syariah, solusi keuangan, serta pengembangan program kemanusiaan dan keumatan. Fokus utamanya adalah mendorong pemberdayaan ekonomi dan sosial melalui layanan keuangan inklusif. WGS menawarkan pembiayaan untuk berbagai kebutuhan, termasuk umroh, haji, UMKM, perumahan, pertanian, dan pendidikan, serta memiliki tujuan sosial dengan menyalurkan sebagian besar keuntungan untuk program seperti santunan anak yatim dan program kemanusiaan lainnya.
+              </motion.p>
+            </div>
           </div>
-        </div>
-      </div>
-      </div>
+          <div className="h-8"></div>
 
-        {/* SECTION LEGALITAS & DATA PERUSAHAAN (Tidak Berubah) */}
+          <div id="sub-holding" className="container py-16 bg-[#cce6c4] rounded-3xl shadow-md">
+            <div className="container mx-auto px-6 text-center">
+              <motion.h2
+                variants={FadeUp(0.1)}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true }}
+                className="text-3xl font-bold text-gray-800 mb-4"
+              >
+                Ekosistem Bisnis <span className="text-secondary">Kami</span>
+              </motion.h2>
+              <motion.p
+                variants={FadeUp(0.2)}
+                initial="initial"
+                whileInView="whileInView"
+                viewport={{ once: true }}
+                className="text-gray-600 max-w-2xl mx-auto mb-10"
+              >
+                Melalui sinergi anak perusahaan, WGS menghadirkan solusi terintegrasi di berbagai sektor — mulai dari keuangan, pertanian, hingga industri kreatif — untuk membangun ekonomi kerakyatan yang kuat dan mandiri.
+              </motion.p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {subsidiaries.map((sub, index) => (
+                  <motion.div
+                    key={sub.name}
+                    variants={FadeUp(0.3 + index * 0.1)}
+                    initial="initial"
+                    whileInView="whileInView"
+                    viewport={{ once: true }}
+                    onClick={() => handleCardClick(sub)}
+                    className="group bg-[#e1f2d8] p-6 rounded-xl border border-transparent transition-all duration-300 hover:border-secondary hover:shadow-lg hover:-translate-y-2 cursor-pointer select-none"
+                  >
+                    <img
+                      src={sub.logo}
+                      alt={`Logo ${sub.name}`}
+                      className="w-28 h-28 lg:w-32 lg:h-32 object-contain mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <h3 className="font-bold text-gray-800 text-lg">{sub.name}</h3>
+                    <p className="text-sm text-gray-500">{sub.tagline}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="h-8"></div>
+
+          {/* Kondisi di sini yang akan menampilkan seluruh wrapper */}
+          {activeSubsidiary && (
+            <div id="subsidiary-details-wrapper" className="container py-16 bg-[#cae2bf] rounded-3xl shadow-md">
+              <div className="container mx-auto px-6">
+                <AnimatePresence>
+                  {renderSubsidiaryDetail()}
+                </AnimatePresence>
+              </div>
+            </div>
+          )}
+        </div>
+        
         <div className="py-16">
           <div className="container mx-auto px-6">
             <motion.h2
@@ -249,8 +380,8 @@ const Page2 = () => {
             </div>
           </div>
         </div>
-        {/* Akhir SECTION BARU */}
-
+      </div>
+      
       <Footer />
     </section>
   );

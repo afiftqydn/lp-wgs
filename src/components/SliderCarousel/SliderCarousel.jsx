@@ -2,6 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from 'react-router-dom';
+
 
 // ===== Dummy Data =====
 const cardData = [
@@ -22,6 +24,7 @@ const cardData = [
     title: "Project D",
   },
 ];
+
 
 // ===== Komponen Card =====
 const CardView = ({ image, alt }) => (

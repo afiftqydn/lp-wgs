@@ -4,7 +4,7 @@
 export const newsArticles = [
     { 
       id: 10, // Urutan terbaru di atas
-      title: "Umroh", 
+      title: "Andalus dan WGS Kerjasama Pembiayaan Umroh", 
       date: "14 Jul 2025", 
       summary: "Berkatnewstv, Travel Andalusia menjalin Kerjasama dengan PT Win Global Solusitama (WGS) untuk pembiayaan umroh...",
       imgSrc: "/andalus.jpg" // Ganti dengan path gambar yang sebenarnya
