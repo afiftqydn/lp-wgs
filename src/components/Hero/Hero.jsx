@@ -36,7 +36,7 @@ const Hero = () => {
       <div className="container grid grid-cols-1 md:grid-cols-2 items-center min-h-[650px] mt-0 md:mt-[-120px]">
         
         {/* Brand Info */}
-        <div className="flex flex-col justify-center py-10 md:py-0 relative z-20 order-2 md:order-1">
+        <div className="flex flex-col justify-center no-caret select-none py-10 md:py-0 relative z-20 order-2 md:order-1">
           <div className="text-center md:text-left space-y-6 max-w-xl mx-auto md:mx-0">
             <motion.h1
               variants={FadeUp(0.6)}
@@ -74,7 +74,7 @@ const Hero = () => {
         </div>
 
         {/* Hero Image */}
-        <div className="flex justify-center items-center mt-6 md:mt-0 order-1 md:order-2">
+        <div className="flex justify-center no-caret select-none items-center mt-6 md:mt-0 order-1 md:order-2">
           <motion.img
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}

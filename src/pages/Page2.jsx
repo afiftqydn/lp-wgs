@@ -4,6 +4,12 @@ import Footer from "../components/Footer/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from 'react-router-dom';
 
+// Import data terpusat
+import { subsidiariesData } from "../data/subsidiariesData";
+
+// Menggunakan data yang diimpor
+const subsidiaries = subsidiariesData;
+
 // Fungsi utilitas FadeUp
 export const FadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -21,57 +27,7 @@ export const FadeUp = (delay = 0) => ({
   viewport: { once: true },
 });
 
-// Pastikan data subsidiaries ini LENGKAP dengan properti 'items'
-const subsidiaries = [
-  { 
-    id: "sub-1", 
-    name: "PT. Palm Nusa Khatulistiwa", 
-    tagline: "Industri, Grosir & Ritel", 
-    logo: "/pnk.png",
-    description: "PT. Palm Nusa Khatulistiwa berfokus pada industri hilir kelapa sawit dengan produk grosir dan ritel. Melalui unit usahanya, perusahaan mendukung pengolahan dan distribusi produk turunan kelapa sawit untuk memenuhi kebutuhan domestik maupun internasional.",
-    items: [
-      "Produk grosir dan ritel berbasis kelapa sawit",
-      "Distribusi minyak goreng kemasan",
-      "Penyediaan fasilitas peminjaman mesin POM Minyak Goreng (POMIGOR) bagi UMKM"
-    ]
-  },
-  { 
-    id: "sub-2", 
-    name: "PT. Agrikultur Global Khatulistiwa", 
-    tagline: "Pertanian, Perkebunan, Peternakan & Perikanan", 
-    logo: "/agri_logo.png",
-    description: "PT. Agrikultur Global Khatulistiwa bergerak di sektor pertanian, perkebunan, peternakan, dan perikanan. Perusahaan ini mengembangkan model usaha yang berorientasi pada keberlanjutan, pemberdayaan petani lokal, serta menjaga ketahanan pangan nasional.",
-    items: [
-      "Pengelolaan lahan pertanian dan perkebunan",
-      "Peternakan skala kecil hingga besar",
-      "Pengembangan sektor perikanan berbasis masyarakat"
-    ]
-  },
-  { 
-    id: "sub-3", 
-    name: "PT. Alfarizi Media Nusantara", 
-    tagline: "Media, Event Organizer & Digital Marketing", 
-    logo: "/entertaint.png",
-    description: "PT. Alfarizi Media Nusantara merupakan perusahaan yang bergerak di bidang media online, penyelenggaraan event, dan digital marketing. Perusahaan ini juga mengembangkan podcast serta program kreatif untuk mendukung transformasi digital di Indonesia.",
-    items: [
-      "Media online dengan berbagai konten informatif",
-      "Event organizer untuk kegiatan korporasi dan publik",
-      "Layanan digital marketing & podcast kreatif"
-    ]
-  },
-  { 
-    id: "sub-4", 
-    name: "Koperasi Jasa Syariah Bhumi Pasundan Sejahtera", 
-    tagline: "Pembiayaan & Koperasi Syariah", 
-    logo: "/koperasi.png",
-    description: "Koperasi Jasa Syariah Bhumi Pasundan Sejahtera berfokus pada layanan pembiayaan syariah yang adil, ringan, dan fleksibel. Melalui program mitra guna, pembiayaan haji & umroh, serta program CSR, koperasi ini mendukung pertumbuhan UMKM dan kesejahteraan anggota.",
-    items: [
-      "Program Mitra Guna berbasis syariah",
-      "Pembiayaan haji & umroh",
-    ]
-  },
-];
-
+// Daftar gambar untuk slideshow
 const slideshowImages = [
   "/slideshow/gmbr1.jpg",
   "/slideshow/gmbr2.jpg",
@@ -83,10 +39,9 @@ const slideshowImages = [
 const Page2 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const location = useLocation();
-
   const [activeSubsidiary, setActiveSubsidiary] = useState(null);
 
-  // Logic Slideshow
+  // ... (semua logic state dan handler tetap sama) ...
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slideshowImages.length);
@@ -127,7 +82,6 @@ const Page2 = () => {
     if (!detail) {
       return null;
     }
-
     return (
       <motion.div
         key={detail.id}
@@ -154,20 +108,21 @@ const Page2 = () => {
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      (prevIndex - 1 + slideshowImages.length) % slideshowImages.length
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + slideshowImages.length) % slideshowImages.length);
   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slideshowImages.length);
   };
 
+
   return (
     <section className="bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover overflow-hidden relative flex flex-col min-h-screen">
       <Navbar />
 
+      {/* Hero Section */}
       <div className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        {/* ... (elemen slideshow tetap sama) ... */}
         <motion.div
           className="absolute inset-0 w-full h-full"
           variants={FadeUp(0)}
@@ -189,7 +144,7 @@ const Page2 = () => {
           </AnimatePresence>
           <div className="absolute inset-0 bg-black/20"></div>
         </motion.div>
-
+        
         <div className="relative z-10 text-center container mx-auto px-6 max-w-4xl">
           <motion.h1
             variants={FadeUp(0.3)}
@@ -201,6 +156,8 @@ const Page2 = () => {
             Membangun Ekosistem, Memberdayakan{" "}
             <span className="text-gray-300">Masyarakat</span>
           </motion.h1>
+
+          {/* ===== NARASI DI SINI DIUBAH KEMBALI ===== */}
           <motion.p
             variants={FadeUp(0.6)}
             initial="initial"
@@ -208,93 +165,64 @@ const Page2 = () => {
             viewport={{ once: true }}
             className="text-lg md:text-xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed drop-shadow-md"
           >
-            PT Win Global Solusitama berkomitmen menciptakan pertumbuhan yang berkelanjutan dan memberikan kontribusi nyata bagi kesejahteraan umat melalui sinergi ekonomi kerakyatan berbasis syariah.
+            PT. Win Global Solusitama berkomitmen menciptakan pertumbuhan yang berkelanjutan dan memberikan kontribusi nyata bagi kesejahteraan umat melalui sinergi ekonomi kerakyatan berbasis syariah.
           </motion.p>
         </div>
-
-        <button
-          onClick={handlePrev}
-          className="absolute top-1/2 left-6 z-20 -translate-y-1/2 bg-white/30 p-3 rounded-full shadow-lg hover:bg-white/50 transition duration-300 hover:scale-110 hidden md:block"
-          aria-label="Previous slide"
-        >
+        {/* ... (tombol slideshow tetap sama) ... */}
+        <button onClick={handlePrev} className="absolute top-1/2 left-6 z-20 -translate-y-1/2 bg-white/30 p-3 rounded-full shadow-lg hover:bg-white/50 transition duration-300 hover:scale-110 hidden md:block" aria-label="Previous slide">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        
-        <button
-          onClick={handleNext}
-          className="absolute top-1/2 right-6 z-20 -translate-y-1/2 bg-white/30 p-3 rounded-full shadow-lg hover:bg-white/50 transition duration-300 hover:scale-110 hidden md:block"
-          aria-label="Next slide"
-        >
+        <button onClick={handleNext} className="absolute top-1/2 right-6 z-20 -translate-y-1/2 bg-white/30 p-3 rounded-full shadow-lg hover:bg-white/50 transition duration-300 hover:scale-110 hidden md:block" aria-label="Next slide">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
-
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
           {slideshowImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ring-2 ring-white ${
-                currentIndex === index
-                  ? "bg-secondary scale-125"
-                  : "bg-white/50 hover:bg-white"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ring-2 ring-white ${currentIndex === index ? "bg-secondary scale-125" : "bg-white/50 hover:bg-white"}`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
       </div>
       
+      {/* Main Content Area */}
       <div className="flex-grow">
         <div className="py-16 bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
+          
+          {/* Selayang Pandang Section */}
           <div className="bg-[#cae2bf] container py-16 rounded-3xl shadow-md">
             <div className="container mx-auto px-6">
-              <motion.h2
-                variants={FadeUp(0.1)}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true }}
-                className="text-3xl font-bold text-gray-800 mb-6 text-center"
-              >
-                Selayang Pandang <span className="text-secondary"></span>
+              <motion.h2 variants={FadeUp(0.1)} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="text-3xl font-bold text-gray-800 mb-6 text-center">
+                Selayang Pandang
               </motion.h2>
-              <motion.p
-                variants={FadeUp(0.2)}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true }}
-                className="text-gray-800 max-w-2xl mx-auto text-l text-justify"
-              >
-                PT Win Global Solusitama (WGS) merupakan startup dari Kalimantan Barat yang bergerak di bidang pembiayaan syariah, solusi keuangan, serta pengembangan program kemanusiaan dan keumatan. Fokus utamanya adalah mendorong pemberdayaan ekonomi dan sosial melalui layanan keuangan inklusif. WGS menawarkan pembiayaan untuk berbagai kebutuhan, termasuk umroh, haji, UMKM, perumahan, pertanian, dan pendidikan, serta memiliki tujuan sosial dengan menyalurkan sebagian besar keuntungan untuk program seperti santunan anak yatim dan program kemanusiaan lainnya.
+
+              {/* ===== NARASI DI SINI DIUBAH KEMBALI ===== */}
+              <motion.p variants={FadeUp(0.2)} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="text-gray-800 max-w-2xl mx-auto text-l text-justify">
+                PT Win Global Solusitama (WGS) merupakan perusahaan dari Kalimantan Barat yang bergerak di bidang pembiayaan syariah, solusi keuangan, serta pengembangan program kemanusiaan dan keumatan. Fokus utamanya adalah mendorong pemberdayaan ekonomi dan sosial melalui layanan keuangan inklusif. WGS menawarkan pembiayaan untuk berbagai kebutuhan, termasuk umroh, haji, UMKM, perumahan, pertanian, dan pendidikan, serta memiliki tujuan sosial dengan menyalurkan sebagian besar keuntungan untuk program seperti santunan anak yatim dan program kemanusiaan lainnya.
               </motion.p>
             </div>
           </div>
           <div className="h-8"></div>
 
+          {/* Ekosistem Bisnis Section */}
           <div id="sub-holding" className="container py-16 bg-[#cce6c4] rounded-3xl shadow-md">
             <div className="container mx-auto px-6 text-center">
-              <motion.h2
-                variants={FadeUp(0.1)}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true }}
-                className="text-3xl font-bold text-gray-800 mb-4"
-              >
+              <motion.h2 variants={FadeUp(0.1)} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="text-3xl font-bold text-gray-800 mb-4">
                 Ekosistem Bisnis <span className="text-secondary">Kami</span>
               </motion.h2>
-              <motion.p
-                variants={FadeUp(0.2)}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true }}
-                className="text-gray-600 max-w-2xl mx-auto mb-10"
-              >
-                Melalui sinergi anak perusahaan, WGS menghadirkan solusi terintegrasi di berbagai sektor — mulai dari keuangan, pertanian, hingga industri kreatif — untuk membangun ekonomi kerakyatan yang kuat dan mandiri.
+
+              {/* ===== NARASI DI SINI DIUBAH KEMBALI ===== */}
+              <motion.p variants={FadeUp(0.2)} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="text-gray-600 max-w-2xl mx-auto mb-10">
+                Melalui sinergi anak perusahaan dan kemitraan strategis, PT. Win Global Solusitama (WGS) menghadirkan solusi terintegrasi di berbagai sektor — mulai dari keuangan, pertanian, hingga industri kreatif — untuk membangun ekonomi kerakyatan yang kuat dan mandiri.
               </motion.p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
                 {subsidiaries.map((sub, index) => (
                   <motion.div
                     key={sub.name}
@@ -305,11 +233,7 @@ const Page2 = () => {
                     onClick={() => handleCardClick(sub)}
                     className="group bg-[#e1f2d8] p-6 rounded-xl border border-transparent transition-all duration-300 hover:border-secondary hover:shadow-lg hover:-translate-y-2 cursor-pointer select-none"
                   >
-                    <img
-                      src={sub.logo}
-                      alt={`Logo ${sub.name}`}
-                      className="w-28 h-28 lg:w-32 lg:h-32 object-contain mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
-                    />
+                    <img src={sub.logo} alt={`Logo ${sub.name}`} className="w-28 h-28 lg:w-32 lg:h-32 object-contain mx-auto mb-6 transition-transform duration-300 group-hover:scale-110" />
                     <h3 className="font-bold text-gray-800 text-lg">{sub.name}</h3>
                     <p className="text-sm text-gray-500">{sub.tagline}</p>
                   </motion.div>
@@ -319,6 +243,7 @@ const Page2 = () => {
           </div>
           <div className="h-8"></div>
 
+          {/* ... (Bagian detail dan legalitas tidak perlu diubah) ... */}
           {activeSubsidiary && (
             <div id="subsidiary-details-wrapper" className="container py-16 bg-[#cae2bf] rounded-3xl shadow-md">
               <div className="container mx-auto px-6">
@@ -332,23 +257,11 @@ const Page2 = () => {
         
         <div className="py-16">
           <div className="container mx-auto px-6">
-            <motion.h2
-              variants={FadeUp(0.1)}
-              initial="initial"
-              whileInView="whileInView"
-              viewport={{ once: true }}
-              className="text-3xl font-bold text-center text-white mb-10"
-            >
+            <motion.h2 variants={FadeUp(0.1)} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="text-3xl font-bold text-center text-white mb-10">
               Legalitas & Data <span className="text-white">Perusahaan</span>
             </motion.h2>
             <div className="max-w-3xl mx-auto">
-              <motion.div
-                variants={FadeUp(0.2)}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true }}
-                className="space-y-6 text-gray-100 leading-relaxed"
-              >
+              <motion.div variants={FadeUp(0.2)} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="space-y-6 text-gray-100 leading-relaxed">
                 <p>
                   PT Win Global Solusitama resmi berdiri berdasarkan Akta Notaris dan telah disahkan oleh Kementerian Hukum & HAM Republik Indonesia. Dengan legalitas yang lengkap, kami berkomitmen untuk menjalankan usaha sesuai dengan peraturan yang berlaku.
                 </p>

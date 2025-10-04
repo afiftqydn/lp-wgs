@@ -19,22 +19,28 @@ const GalleryGrid = ({ items }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="grid grid-cols-3 gap-6"
+      // Perubahan utama ada di sini:
+      // - Mobile: 1 kolom (grid-cols-1)
+      // - Tablet (md): 2 kolom (md:grid-cols-2)
+      // - Desktop (lg): 3 kolom (lg:grid-cols-3)
+      // - Jarak antar item juga disesuaikan
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
     >
       {/* Gambar 1 */}
       <motion.div variants={FadeUp(0)} className={`${baseCardClass} aspect-square`}>
         <img
           src={items[0]?.src || "https://via.placeholder.com/600x400"}
-          alt={items[0]?.alt}
+          alt={items[0]?.alt || 'Gallery image 1'}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </motion.div>
 
       {/* Gambar 2 */}
-      <motion.div variants={FadeUp(0.1)} className={`${baseCardClass} col-span-2 aspect-video`}>
+      {/* Di Tablet (md) & Desktop (lg), gambar ini akan mengambil 2 kolom */}
+      <motion.div variants={FadeUp(0.1)} className={`${baseCardClass} md:col-span-2 lg:col-span-2 aspect-video`}>
         <img
           src={items[1]?.src || "https://via.placeholder.com/1200x600"}
-          alt={items[1]?.alt}
+          alt={items[1]?.alt || 'Gallery image 2'}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </motion.div>
@@ -43,7 +49,7 @@ const GalleryGrid = ({ items }) => {
       <motion.div variants={FadeUp(0.2)} className={`${baseCardClass} aspect-square`}>
         <img
           src={items[2]?.src || "https://via.placeholder.com/600x400"}
-          alt={items[2]?.alt}
+          alt={items[2]?.alt || 'Gallery image 3'}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </motion.div>
@@ -52,7 +58,7 @@ const GalleryGrid = ({ items }) => {
       <motion.div variants={FadeUp(0.3)} className={`${baseCardClass} aspect-square`}>
         <img
           src={items[3]?.src || "https://via.placeholder.com/600x400"}
-          alt={items[3]?.alt}
+          alt={items[3]?.alt || 'Gallery image 4'}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </motion.div>
@@ -61,24 +67,26 @@ const GalleryGrid = ({ items }) => {
       <motion.div variants={FadeUp(0.5)} className={`${baseCardClass} aspect-square`}>
         <img
           src={items[4]?.src || "https://via.placeholder.com/600x400"}
-          alt={items[4]?.alt}
+          alt={items[4]?.alt || 'Gallery image 5'}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </motion.div>
 
       {/* Gambar 6 */}
-      <motion.div variants={FadeUp(0.6)} className={`${baseCardClass} col-span-2 aspect-video`}>
+      {/* Di Tablet (md) & Desktop (lg), gambar ini akan mengambil 2 kolom */}
+      <motion.div variants={FadeUp(0.6)} className={`${baseCardClass} md:col-span-2 lg:col-span-2 aspect-video`}>
         <img
           src={items[5]?.src || "https://via.placeholder.com/1200x600"}
-          alt={items[5]?.alt}
+          alt={items[5]?.alt || 'Gallery image 6'}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </motion.div>
 
       {/* Kotak CTA */}
+      {/* Di Tablet (md) mengambil 2 kolom, di Desktop (lg) kembali menjadi 1 kolom */}
       <motion.div
         variants={FadeUp(0.7)}
-        className="bg-[#cae2bf] rounded-xl shadow-md p-8 flex flex-col justify-center items-center text-center hover:shadow-lg transition-all"
+        className="bg-[#cae2bf] rounded-xl shadow-md p-8 flex flex-col justify-center items-center text-center hover:shadow-lg transition-all md:col-span-2 lg:col-span-1"
       >
         <h4 className="text-base font-semibold mb-2 text-gray-700">
           Ingin tahu lebih lanjut?
