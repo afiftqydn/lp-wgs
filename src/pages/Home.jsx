@@ -12,9 +12,13 @@ import Footer from "../components/Footer/Footer";
 const Home = () => {
   return (
   
-    <main className="overflow-hidden relative bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
+    <main className="relative bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
       <Navbar/>
-      <SliderCarousel />
+
+      <div className="overflow-visible">
+        <SliderCarousel />
+      </div>
+
       <Hero />
       <Services />
       <Footer />

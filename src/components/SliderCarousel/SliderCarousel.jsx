@@ -1,23 +1,43 @@
+// src/components/SliderCarousel/SliderCarousel.jsx
+
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from 'react-router-dom';
-import { subsidiariesData } from "../../data/subsidiariesData";
+import { subsidiariesData } from "../../data/subsidiariesData"; // Pastikan path ini benar
 
+/**
+ * CardView Component
+ * Komponen individual untuk setiap item di dalam carousel.
+ * Tingginya diatur secara responsif untuk tampilan optimal di semua perangkat.
+ */
 const CardView = ({ image, title, alt, onClick }) => (
   <div 
-    className="bg-[#cae4c3] rounded-xl shadow-lg overflow-hidden h-full transition-transform duration-300 hover:scale-105 cursor-pointer"
+    // Kelas responsif untuk tinggi:
+    // - h-56: Tinggi default untuk mobile (paling tinggi)
+    // - md:h-48: Tinggi untuk tablet
+    // - lg:h-40: Tinggi untuk desktop (paling pendek)
+   className="bg-[#cae4c3] rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer 
+            flex items-center justify-center p-4 
+            h-28 sm:h-32 md:h-36 lg:h-44 xl:h-52"
+
     onClick={onClick}
   >
     <img 
       src={image} 
       alt={alt || title} 
-      className="w-full h-48 object-cover" 
+      // object-contain memastikan gambar utuh dan tidak terpotong
+      className="max-w-full max-h-full object-contain"
     />
   </div>
 );
 
+
+/**
+ * CenteredCarousel Component
+ * Komponen utama yang mengatur dan menampilkan slider/carousel.
+ */
 const CenteredCarousel = () => {
   const navigate = useNavigate();
 
@@ -25,70 +45,98 @@ const CenteredCarousel = () => {
     navigate(`/page2#${id}`);
   };
 
-  // Pengaturan carousel yang lebih responsif
+  // Pengaturan untuk library react-slick
   const settings = {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "60px", // Padding default untuk desktop
-    slidesToShow: 3,       // Menampilkan 3 slide di desktop
+    centerPadding: "0px", // Jarak visual antar kartu di desktop
+    slidesToShow: 3,       // Default 3 kartu untuk desktop
     speed: 500,
-    arrows: true,
+    arrows: false,
     dots: true,
     autoplay: true,
-    autoplaySpeed: 2000,   // Sedikit diperlambat agar lebih smooth
+    autoplaySpeed: 2500,
+    // Pengaturan responsif untuk berbagai ukuran layar
     responsive: [
       {
-        // Untuk layar Laptop Kecil / Tablet Besar
-        breakpoint: 1280, // xl
+        // Tablet
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
+          centerPadding: "100px",
+        }
+      },
+      {
+        // Mobile Besar
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
           centerPadding: "40px",
         }
       },
       {
-        // Untuk layar Tablet
-        breakpoint: 1024, // lg
-        settings: {
-          slidesToShow: 1, // Fokus pada 1 slide di tengah
-          centerPadding: "150px", // Padding lebih besar agar "intipan" terlihat jelas
-        }
-      },
-      {
-        // Untuk layar Mobile Besar
-        breakpoint: 768, // md
+        // Mobile Kecil
+        breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          centerPadding: "80px", // Padding disesuaikan untuk layar lebih kecil
-        }
-      },
-      {
-        // Untuk layar Mobile Kecil
-        breakpoint: 480, // sm
-        settings: {
-          slidesToShow: 1,
-          centerPadding: "40px", // Padding lebih kecil agar card utama tidak terlalu sempit
+          centerPadding: "25px",
         }
       }
     ]
   };
 
+  // Mencegah error jika data belum siap/kosong
+  if (!subsidiariesData || subsidiariesData.length === 0) {
+    return null;
+  }
+
   return (
-    <section className="w-full py-12 overflow-hidden"> {/* Menambahkan overflow-hidden */}
-      <div className="max-w-7xl mx-auto px-4"> {/* Sedikit memperlebar max-width */}
-        <Slider {...settings}>
-          {subsidiariesData.map((card) => (
-            <div key={card.id} className="px-2 md:px-3"> {/* Jarak antar slide disesuaikan */}
-              <CardView 
-                image={card.logo} 
-                title={card.name} 
-                onClick={() => handleCardClick(card.id)}
-              />
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </section>
+    // Fragment <></> untuk membungkus style dan section
+    <>
+      {/* CSS tambahan untuk memoles tampilan dots dan arrows */}
+      <style>{`
+        /* Dots container */
+        .slick-dots {
+          bottom: -30px; /* geser ke bawah */
+        }
+
+        /* Dot normal */
+        .slick-dots li button:before {
+          font-size: 8px;       /* kecilkan ukuran */
+          color: #9ca3af;       /* abu-abu netral */
+          opacity: 0.5;
+        }
+
+        /* Dot aktif */
+        .slick-dots li.slick-active button:before {
+          color: #222222ff;       /* hijau sesuai tema */
+          opacity: 0.5;
+        }
+
+        /* Opsional: rapatkan jarak antar dots */
+        .slick-dots li {
+          margin: 0 2px;
+        }
+      `}</style>
+      
+      <section className="w-full py-12 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4">
+          <Slider {...settings}>
+            {/* Mapping data untuk membuat setiap slide */}
+            {subsidiariesData.map((card) => (
+              <div key={card.id} className="p-2">
+                <CardView 
+                  image={card.logo} 
+                  title={card.name} 
+                  onClick={() => handleCardClick(card.id)}
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </section>
+    </>
   );
 };
 
