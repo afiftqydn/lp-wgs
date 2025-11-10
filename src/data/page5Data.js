@@ -1,52 +1,84 @@
 export const newsArticles = [
     { 
-      id: 20, // Urutan terbaru di atas
-      title: "Holding Firmans Grup Hadir di Kalbar, Berbisnis Dibarengi Sosial Kemanusiaan", 
-      date: "22 Okt 2025", 
-      summary: "Berkatnewstv, Holding Firmans Grup kini hadir di Kalimantan Barat. CEO PT Win Global Solusitama (WGS) Hendra Firmansyah...",
-      imgSrc: "/firmansgrup.jpg",
-      sourceUrl: "https://berkatnewstv.com/2025/10/22/holding-firmans-grup-hadir-di-kalbar-berbisnis-dibarengi-sosial-kemanusiaan/" // URL sumber
-    },
-    { 
-      id: 19, 
-      title: "Gagas Bank Wakaf Pertama di Dunia, Kemenag Kalbar Apresiasi Win Global Solution", 
-      date: "22 Okt 2025", 
-      summary: "Suara Pemred Kalbar, Kemenag Kalbar mengapresiasi CEO Win Global Solution (WGS), Hendra Firmansyah, yang menggagas Bank Wakaf pertama...",
-      imgSrc: "/bankwakaf_pemred.jpg",
-      sourceUrl: "https://www.suarapemredkalbar.com/read/potret/22102025/gagas-bank-wakaf-pertama-di-dunia-kemenag-kalbar-apresiasi-win-global-solution" // URL sumber
-    },
-  { 
-      id: 18, // Urutan terbaru di atas
-      title: "Food Media, Aplikasi Karya Anak Bangsa Hadirkan Harga Makanan Online Setara Offline", 
-      date: "21 Okt 2025", 
-      summary: "CyberTV.id, Food Media, aplikasi karya anak bangsa, resmi diluncurkan di WGS Building, Pontianak. Aplikasi ini menawarkan harga makanan online...",
-      imgSrc: "/foodmedia_cybertv.jpg",
-      sourceUrl: "https://cybertv.id/food-media-aplikasi-karya-anak-bangsa-hadirkan-harga-makanan-online-setara-offline-dan-dukung-umkm-kalbar/" // URL sumber
-    },
-    { 
-      id: 17, 
-      title: "Lawan Dominasi Asing, Anak Bangsa Luncurkan Food Media: Murah, Aman dan Berdayakan UMKM", 
-      date: "21 Okt 2025", 
-      summary: "Fakta Investigasi News, Dalam upaya melawan dominasi asing, anak bangsa meluncurkan aplikasi Food Media di Pontianak...",
-      imgSrc: "/foodmedia_fin.jpg",
-      sourceUrl: "https://faktainvestigasinews8.wordpress.com/2025/10/21/lawan-dominasi-asing-anak-bangsa-luncurkan-food-media-murah-aman-dan-berdayakan-umkm-lokal/" // URL sumber
-    },
-    { 
-      id: 16, 
-      title: "Dari Anak Bangsa Untuk Bangsa, FoodMedia Hadir di Kota Pontianak", 
-      date: "21 Okt 2025", 
-      summary: "Media Harian Nusantara, Aplikasi FoodMedia resmi hadir di Kota Pontianak, diluncurkan di WGS Building. Ini merupakan karya anak bangsa...",
-      imgSrc: "/foodmedia_mhn.jpg",
-      sourceUrl: "https://mediahariannusantara.wordpress.com/2025/10/21/dari-anak-bangsa-untuk-bangsa-foodmedia-hadir-di-kota-pontianak/" // URL sumber
-    },
-    { 
-      id: 15, 
-      title: "Win Global Solusitama Building dan Aplikasi FoodMedia Resmi Diluncurkan di Pontianak", 
-      date: "21 Okt 2025", // Tanggal peluncuran
-      summary: "Pontianak Info, PT Win Global Solusitama (WGS) meresmikan WGS Building sekaligus meluncurkan aplikasi FoodMedia, sebuah platform kuliner...",
-      imgSrc: "/foodmedia.jpg",
-      sourceUrl: "https://pontianakinfo.disway.id/amp/18773/win-global-solusitama-building-dan-aplikasi-foodmedia-resmi-diluncurkan-di-pontianak" // URL sumber
-    },
+    id: 23,
+    title: "Targetkan Transaksi Rp50 Miliar, Borneo Fair 2025 Jadi Ajang Promosi UMKM Terbesar di Kalbar", 
+    date: "8 Nov 2025", 
+    summary: "Fakta Kalbar, Borneo Fair 2025 menargetkan transaksi hingga Rp50 miliar dan menjadi ajang promosi terbesar bagi UMKM Kalimantan Barat. Acara ini diharapkan memperkuat potensi ekonomi daerah...", 
+    imgSrc: "/borneofair_.jpg", 
+    sourceUrl: "https://faktakalbar.id/2025/11/08/targetkan-transaksi-rp50-miliar-borneo-fair-2025-jadi-ajang-promosi-umkm-terbesar-di-kalbar/" 
+    },
+
+    { 
+        id: 22,
+        title: "Pengunjung Diperkirakan 20 Ribu, Transaksi di Borneo Fair Ditargetkan Rp50 Miliar", 
+        date: "8 Nov 2025", 
+        summary: "Berkatnewstv, Gelaran Borneo Fair 2025 menargetkan transaksi Rp50 miliar dengan jumlah pengunjung diperkirakan mencapai 20 ribu orang. Event ini menjadi bukti komitmen WGS dalam mendukung UMKM lokal...", 
+        imgSrc: "/borneofair_.jpg", 
+        sourceUrl: "https://berkatnewstv.com/2025/11/08/pengunjung-diperkirakan-20-ribu-transaksi-di-borneo-fair-ditargetkan-rp50-miliar/" 
+    },
+
+    { 
+        id: 21,
+        title: "Ratusan UMKM Ramaikan Borneo Fair 2025", 
+        date: "8 Nov 2025", 
+        summary: "Tintarakyatnusantara.com, Borneo Fair 2025 di Pontianak diramaikan oleh ratusan pelaku UMKM dari berbagai daerah di Kalimantan Barat. Acara ini menjadi momentum penting bagi peningkatan ekonomi masyarakat...", 
+        imgSrc: "/borneofair_.jpg", 
+        sourceUrl: "https://www.tintarakyatnusantara.com/2025/11/ratusan-umkm-ramaikan-borneo-fair-2025.html" 
+    },
+
+    { 
+        id: 20,
+        title: "Holding Firmans Grup Hadir di Kalbar, Berbisnis Dibarengi Sosial Kemanusiaan", 
+        date: "22 Okt 2025", 
+        summary: "Berkatnewstv, Holding Firmans Grup kini hadir di Kalimantan Barat. CEO PT Win Global Solusitama (WGS) Hendra Firmansyah...",
+        imgSrc: "/firmansgrup.jpg",
+        sourceUrl: "https://berkatnewstv.com/2025/10/22/holding-firmans-grup-hadir-di-kalbar-berbisnis-dibarengi-sosial-kemanusiaan/"
+    },
+
+    { 
+        id: 19,
+        title: "Gagas Bank Wakaf Pertama di Dunia, Kemenag Kalbar Apresiasi Win Global Solution", 
+        date: "22 Okt 2025", 
+        summary: "Suara Pemred Kalbar, Kemenag Kalbar mengapresiasi CEO Win Global Solution (WGS), Hendra Firmansyah, yang menggagas Bank Wakaf pertama...",
+        imgSrc: "/bankwakaf_pemred.jpg",
+        sourceUrl: "https://www.suarapemredkalbar.com/read/potret/22102025/gagas-bank-wakaf-pertama-di-dunia-kemenag-kalbar-apresiasi-win-global-solution"
+    },
+
+    { 
+        id: 18,
+        title: "Food Media, Aplikasi Karya Anak Bangsa Hadirkan Harga Makanan Online Setara Offline", 
+        date: "21 Okt 2025", 
+        summary: "CyberTV.id, Food Media, aplikasi karya anak bangsa, resmi diluncurkan di WGS Building, Pontianak. Aplikasi ini menawarkan harga makanan online...",
+        imgSrc: "/foodmedia_cybertv.jpg",
+        sourceUrl: "https://cybertv.id/food-media-aplikasi-karya-anak-bangsa-hadirkan-harga-makanan-online-setara-offline-dan-dukung-umkm-kalbar/"
+    },
+
+    { 
+        id: 17,
+        title: "Lawan Dominasi Asing, Anak Bangsa Luncurkan Food Media: Murah, Aman dan Berdayakan UMKM", 
+        date: "21 Okt 2025", 
+        summary: "Fakta Investigasi News, Dalam upaya melawan dominasi asing, anak bangsa meluncurkan aplikasi Food Media di Pontianak...",
+        imgSrc: "/foodmedia_fin.jpg",
+        sourceUrl: "https://faktainvestigasinews8.wordpress.com/2025/10/21/lawan-dominasi-asing-anak-bangsa-luncurkan-food-media-murah-aman-dan-berdayakan-umkm-lokal/"
+    },
+
+    { 
+        id: 16,
+        title: "Dari Anak Bangsa Untuk Bangsa, FoodMedia Hadir di Kota Pontianak", 
+        date: "21 Okt 2025", 
+        summary: "Media Harian Nusantara, Aplikasi FoodMedia resmi hadir di Kota Pontianak, diluncurkan di WGS Building. Ini merupakan karya anak bangsa...",
+        imgSrc: "/foodmedia_mhn.jpg",
+        sourceUrl: "https://mediahariannusantara.wordpress.com/2025/10/21/dari-anak-bangsa-untuk-bangsa-foodmedia-hadir-di-kota-pontianak/"
+    },
+
+    { 
+        id: 15,
+        title: "Win Global Solusitama Building dan Aplikasi FoodMedia Resmi Diluncurkan di Pontianak", 
+        date: "21 Okt 2025",
+        summary: "Pontianak Info, PT Win Global Solusitama (WGS) meresmikan WGS Building sekaligus meluncurkan aplikasi FoodMedia, sebuah platform kuliner...",
+        imgSrc: "/foodmedia.jpg",
+        sourceUrl: "https://pontianakinfo.disway.id/amp/18773/win-global-solusitama-building-dan-aplikasi-foodmedia-resmi-diluncurkan-di-pontianak"
+    },
     { 
       id: 14, 
       title: "Kemenag Kalbar Apresiasi WGS Gagas Bank Wakaf", 

@@ -192,8 +192,8 @@ const Page2 = () => {
       </div>
       
       {/* Main Content Area */}
-      <div className="flex-grow">
-        <div className="py-16 bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
+      <div className=" flex-grow">
+        <div className="container py-16 bg-[url('/src/assets/navbar-bg.svg')] bg-repeat bg-cover">
           
           {/* Selayang Pandang Section */}
           <div className="bg-[#cae2bf] container py-16 rounded-3xl shadow-md">
