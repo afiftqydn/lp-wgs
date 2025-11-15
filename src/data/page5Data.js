@@ -1,4 +1,36 @@
 export const newsArticles = [
+    { 
+        id: 27,
+        title: "Borneo Fair Gairahkan UMKM di Tengah Kelesuan Ekonomi", 
+        date: "13 Nov 2025", 
+        summary: "Suara Pemred Kalbar, Borneo Fair 2025 yang digelar di Pontianak diharapkan dapat menggairahkan kembali UMKM di tengah kelesuan ekonomi...", 
+        imgSrc: "/borneofair_pemred.jpg", 
+        sourceUrl: "https://www.suarapemredkalbar.com/read/ponticity/13112025/borneo-fair-gairahkan-umkm-di-tengah-kelesuan-ekonomi" 
+    },
+    { 
+        id: 26,
+        title: "Borneo Fair 2025 Suguhkan Kompetisi Ekonomi Kreatif Dari Grup Band Hingga Drum Band", 
+        date: "13 Nov 2025", 
+        summary: "BorneoReview.co, Borneo Fair 2025 tidak hanya pameran UMKM, tapi juga menyuguhkan berbagai kompetisi ekonomi kreatif, mulai dari festival grup band hingga drum band...", 
+        imgSrc: "/borneofair_kompetisi.jpg", 
+        sourceUrl: "https://borneoreview.co/borneo-fair-2025-suguhkan-kompetisi-ekonomi-kreatif-dari-grup-band-hingga-drum-band/?amp=1" 
+    },
+    { 
+        id: 25,
+        title: "Borneo Fair 2025 Meriahkan Pontianak dengan Ragam Ekonomi Kreatif", 
+        date: "13 Nov 2025", 
+        summary: "Kalbarsatu.id, Gelaran Borneo Fair 2025 di Pontianak berlangsung meriah dengan berbagai stan UMKM dan panggung hiburan yang diisi dengan ragam ekonomi kreatif...", 
+        imgSrc: "/borneofair_kalbarsatu.jpg", 
+        sourceUrl: "https://kalbarsatu.id/daerah/borneo-fair-2025-meriahkan-pontianak-dengan-ragam-ekonomi-kreatif/" 
+    },
+    { 
+        id: 24,
+        title: "Generasi Muda Unjuk Kebolehan di Borneo Fair", 
+        date: "13 Nov 2025", 
+        summary: "Pontianak Metropost, Ajang Borneo Fair 2025 menjadi panggung bagi generasi muda untuk unjuk kebolehan dalam berbagai kompetisi dan pameran ekonomi kreatif...", 
+        imgSrc: "/borneofair_generasimuda.jpg", 
+        sourceUrl: "https://pontianakmetropost.com/generasi-muda-unjuk-kebolehan-di-borneo-fair/" 
+    },
     { 
     id: 23,
     title: "Targetkan Transaksi Rp50 Miliar, Borneo Fair 2025 Jadi Ajang Promosi UMKM Terbesar di Kalbar", 
