@@ -1,5 +1,37 @@
 export const newsArticles = [
     { 
+        id: 31,
+        title: "Konser Rony Parulian di Borneo Fair 2025 Dipadati Ribuan Penonton", 
+        date: "16 Nov 2025", 
+        summary: "Warta Pontianak, Konser Rony Parulian di Borneo Fair 2025 sukses dipadati ribuan penonton. Acara ini menjadi puncak kemeriahan...", 
+        imgSrc: "/rony_wartapontianak.jpg", 
+        sourceUrl: "https://wartapontianak.pikiran-rakyat.com/kalbar/pr-1179794919/konser-rony-parulian-di-borneo-fair-2025-dipadati-ribuan-penonton" 
+    },
+    { 
+        id: 30,
+        title: "Konser Rony Parulian Borneo Fair Pontianak Sukses, Histeris Ribuan Fans", 
+        date: "16 Nov 2025", 
+        summary: "KalbarOke.com, Penyanyi Rony Parulian sukses membuat histeris ribuan fans yang memadati area Borneo Fair 2025 di Pontianak...", 
+        imgSrc: "/rony_kalbaroke.jpg", 
+        sourceUrl: "https://www.kalbaroke.com/konser-rony-parulian-borneo-fair-pontianak-sukses-histeris-ribuan-fans/" 
+    },
+    { 
+        id: 29,
+        title: "Rony Parulian Getarkan Fans di Borneo Fair", 
+        date: "15 Nov 2025", 
+        summary: "Berkatnewstv, Rony Parulian berhasil menggetarkan panggung Borneo Fair 2025 dan menghibur ribuan penggemarnya yang hadir...", 
+        imgSrc: "/rony_berkatnews.jpg", 
+        sourceUrl: "https://berkatnewstv.com/2025/11/15/rony-parulian-getarkan-fans-di-borneo-fair/" 
+    },
+    { 
+        id: 28,
+        title: "Borneo Fair 2025 Gabungkan UMKM & Ekonomi Kreatif Pontianak", 
+        date: "14 Nov 2025", 
+        summary: "KalbarOke.com, Event Borneo Fair 2025 menjadi ajang yang menggabungkan pameran UMKM dengan berbagai pertunjukan ekonomi kreatif di Pontianak...", 
+        imgSrc: "/borneofair_kalbaroke.jpg", 
+        sourceUrl: "https://www.kalbaroke.com/borneo-fair-2025-gabungkan-umkm-ekonomi-kreatif-pontianak/" 
+    },
+    { 
         id: 27,
         title: "Borneo Fair Gairahkan UMKM di Tengah Kelesuan Ekonomi", 
         date: "13 Nov 2025", 
@@ -226,16 +258,21 @@ export const newsArticles = [
 ];
 // Data Galeri (pertahankan jika kamu tidak ingin mengganti)
 export const galleryItems = [
-    { id: 1, src: "/slideshow/img01.JPG", alt: "Acara Lapangan" },
-    { id: 2, src: "/slideshow/img02.JPG", alt: "Tim WGS" },
-    { id: 3, src: "/slideshow/img03.jpeg", alt: "Rapat Direksi" },
-    { id: 4, src: "/slideshow/img04.jpeg", alt: "Produk Unggulan" },
-    { id: 5, src: "/slideshow/gmbr1.jpg", alt: "Acara Lapangan" },
-    { id: 6, src: "/slideshow/gmbr2.jpg", alt: "Tim WGS" },
-    { id: 7, src: "/slideshow/gmbr3.jpg", alt: "Rapat Direksi" },
-    { id: 8, src: "/slideshow/gmbr4.jpg", alt: "Produk Unggulan" },
-    { id: 9, src: "/slideshow/gmbr5.jpg", alt: "Produk Unggulan" },
-    { id: 10, src: "/slideshow/gmbr6.jpg", alt: "Produk Unggulan" },
-    { id: 11, src: "/slideshow/gmbr7.jpg", alt: "Produk Unggulan" },
-    { id: 12, src: "/slideshow/gmbr8.jpg", alt: "Produk Unggulan" },
+    { id: 17, src: "/slideshow/gmbr13.jpg", alt: "Galeri WGS 13" },
+    { id: 16, src: "/slideshow/gmbr12.jpg", alt: "Galeri WGS 12" },
+    { id: 15, src: "/slideshow/gmbr11.jpg", alt: "Galeri WGS 11" },
+//     { id: 14, src: "/slideshow/gmbr10.jpg", alt: "Galeri WGS 10" },
+    { id: 13, src: "/slideshow/gmbr9.jpg", alt: "Galeri WGS 9" },
+    { id: 4, src: "/slideshow/img04.jpeg", alt: "Produk Unggulan" },
+    { id: 3, src: "/slideshow/img03.jpeg", alt: "Rapat Direksi" },
+    { id: 2, src: "/slideshow/img02.JPG", alt: "Tim WGS" },
+    { id: 1, src: "/slideshow/img01.JPG", alt: "Acara Lapangan" },
+    { id: 12, src: "/slideshow/gmbr8.jpg", alt: "Produk Unggulan" },
+    { id: 11, src: "/slideshow/gmbr7.jpg", alt: "Produk Unggulan" },
+    { id: 10, src: "/slideshow/gmbr6.jpg", alt: "Produk Unggulan" },
+    { id: 9, src: "/slideshow/gmbr5.jpg", alt: "Produk Unggulan" },
+    { id: 8, src: "/slideshow/gmbr4.jpg", alt: "Produk Unggulan" },
+    { id: 7, src: "/slideshow/gmbr3.jpg", alt: "Rapat Direksi" },
+    { id: 6, src: "/slideshow/gmbr2.jpg", alt: "Tim WGS" },
+    { id: 5, src: "/slideshow/gmbr1.jpg", alt: "Acara Lapangan" },
 ];

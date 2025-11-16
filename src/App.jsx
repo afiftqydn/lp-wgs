@@ -12,10 +12,10 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/page2" element={<Page2/>} />
-        <Route path="/page3" element={<Page3/>} />
-        <Route path="/page4" element={<Page4/>} />
-        <Route path="/page5" element={<Page5/>} />
+        <Route path="/About Us" element={<Page2/>} />
+        <Route path="/Products & Services" element={<Page3/>} />
+        <Route path="/Contact Us" element={<Page4/>} />
+        <Route path="/Geleri & Berita" element={<Page5/>} />
       </Routes>
     </Router>
   )

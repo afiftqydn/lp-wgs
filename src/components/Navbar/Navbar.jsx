@@ -6,13 +6,13 @@ import { useLocation } from 'react-router-dom';
 // 1. DATA MENU DIPISAHKAN
 const mainMenuItems = [
   { id: 1, title: "Beranda", path: "/" },
-  { id: 2, title: "Tentang Kami", path: "/page2" },
-  { id: 3, title: "Produk & Layanan", path: "/page3" },
+  { id: 2, title: "Tentang Kami", path: "/About Us" },
+  { id: 3, title: "Produk & Layanan", path: "/Products & Services" },
 ];
 
 const dropdownMenuItems = [
-  { id: 5, title: "Galeri & Berita", path: "/page5" },
-  { id: 4, title: "Hubungi Kami", path: "/page4" },
+  { id: 5, title: "Galeri & Berita", path: "/Geleri & Berita" },
+  { id: 4, title: "Hubungi Kami", path: "/Contact Us" },
 ];
 
 const Navbar = () => {

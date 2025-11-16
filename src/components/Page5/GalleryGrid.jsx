@@ -6,112 +6,144 @@ import { FadeUp } from '../../pages/Page5';
 import { useNavigate } from "react-router-dom";
 
 const GalleryGrid = ({ items }) => {
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("/page4");
-  };
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/Contact Us"); // Asumsi "/page4" adalah Contact Us
+  };
 
-  const baseCardClass =
-    "bg-white rounded-xl shadow-md overflow-hidden group relative transition-all hover:shadow-lg";
+  const baseCardClass =
+    "bg-white rounded-xl shadow-md overflow-hidden group relative transition-all hover:shadow-lg";
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      // Perubahan utama ada di sini:
-      // - Mobile: 1 kolom (grid-cols-1)
-      // - Tablet (md): 2 kolom (md:grid-cols-2)
-      // - Desktop (lg): 3 kolom (lg:grid-cols-3)
-      // - Jarak antar item juga disesuaikan
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
-    >
-      {/* Gambar 1 */}
-      <motion.div variants={FadeUp(0)} className={`${baseCardClass} aspect-square`}>
-        <img
-          src={items[0]?.src || "https://via.placeholder.com/600x400"}
-          alt={items[0]?.alt || 'Gallery image 1'}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </motion.div>
+  // --- MODIFIKASI DIMULAI ---
+  // Ambil 11 item sisanya (dari index 6 sampai akhir)
+  const remainingItems = items.slice(6);
+  // --- MODIFIKASI SELESAI ---
 
-      {/* Gambar 2 */}
-      {/* Di Tablet (md) & Desktop (lg), gambar ini akan mengambil 2 kolom */}
-      <motion.div variants={FadeUp(0.1)} className={`${baseCardClass} md:col-span-2 lg:col-span-2 aspect-video`}>
-        <img
-          src={items[1]?.src || "https://via.placeholder.com/1200x600"}
-          alt={items[1]?.alt || 'Gallery image 2'}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </motion.div>
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+    >
+      {/* Layout Kustom untuk 6 Gambar Pertama */}
+      
+      {/* Gambar 1 */}
+      {/* Menambahkan cek 'items[0] &&' untuk keamanan */}
+      {items[0] && (
+        <motion.div variants={FadeUp(0)} className={`${baseCardClass} aspect-square`}>
+          <img
+            src={items[0].src}
+            alt={items[0].alt}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </motion.div>
+      )}
 
-      {/* Gambar 3 */}
-      <motion.div variants={FadeUp(0.2)} className={`${baseCardClass} aspect-square`}>
-        <img
-          src={items[2]?.src || "https://via.placeholder.com/600x400"}
-          alt={items[2]?.alt || 'Gallery image 3'}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </motion.div>
+      {/* Gambar 2 */}
+      {items[1] && (
+        <motion.div variants={FadeUp(0.1)} className={`${baseCardClass} md:col-span-2 lg:col-span-2 aspect-video`}>
+          <img
+            src={items[1].src}
+            alt={items[1].alt}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </motion.div>
+      )}
 
-      {/* Gambar 4 */}
-      <motion.div variants={FadeUp(0.3)} className={`${baseCardClass} aspect-square`}>
-        <img
-          src={items[3]?.src || "https://via.placeholder.com/600x400"}
-          alt={items[3]?.alt || 'Gallery image 4'}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </motion.div>
+      {/* Gambar 3 */}
+      {items[2] && (
+        <motion.div variants={FadeUp(0.2)} className={`${baseCardClass} aspect-square`}>
+          <img
+            src={items[2].src}
+            alt={items[2].alt}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </motion.div>
+      )}
 
-      {/* Gambar 5 */}
-      <motion.div variants={FadeUp(0.5)} className={`${baseCardClass} aspect-square`}>
-        <img
-          src={items[4]?.src || "https://via.placeholder.com/600x400"}
-          alt={items[4]?.alt || 'Gallery image 5'}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </motion.div>
+      {/* Gambar 4 */}
+      {items[3] && (
+        <motion.div variants={FadeUp(0.3)} className={`${baseCardClass} aspect-square`}>
+          <img
+            src={items[3].src}
+            alt={items[3].alt}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </motion.div>
+      )}
 
-      {/* Gambar 6 */}
-      {/* Di Tablet (md) & Desktop (lg), gambar ini akan mengambil 2 kolom */}
-      <motion.div variants={FadeUp(0.6)} className={`${baseCardClass} md:col-span-2 lg:col-span-2 aspect-video`}>
-        <img
-          src={items[5]?.src || "https://via.placeholder.com/1200x600"}
-          alt={items[5]?.alt || 'Gallery image 6'}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </motion.div>
+      {/* Gambar 5 */}
+      {items[4] && (
+        <motion.div variants={FadeUp(0.5)} className={`${baseCardClass} aspect-square`}>
+          <img
+            src={items[4].src}
+            alt={items[4].alt}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </motion.div>
+      )}
 
-      {/* Kotak CTA */}
-      {/* Di Tablet (md) mengambil 2 kolom, di Desktop (lg) kembali menjadi 1 kolom */}
-      <motion.div
-        variants={FadeUp(0.7)}
-        className="bg-[#cae2bf] rounded-xl shadow-md p-8 flex flex-col justify-center items-center text-center hover:shadow-lg transition-all md:col-span-2 lg:col-span-1"
-      >
-        <h4 className="text-base font-semibold mb-2 text-gray-700">
-          Ingin tahu lebih lanjut?
-        </h4>
-        <h3 className="text-xl font-bold mb-4 text-green-700">
-          Terlibat Bersama Kami <br /> dalam Pengembangan Ekonomi Kerakyatan
-        </h3>
-        <button
-          onClick={handleClick}
-          className="flex items-center space-x-2 border border-green-600 text-green-600 py-3 px-6 rounded-full font-medium transition-all hover:bg-green-600 hover:text-white"
+      {/* Gambar 6 */}
+      {items[5] && (
+        <motion.div variants={FadeUp(0.6)} className={`${baseCardClass} md:col-span-2 lg:col-span-2 aspect-video`}>
+          <img
+            src={items[5].src}
+            alt={items[5].alt}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </motion.div>
+      )}
+
+      {/* --- MODIFIKASI DIMULAI --- */}
+      {/* Render sisa foto (item ke 7 s.d 17) secara dinamis */}
+      {remainingItems.map((item, index) => (
+        <motion.div
+          key={item.id}
+          // Animasi berlanjut dari item ke-6 (delay 0.6)
+          variants={FadeUp(0.7 + index * 0.1)} 
+          className={`${baseCardClass} aspect-square`} // Layout standar
         >
-          <span>Hubungi Kami</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </button>
-      </motion.div>
-    </motion.div>
-  );
+          <img
+            src={item.src}
+            alt={item.alt}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </motion.div>
+      ))}
+      {/* --- MODIFIKASI SELESAI --- */}
+
+
+      {/* Kotak CTA (Dipindahkan ke Paling Akhir) */}
+      <motion.div
+        // Delay diatur agar muncul setelah item loop terakhir
+        variants={FadeUp(0.7 + remainingItems.length * 0.1)} 
+        className="bg-[#cae2bf] rounded-xl shadow-md p-8 flex flex-col justify-center items-center text-center hover:shadow-lg transition-all md:col-span-2 lg:col-span-1"
+      >
+        <h4 className="text-base font-semibold mb-2 text-gray-700">
+          Ingin tahu lebih lanjut?
+        </h4>
+        <h3 className="text-xl font-bold mb-4 text-green-700">
+          Terlibat Bersama Kami <br /> dalam Pengembangan Ekonomi Kerakyatan
+        </h3>
+        <button
+          onClick={handleClick}
+          className="flex items-center space-x-2 border border-green-600 text-green-600 py-3 px-6 rounded-full font-medium transition-all hover:bg-green-600 hover:text-white"
+        >
+          <span>Hubungi Kami</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </button>
+      </motion.div>
+    </motion.div>
+  );
 };
 
 export default GalleryGrid;
