@@ -1,4 +1,44 @@
 export const newsArticles = [
+    {
+        id: 36,
+        title: "Dea Bingung dan Terkejut Dapat Hadiah Umroh di Borneo Fair 2025",
+        date: "23 Nov 2025",
+        summary: "Borneo Review, Dea, salah satu pengunjung yang beruntung, mengaku bingung sekaligus terkejut saat namanya dipanggil sebagai pemenang...",
+        imgSrc: "/dea_umroh_borneoreview.jpg",
+        sourceUrl: "https://borneoreview.co/dea-bingung-dan-terkejut-dapat-hadian-umroh-di-borneo-fair-2025/?amp=1"
+    },
+    {
+        id: 35,
+        title: "Last Child, Rain dan Ello Guncang Fans",
+        date: "22 Nov 2025",
+        summary: "Tinta Rakyat Nusantara, Penampilan Last Child, The Rain, dan Ello sukses mengguncang ribuan fans yang memadati lokasi...",
+        imgSrc: "/konser_tintarakyat.jpg",
+        sourceUrl: "https://www.tintarakyatnusantara.com/2025/11/last-child-rain-dan-ello-guncang-fans.html"
+    },
+    {
+        id: 34,
+        title: "Pengunjung Non-Muslim Dapat Hadiah Umroh di Borneo Fair",
+        date: "23 Nov 2025",
+        summary: "Pontianak Metro Post, Momen unik terjadi saat seorang pengunjung non-muslim mendapatkan hadiah utama berupa paket Umroh di Borneo Fair...",
+        imgSrc: "/umroh_pontianakmetropost.jpg",
+        sourceUrl: "https://pontianakmetropost.com/pengunjung-non-muslim-dapat-hadiah-umroh-di-borneo-fair/"
+    },
+    {
+        id: 33,
+        title: "Last Child, The Rain, & Ello Guncang dan Hipnotis Fans di Borneo Fair 2025",
+        date: "22 Nov 2025",
+        summary: "Borneo Review, Kolaborasi epik antara Last Child, The Rain, dan Ello berhasil menghipnotis para penggemar yang hadir di Borneo Fair...",
+        imgSrc: "/konser_borneoreview.jpg",
+        sourceUrl: "https://borneoreview.co/last-child-the-rain-ello-guncang-dan-hipnotis-fans-di-borneo-fair-2025/?amp=1"
+    },
+    {
+        id: 32,
+        title: "Konser Band di Borneo Fair Ciptakan Atmosfer Hipnotis Penonton",
+        date: "22 Nov 2025",
+        summary: "Berkatnewstv, Rangkaian konser band di Borneo Fair sukses menciptakan atmosfer yang menghipnotis penonton sepanjang malam...",
+        imgSrc: "/konser_berkatnewstv.jpg",
+        sourceUrl: "https://berkatnewstv.com/2025/11/22/konser-band-di-borneo-fair-ciptakan-atmosfer-hipnotis-penonton/"
+    },
     { 
         id: 31,
         title: "Konser Rony Parulian di Borneo Fair 2025 Dipadati Ribuan Penonton", 
@@ -64,12 +104,12 @@ export const newsArticles = [
         sourceUrl: "https://pontianakmetropost.com/generasi-muda-unjuk-kebolehan-di-borneo-fair/" 
     },
     { 
-    id: 23,
-    title: "Targetkan Transaksi Rp50 Miliar, Borneo Fair 2025 Jadi Ajang Promosi UMKM Terbesar di Kalbar", 
-    date: "8 Nov 2025", 
-    summary: "Fakta Kalbar, Borneo Fair 2025 menargetkan transaksi hingga Rp50 miliar dan menjadi ajang promosi terbesar bagi UMKM Kalimantan Barat. Acara ini diharapkan memperkuat potensi ekonomi daerah...", 
-    imgSrc: "/borneofair_.jpg", 
-    sourceUrl: "https://faktakalbar.id/2025/11/08/targetkan-transaksi-rp50-miliar-borneo-fair-2025-jadi-ajang-promosi-umkm-terbesar-di-kalbar/" 
+        id: 23,
+        title: "Targetkan Transaksi Rp50 Miliar, Borneo Fair 2025 Jadi Ajang Promosi UMKM Terbesar di Kalbar", 
+        date: "8 Nov 2025", 
+        summary: "Fakta Kalbar, Borneo Fair 2025 menargetkan transaksi hingga Rp50 miliar dan menjadi ajang promosi terbesar bagi UMKM Kalimantan Barat. Acara ini diharapkan memperkuat potensi ekonomi daerah...", 
+        imgSrc: "/borneofair_.jpg", 
+        sourceUrl: "https://faktakalbar.id/2025/11/08/targetkan-transaksi-rp50-miliar-borneo-fair-2025-jadi-ajang-promosi-umkm-terbesar-di-kalbar/" 
     },
 
     { 
