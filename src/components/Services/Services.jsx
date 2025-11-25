@@ -45,7 +45,7 @@ const Services = () => {
   const navigate = useNavigate();
 
   const handleItemClick = (productKey) => {
-    navigate(`/page3?product=${productKey}`);
+    navigate(`/Products & Services?product=${productKey}`);
   };
 
   return (
