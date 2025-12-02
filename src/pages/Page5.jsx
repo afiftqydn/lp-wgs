@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react'; // Tambahkan useEffect
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { motion } from "framer-motion";
@@ -38,7 +38,6 @@ const Page5 = () => {
   const hasMoreNews = newsLimit < newsArticles.length;
   // --- AKHIR MODIFIKASI ---
 
-
   return (
     <section className="relative min-h-screen bg-[url('/src/assets/navbar-bg.svg')] bg-cover bg-fixed text-white overflow-hidden">
       <Navbar />
@@ -51,7 +50,7 @@ const Page5 = () => {
           animate="animate"
           className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg"
         >
-          Galeri & Berita <span className="text-lime-300">WGS</span>
+          Galeri & Berita <span className="text-lime-300"></span>
         </motion.h1>
         <motion.p
           variants={FadeUp(0.3)}
@@ -59,8 +58,7 @@ const Page5 = () => {
           animate="animate"
           className="text-gray-200 max-w-2xl mx-auto text-lg"
         >
-          Jelajahi galeri aktivitas kami dan ikuti berita terbaru dari PT Win
-          Global Solusitama.
+          Jelajahi galeri aktivitas kami dan ikuti berita terbaru dari PT Firmans Khatulistiwa Group.
         </motion.p>
       </div>
 

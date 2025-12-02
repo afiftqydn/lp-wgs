@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom"; 
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Blob from "../../assets/blob.svg";
-import BadgesWGS from "/wgs_logo.png";
+import BadgesWGS from "/logo_firmans.png";
 import { motion } from "framer-motion";
 
 export const FadeUp = (delay) => {
@@ -28,7 +28,7 @@ export const FadeUp = (delay) => {
 const Hero = () => {
   const navigate = useNavigate(); 
   const handleClick = () => {
-    navigate("/page2"); 
+    navigate("/About-Us"); 
   };
 
   return (
@@ -44,16 +44,16 @@ const Hero = () => {
               animate="animate"
               className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug break-words text-light"
             >
-              PT WIN GLOBAL SOLUSITAMA
+              PT Firman'syah Khatulistiwa Group
             </motion.h1>
 
             <motion.p
               variants={FadeUp(0.7)}
               initial="initial"
               animate="animate"
-              className="text-xl text-base text-gray-200 leading-relaxed"
+              className="text-xl text-base text-gray-200 leading-relaxed text-justify"
             >
-              PT Win Global Solusitama (WGS) merupakan startup dari Kalimantan Barat yang bergerak di bidang pembiayaan syariah, solusi keuangan, serta pengembangan program kemanusiaan dan keumatan. Fokus utamanya adalah mendorong pemberdayaan ekonomi dan sosial melalui layanan keuangan inklusif.
+              PT Firmansyah Khatulistiwa Group (Firmans Group) adalah sebuah startup yang berasal dari Kalimantan Barat, bergerak di bidang pembiayaan syariah, solusi keuangan, serta pengembangan program kemanusiaan dan keumatan. Fokus utama perusahaan ini adalah untuk mendorong pemberdayaan ekonomi dan sosial melalui layanan keuangan inklusif.
             </motion.p>
 
             <motion.div

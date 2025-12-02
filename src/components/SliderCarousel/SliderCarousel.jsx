@@ -7,45 +7,36 @@ import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from 'react-router-dom';
 import { subsidiariesData } from "../../data/subsidiariesData"; // Pastikan path ini benar
 
-/**
- * CardView Component
- * Komponen individual untuk setiap item di dalam carousel.
- * Tingginya diatur secara responsif untuk tampilan optimal di semua perangkat.
- */
+
 const CardView = ({ image, title, alt, onClick }) => (
   <div 
-    // Kelas responsif untuk tinggi:
-    // - h-56: Tinggi default untuk mobile (paling tinggi)
-    // - md:h-48: Tinggi untuk tablet
-    // - lg:h-40: Tinggi untuk desktop (paling pendek)
-   className="bg-[#cae4c3] rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer 
-            flex items-center justify-center p-4 
-            h-28 sm:h-32 md:h-36 lg:h-44 xl:h-52"
+
+    className="
+      bg-[#cae4c3] bg-opacity-70 
+      rounded-xl shadow-lg overflow-hidden 
+      transition-transform duration-300 hover:scale-105 cursor-pointer 
+      flex items-center justify-center p-4 
+      h-28 sm:h-32 md:h-36 lg:h-44 xl:h-52
+    "
 
     onClick={onClick}
   >
     <img 
       src={image} 
       alt={alt || title} 
-      // object-contain memastikan gambar utuh dan tidak terpotong
       className="max-w-full max-h-full object-contain"
     />
   </div>
 );
 
 
-/**
- * CenteredCarousel Component
- * Komponen utama yang mengatur dan menampilkan slider/carousel.
- */
 const CenteredCarousel = () => {
   const navigate = useNavigate();
 
   const handleCardClick = (id) => {
-    navigate(`/page2#${id}`);
+    navigate(`/Subholding/${id}`);
   };
 
-  // Pengaturan untuk library react-slick
   const settings = {
     className: "center",
     centerMode: true,
@@ -104,14 +95,14 @@ const CenteredCarousel = () => {
         /* Dot normal */
         .slick-dots li button:before {
           font-size: 8px;       /* kecilkan ukuran */
-          color: #9ca3af;       /* abu-abu netral */
+          color: #ffffff;       /* abu-abu netral */
           opacity: 0.5;
         }
 
         /* Dot aktif */
         .slick-dots li.slick-active button:before {
-          color: #222222ff;       /* hijau sesuai tema */
-          opacity: 0.5;
+          color: #000000;       /* hijau sesuai tema */
+          opacity: 0.8;
         }
 
         /* Opsional: rapatkan jarak antar dots */
@@ -123,7 +114,6 @@ const CenteredCarousel = () => {
       <section className="w-full py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <Slider {...settings}>
-            {/* Mapping data untuk membuat setiap slide */}
             {subsidiariesData.map((card) => (
               <div key={card.id} className="p-2">
                 <CardView 

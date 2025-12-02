@@ -6,6 +6,10 @@
 /* ==== Styling Custom Carousel ==== */
 
 
+.group:hover .flip-card-inner {
+    transform: rotateY(180deg) !important; 
+    /* Gunakan !important jika diperlukan, tetapi sebaiknya coba tanpa dulu */
+}
 /* Base untuk semua slide */
 .slick-slide {
   transition: all 0.5s ease-in-out;

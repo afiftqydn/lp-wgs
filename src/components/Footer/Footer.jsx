@@ -26,7 +26,7 @@ const Footer = () => {
           <a href="https://wa.me/085195522202" className="hover:text-green-500 transition-all">
             <FaWhatsapp />
           </a>
-          <a href="https://maps.app.goo.gl/5vJCetAhY2mNLxdg8" className="hover:text-red-500 transition-all">
+          <a href="https://maps.app.goo.gl/8bDZhQM2rSMea6fn8" className="hover:text-red-500 transition-all">
             <FaLocationPin />
           </a>
           <a href="https://www.linkedin.com/company/pt-win-global-solusitama/" className="hover:text-blue-500 transition-all">
@@ -35,9 +35,10 @@ const Footer = () => {
         </div>
 
         {/* Baris 2: Copyright */}
-        <div className="text-base md:text-lg text-gray-600">
-          Copyright ©{new Date().getFullYear()} PT. Win Global Solusitama
-        </div>
+<div className="text-base md:text-lg text-gray-600">
+  Copyright ©{new Date().getFullYear()}<br />
+  PT. Firmansyah Khatulistiwa Group
+</div>
       </div>
     </motion.footer>
   );
