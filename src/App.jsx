@@ -4,6 +4,7 @@ import Page2 from "./pages/Page2";
 import Page3 from "./pages/Page3";
 import Page4 from "./pages/Page4";
 import Page5 from "./pages/Page5";
+import Maintenance from "./pages/MaintenanceNavigation";
 
 // 1. IMPORT KOMPONEN DETAIL BARU
 import SubsidiaryDetailPage from "./pages/SubsidiaryDetailPage"; 
@@ -12,7 +13,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Maintenance/>} />
         <Route path="/About-Us" element={<Page2/>} />
         
         {/* 2. TAMBAHKAN RUTE DINAMIS UNTUK DETAIL ANAK PERUSAHAAN */}
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/Products&Services" element={<Page3/>} />
         <Route path="/Contact-Us" element={<Page4/>} />
         <Route path="/Geleri&Berita" element={<Page5/>} />
+        <Route path="/mntc" element={<Maintenance/>} />
       </Routes>
     </Router>
   )

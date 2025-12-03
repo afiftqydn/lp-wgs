@@ -238,7 +238,7 @@ const SubsidiaryDetailPage = () => {
                         </motion.div>
                     ) : (
                         <div className="max-w-3xl mx-auto text-center">
-                            <motion.div 
+                            {/* <motion.div 
                                 variants={FadeUp(0.2)}
                                 initial="initial"
                                 whileInView="whileInView"
@@ -247,7 +247,7 @@ const SubsidiaryDetailPage = () => {
                                 <p className="text-[#174b1d] italic font-medium">
                                     Data legalitas belum tersedia untuk ditampilkan saat ini.
                                 </p>
-                            </motion.div>
+                            </motion.div> */}
                         </div>
                     )}
 

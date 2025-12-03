@@ -20,7 +20,7 @@ const Footer = () => {
         
         {/* Baris 1: Icons */}
         <div className="flex gap-5 text-gray-600 text-2xl">
-          <a href="https://www.instagram.com/wgs_officiall/" className="hover:text-pink-600 transition-all">
+          <a href="https://www.instagram.com/firmansgroup/" className="hover:text-pink-600 transition-all">
             <FaInstagram />
           </a>
           <a href="https://wa.me/085195522202" className="hover:text-green-500 transition-all">

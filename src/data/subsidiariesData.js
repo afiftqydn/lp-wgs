@@ -139,12 +139,6 @@ export const subsidiariesData = [
         "Harga Transparan Sesuai Resto, Tanpa Biaya Tersembunyi",
         "Aplikasi Terintegrasi untuk Merchant, Driver, dan Tim Sales"
     ],
-    legal: {
-        aktaPendirian: '—',
-        skKemenkumham: '—',
-        nib: '—',
-        npwp: '—',
-    },
     activityPhotoBg: 'url(/slideshow/fdmedia.jpg)', 
     commissionersPhotoBg: 'url(/FOODMEDIA_Kom.jpeg)', 
     commissioners: [ 
