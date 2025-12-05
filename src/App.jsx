@@ -13,7 +13,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Maintenance/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/About-Us" element={<Page2/>} />
         
         {/* 2. TAMBAHKAN RUTE DINAMIS UNTUK DETAIL ANAK PERUSAHAAN */}

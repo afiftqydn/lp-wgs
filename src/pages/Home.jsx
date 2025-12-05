@@ -14,7 +14,7 @@ import PejabatBgImg from "/AFG.jpeg"; // SAYA PAKAI BLOB SBG CONTOH SEMENTARA
 const Home = () => {
   return (
   
-    <main className="relative bg-black bg-repeat bg-cover">
+    <main className="flex-col relative bg-black bg-repeat bg-cover">
       <Navbar/>
       <img 
         src={PejabatBgImg} 

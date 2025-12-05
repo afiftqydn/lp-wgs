@@ -33,10 +33,10 @@ const Hero = () => {
 
   return (
     <section className="overflow-hidden relative">
-      <div className="container grid grid-cols-1 md:grid-cols-2 items-center min-h-[650px] mt-0 md:mt-[-120px]">
+      <div className=" container grid grid-cols-1 md:grid-cols-2 items-center min-h-[650px] mt-0 md:mt-[1px]">
         
         {/* Brand Info */}
-        <div className="flex flex-col justify-center no-caret select-none py-10 md:py-0 relative z-20 order-2 md:order-1">
+        <div className="container flex flex-col justify-center no-caret select-none py-10 md:py-0 relative z-20 order-2 md:order-1 mt-5">
           <div className="text-center md:text-left space-y-6 max-w-xl mx-auto md:mx-0">
             <motion.h1
               variants={FadeUp(0.6)}
@@ -44,7 +44,7 @@ const Hero = () => {
               animate="animate"
               className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug break-words text-light"
             >
-              PT Firman'syah Khatulistiwa Group
+              PT Firmansyah Khatulistiwa Group
             </motion.h1>
 
             <motion.p
@@ -53,7 +53,7 @@ const Hero = () => {
               animate="animate"
               className="text-xl text-base text-gray-200 leading-relaxed text-justify"
             >
-              PT Firmansyah Khatulistiwa Group (Firmans Group) adalah sebuah startup yang berasal dari Kalimantan Barat, bergerak di bidang pembiayaan syariah, solusi keuangan, serta pengembangan program kemanusiaan dan keumatan. Fokus utama perusahaan ini adalah untuk mendorong pemberdayaan ekonomi dan sosial melalui layanan keuangan inklusif.
+              PT Firmansyah Khatulistiwa Group (Firman's Group) adalah sebuah startup yang berasal dari Kalimantan Barat, bergerak di bidang pembiayaan syariah, solusi keuangan, serta pengembangan program kemanusiaan dan keumatan. Fokus utama perusahaan ini adalah untuk mendorong pemberdayaan ekonomi dan sosial melalui layanan keuangan inklusif.
             </motion.p>
 
             <motion.div
@@ -74,7 +74,7 @@ const Hero = () => {
         </div>
 
         {/* Hero Image */}
-        <div className="flex justify-center no-caret select-none items-center mt-6 md:mt-0 order-1 md:order-2">
+        <div className="flex justify-center no-caret select-none items-center mt-6 md:mt-0 order-1 md:order-2 opacity-75">
           <motion.img
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}

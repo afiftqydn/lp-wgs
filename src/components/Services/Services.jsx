@@ -136,64 +136,66 @@ const Services = () => {
   };
 
   return (
-    <section className="bg-[#cae2c0] rounded-t-3xl min-h-screen overflow-hidden">
+    <section className="bg-[#cae2c0] rounded-t-[50px] min-h-screen overflow-hidden">
       
       {/* ==================== PRODUK UNGGULAN SECTION ==================== */}
-      <div className="container mx-auto px-6 pt-16 pb-12">
-        <motion.h1
-          className="text-4xl font-bold text-left pb-10 text-[#174b1d]"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.0, ease: "easeInOut",
-          delay: 0 }}
-          viewport={{ once: true }}
-        >
-          Produk Unggulan
-        </motion.h1>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-8">
-          {ServicesData.map((service) => (
-            <motion.div
-              key={service.id}
-              variants={SlideLeft(service.delay)}
-              initial="initial"
-              whileInView="animate"
+      <div className="mx-auto pt-16 pb-12">
+        <div className="container mx-auto">
+            <motion.h1
+              className="text-4xl font-bold text-left pb-5 text-[#174b1d] text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.0, ease: "easeInOut",
+              delay: 0 }}
               viewport={{ once: true }}
-              // 1. CONTAINER LUAR: Mengatur tinggi tetap dan perspective
-              className="group h-[320px] w-full [perspective:1000px] cursor-pointer"
-              onClick={() => handleProductClick(service.key)}
             >
-              {/* 2. INNER CONTAINER: Menangani Rotasi */}
-              <div className="relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] rounded-2xl shadow-md hover:shadow-xl">
-                
-                {/* --- SISI DEPAN (FRONT) --- */}
-                <div className="absolute inset-0 h-full w-full rounded-2xl bg-[#e1f2d8] border border-[#cae2c0] [backface-visibility:hidden]">
-                  <div className="flex flex-col gap-4 items-center justify-center h-full p-6 text-center">
-                    <div className="text-4xl mb-1 text-[#174b1d]">{service.icon}</div>
-                    <h1 className="text-lg font-bold text-[#174b1d]">{service.title}</h1>
-                    <p className="text-sm font-light px-3 text-gray-700 leading-relaxed">
-                      {service.desc}
-                    </p>
+              Produk Unggulan
+            </motion.h1>
+          <div className="w-20 h-1.5 bg-[#174b1d] mx-auto rounded-full" />
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-8 px-10 pt-10">
+            {ServicesData.map((service) => (
+              <motion.div
+                key={service.id}
+                variants={SlideLeft(service.delay)}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                // 1. CONTAINER LUAR: Mengatur tinggi tetap dan perspective
+                className="group h-[320px] w-full [perspective:1000px] cursor-pointer"
+                onClick={() => handleProductClick(service.key)}
+              >
+                {/* 2. INNER CONTAINER: Menangani Rotasi */}
+                <div className="relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] rounded-2xl shadow-md hover:shadow-xl">
+                  
+                  {/* --- SISI DEPAN (FRONT) --- */}
+                  <div className="absolute inset-0 h-full w-full rounded-2xl bg-[#e1f2d8] border border-[#cae2c0] [backface-visibility:hidden]">
+                    <div className="flex flex-col gap-4 items-center justify-center h-full p-6 text-center">
+                      <div className="text-4xl mb-1 text-[#174b1d]">{service.icon}</div>
+                      <h1 className="text-lg font-bold text-[#174b1d]">{service.title}</h1>
+                      <p className="text-sm font-light px-3 text-gray-700 leading-relaxed">
+                        {service.desc}
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                {/* --- SISI BELAKANG (BACK) --- */}
-                <div className="absolute inset-0 h-full w-full rounded-2xl bg-[#e1f2d8] border border-gray-200 [backface-visibility:hidden] [transform:rotateY(180deg)] flex items-center justify-center p-8">
-                  {/* Pastikan path logo sesuai dengan file project Anda */}
-                  <img 
-                    src="/wgs_karousel.png" 
-                    alt="Logo WGS" 
-                    className="w-3/4 h-auto object-contain"
-                  />
-                </div>
+                  {/* --- SISI BELAKANG (BACK) --- */}
+                  <div className="absolute inset-0 h-full w-full rounded-2xl bg-[#e1f2d8] border border-gray-200 [backface-visibility:hidden] [transform:rotateY(180deg)] flex items-center justify-center p-8">
+                    {/* Pastikan path logo sesuai dengan file project Anda */}
+                    <img 
+                      src="/wgs_karousel.png" 
+                      alt="Logo WGS" 
+                      className="w-3/4 h-auto object-contain"
+                    />
+                  </div>
 
-              </div>
-            </motion.div>
-          ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>      
       {/* ==================== GALLERY SECTION (AUTO SLIDESHOW) ==================== */}
-      <div className="py-16 overflow-hidden">
+      <div className="pb-14 overflow-hidden">
         {/* INFINITE MARQUEE SLIDESHOW */}
         {/* Menggunakan grid 1x6 (sekitar 6 item di desktop) */}
         <div className="relative w-full flex overflow-hidden">
@@ -233,7 +235,7 @@ const Services = () => {
       </div>
 
       {/* ==================== NEWS SECTION ==================== */}
-      <div className="container mx-auto px-6 pt-0 pb-12">
+      <div className="mx-auto px-6 pt-0 pb-12">
         {/* BENTO GRID LAYOUT */}
         <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-auto md:grid-rows-2 gap-4 h-auto md:h-[600px]">
           {featuredNews.map((news, index) => {

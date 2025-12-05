@@ -111,7 +111,7 @@ const CenteredCarousel = () => {
         }
       `}</style>
       
-      <section className="w-full py-12 overflow-hidden">
+      <section className="w-full py-7 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <Slider {...settings}>
             {subsidiariesData.map((card) => (
