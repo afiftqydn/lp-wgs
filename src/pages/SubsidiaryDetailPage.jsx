@@ -69,47 +69,46 @@ const SubsidiaryDetailPage = () => {
 
     return (
         // 1. MAIN WRAPPER
-        <section className="bg-black bg-repeat bg-cover overflow-hidden relative flex flex-col min-h-screen">
+        <section className=" bg-black bg-repeat bg-cover overflow-hidden relative flex flex-col min-h-screen">
             <Navbar />
 
             {/* ====== SECTION 1: HERO ====== */}
             <div
-                className="relative h-[80vh] flex items-center justify-center bg-fixed bg-cover bg-center shadow-2xl"
+                // UBAH: Hapus 'bg-center' agar kita bisa atur manual posisinya di style
+                className="relative h-[95vh] flex items-end justify-start bg-fixed bg-cover shadow-2xl"
                 style={{
                     backgroundImage: detail.commissionersPhotoBg || 'none',
-                    backgroundColor: '#174b1d'
+                    backgroundColor: '#174b1d',
+                    // UBAH: Atur posisi background di sini. 
+                    // Ganti '35%' dengan angka lain (misal 20% atau 40%) sesuai selera agar pas turunnya.
+                    backgroundPosition: 'center 15%' 
                 }}
             >
                 {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90 z-0"></div>
-                <div className="container mx-auto px-6 relative z-10 text-center text-white">
-                    <motion.div
-                        variants={FadeUp(0.2)}
-                        initial="initial"
-                        animate="whileInView"
-                    >
-                        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-wide text-white drop-shadow-lg">
-                            {detail.name}
-                        </h1>
-                        <p className="text-lg md:text-2xl font-light max-w-3xl mx-auto leading-relaxed text-[#cae2c0]">
-                            Bergerak dan berdedikasi penuh dalam bidang <span className="font-semibold text-white">{detail.items ? detail.items[0] : "Layanan Profesional"}</span> serta memberikan solusi terbaik bagi mitra kami.
-                        </p>
-                    </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/90 z-0"></div>
+                
+                {/* UBAH: text-center DIUBAH jadi text-left sesuai request sebelumnya */}
+<div className="container mx-auto px-6 relative z-10 text-center text-white pb-10 md:pb-8">
+    <motion.div
+        variants={FadeUp(0.2)}
+        initial="initial"
+        animate="whileInView"
+    >
+        <h1 className="text-3xl md:text-5xl font-extrabold mb-5 tracking-wide text-white drop-shadow-lg">
+            {detail.name}
+        </h1>
 
-                    {/* Scroll Indicator */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1, duration: 1 }}
-                        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block"
-                    >
-                        <svg className="w-6 h-6 text-[#cae2c0]" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                    </motion.div>
-                </div>
+        <p className="text-base md:text-xl font-light max-w-3xl leading-relaxed text-[#cae2c0] mx-auto">
+            Bergerak dan berdedikasi penuh dalam bidang
+            <span className="font-semibold text-white">
+                {" "}
+                {detail.items ? detail.items[0] : "Layanan Profesional"}
+            </span>{" "}
+            serta memberikan solusi terbaik bagi mitra kami.
+        </p>
+    </motion.div>
+</div>
             </div>
-
             {/* ====== MAIN CONTENT WRAPPER ====== */}
             <div className="flex-grow bg-[#cae2c0] container py-8 rounded-t-[50px] shadow-md">
                 

@@ -88,7 +88,7 @@ const Page2 = () => {
 
   return (
     // Main Wrapper
-    <div className="flex flex-col min-h-screen font-sans bg-[#cae2c0]">
+    <div className="flex flex-col bg-black min-h-screen font-sans">
       <Navbar />
 
       {/* =========================================
@@ -157,7 +157,7 @@ const Page2 = () => {
             {/* =========================================
           SECTION 2: SELAYANG PANDANG (OVERVIEW)
       ========================================= */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative bg-[#cae2c0] rounded-t-[50px] py-20 overflow-hidden">
         {/* Decorative Background Element */}
         {/* <div className="absolute top-0 right-0 w-1/3 h-full bg-[#174b1d]/80 -skew-x-12 translate-x-20 z-0 pointer-events-none" /> */}
 

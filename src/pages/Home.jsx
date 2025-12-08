@@ -14,29 +14,36 @@ import PejabatBgImg from "/AFG.jpeg"; // SAYA PAKAI BLOB SBG CONTOH SEMENTARA
 const Home = () => {
   return (
   
-    <main className="flex-col relative bg-black bg-repeat bg-cover">
+<main className="flex flex-col min-h-screen bg-black">
       <Navbar/>
-      <img 
-        src={PejabatBgImg} 
-        alt="Background Pejabat"
-        className="
-          absolute top-3- left-0 z-0 w-full h-auto object-contain opacity-50 pointer-events-none 
-          -translate-y-[1%] 
-          
-          /* --- INI BAGIAN GRADASINYA (MASKING) --- */
-          [mask-image:linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]
-        " 
-      />  
+      
+      {/* --- BAGIAN GAMBAR PEJABAT --- */}
+      {/* 1. Hapus 'absolute'. Ganti jadi 'relative' agar dia punya tinggi dan lebar fisik di halaman */}
+      {/* 2. Bungkus dengan div agar lebih rapi */}
+      <div className="relative w-full">
+        <img 
+          src={PejabatBgImg} 
+          alt="Background Pejabat"
+          className="
+            w-full h-auto object-cover opacity-50 pointer-events-none 
+            
+            /* Masking tetap dipertahankan agar gradasi halus */
+            [mask-image:linear-gradient(to_bottom,transparent_0%,black_20%,black_80%,transparent_100%)]
+          " 
+        /> 
+      </div>
 
-      <div className="overflow-visible">
+      {/* --- SLIDER CAROUSEL --- */}
+      {/* Karena gambar di atas sudah tidak absolute, slider ini otomatis akan turun ke bawah gambar */}
+      {/* Saya tambahkan -mt-20 (margin top negatif) opsional jika ingin slidernya sedikit naik menutupi kaki gambar agar terlihat menyatu */}
+      <div className="relative z-10 -mt-20 mb-10 overflow-visible">
         <SliderCarousel />
       </div>
 
-      <Hero />
       <Services />
       <Footer />
     </main>
-  );
+    );
 };
 
 export default Home;

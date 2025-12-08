@@ -1,8 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import Blob from "../../assets/blob.svg";
-import BadgesWGS from "/logo_firmans.png";
+import BadgesWGS from "/logo_firmans.png"; // Pastikan path ini benar
 import { motion } from "framer-motion";
 
 export const FadeUp = (delay) => {
@@ -26,63 +25,87 @@ export const FadeUp = (delay) => {
 };
 
 const Hero = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+
   const handleClick = () => {
-    navigate("/About-Us"); 
+    navigate("/About-Us");
   };
 
   return (
-    <section className="overflow-hidden relative">
-      <div className=" container grid grid-cols-1 md:grid-cols-2 items-center min-h-[650px] mt-0 md:mt-[1px]">
+    <section className="relative overflow-hidden bg-[#cae2c0]/20">
+      {/* PERUBAHAN LAYOUT (GESER KANAN):
+        -------------------------------
+        Saya mengubah padding agar tidak simetris (kiri lebih besar dari kanan).
         
-        {/* Brand Info */}
-        <div className="container flex flex-col justify-center no-caret select-none py-10 md:py-0 relative z-20 order-2 md:order-1 mt-5">
-          <div className="text-center md:text-left space-y-6 max-w-xl mx-auto md:mx-0">
-            <motion.h1
-              variants={FadeUp(0.6)}
-              initial="initial"
-              animate="animate"
-              className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug break-words text-light"
-            >
-              PT Firmansyah Khatulistiwa Group
-            </motion.h1>
-
-            <motion.p
-              variants={FadeUp(0.7)}
-              initial="initial"
-              animate="animate"
-              className="text-xl text-base text-gray-200 leading-relaxed text-justify"
-            >
-              PT Firmansyah Khatulistiwa Group (Firman's Group) adalah sebuah startup yang berasal dari Kalimantan Barat, bergerak di bidang pembiayaan syariah, solusi keuangan, serta pengembangan program kemanusiaan dan keumatan. Fokus utama perusahaan ini adalah untuk mendorong pemberdayaan ekonomi dan sosial melalui layanan keuangan inklusif.
-            </motion.p>
-
-            <motion.div
-              variants={FadeUp(0.8)}
-              initial="initial"
-              animate="animate"
-              className="flex justify-center md:justify-start"
-            >
-              <button
-                onClick={handleClick}
-                className="primary-btn flex items-center gap-2 group"
+        Sebelumnya: px-6 md:px-16 lg:px-24 (Kanan Kiri sama)
+        Sekarang:   pl-10 pr-4 md:pl-28 md:pr-8 lg:pl-40 lg:pr-12
+        
+        Efeknya: Konten akan terdorong menjauh dari sisi kiri (bergeser ke kanan).
+      */}
+      <div className="container mx-auto flex min-h-[650px] items-center pl-10 pr-4 md:pl-28 md:pr-8 lg:pl-40 lg:pr-12 pt-10 pb-10">
+        
+        {/* Grid Layout */}
+        <div className="grid w-full grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
+          
+          {/* Kolom 1: Teks */}
+          <div className="flex flex-col justify-center order-2 md:order-1 relative z-20">
+            <div className="text-center md:text-left space-y-6">
+              
+              {/* Judul */}
+              <motion.h1
+                variants={FadeUp(0.6)}
+                initial="initial"
+                animate="animate"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-[#174b1d]"
               >
-                Selengkapnya
-                <IoIosArrowRoundForward className="text-xl group-hover:translate-x-2 group-hover:-rotate-45 duration-300" />
-              </button>
-            </motion.div>
-          </div>
-        </div>
+                PT Firmansyah Khatulistiwa Group
+              </motion.h1>
 
-        {/* Hero Image */}
-        <div className="flex justify-center no-caret select-none items-center mt-6 md:mt-0 order-1 md:order-2 opacity-75">
-          <motion.img
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
-            src={BadgesWGS}
-            alt="Logo WGS"
-            className="w-60 sm:w-80 md:w-[400px] xl:w-[600px] relative z-10 drop-shadow"
-          />
+              {/* Deskripsi */}
+              <motion.p
+                variants={FadeUp(0.7)}
+                initial="initial"
+                animate="animate"
+                className="text-base md:text-lg text-gray-800 leading-relaxed text-justify font-medium"
+              >
+                PT Firmansyah Khatulistiwa Group (Firman's Group) adalah sebuah
+                startup yang berasal dari Kalimantan Barat, bergerak di bidang
+                pembiayaan syariah, solusi keuangan, serta pengembangan program
+                kemanusiaan dan keumatan. Fokus utama perusahaan ini adalah
+                untuk mendorong pemberdayaan ekonomi dan sosial melalui layanan
+                keuangan inklusif.
+              </motion.p>
+
+              {/* Tombol */}
+              <motion.div
+                variants={FadeUp(0.8)}
+                initial="initial"
+                animate="animate"
+                className="flex justify-center md:justify-start pt-4"
+              >
+                <button
+                  onClick={handleClick}
+                  className="group flex items-center gap-2 rounded-full border-2 border-[#174b1d] px-8 py-3 font-semibold text-[#174b1d] transition-all duration-300 hover:bg-[#174b1d] hover:text-white"
+                >
+                  Selengkapnya
+                  <IoIosArrowRoundForward className="text-2xl duration-300 group-hover:-rotate-45 group-hover:translate-x-2" />
+                </button>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Kolom 2: Gambar */}
+          <div className="flex justify-center items-center order-1 md:order-2">
+            <motion.img
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
+              src={BadgesWGS}
+              alt="Logo Firmans Group"
+              className="w-[280px] sm:w-[350px] md:w-[450px] lg:w-[550px] drop-shadow-2xl object-contain z-10"
+            />
+          </div>
+
         </div>
       </div>
     </section>

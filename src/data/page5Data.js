@@ -318,50 +318,51 @@ export const galleryItems = [
     { id: 5, src: "/slideshow/gmbr1.jpg", alt: "Acara Lapangan" },
 ];
 
-// --- DATA VIDEO (Tambahan Baru) ---
-// ... (Bagian newsArticles & galleryItems biarkan saja) ...
-
-// --- DATA VIDEO (UPDATE: Total 8 Item) ---
+// --- DATA VIDEO (UPDATE: Total 9 Item) ---
 export const videoItems = [
   {
     id: 1,
-    title: "Antusian Pelaku UMKM Ikuti Borneo Fair 2025",
-    videoId: "s_ZVNVTdtp4", 
+    title: "Borneo Fair Reborn 2025 Resmi Dibuka: Panggung Kreativitas Kalbar, Didukung foodmedia Indonesia",
+    videoId: "oy_fYupN6CM", // Video Baru ditaruh di paling atas
   },
   {
     id: 2,
+    title: "Antusias Pelaku UMKM Ikuti Borneo Fair 2025",
+    videoId: "s_ZVNVTdtp4", 
+  },
+  {
+    id: 3,
     title: "Bincang Santai Bersama CEO Firman's Group", 
     videoId: "xlBjMGFEgtw", 
   },
   {
-    id: 3,
+    id: 4,
     title: "Segera Luncurkan Bank Wakaf Dunia", 
     videoId: "QFW7k-t6BBk", 
   },
   {
-    id: 4,
+    id: 5,
     title: "Ribuan Pelaku UMKM Mengikuti BIMTEK", 
     videoId: "kjf341XtShI", 
   },
   {
-    id: 5,
+    id: 6,
     title: "Siaran Langsung Acara", 
     videoId: "9UHTPr396Sw", 
   },
   {
-    id: 6,
+    id: 7,
     title: "Rony Parulian Getarkan Panggung Borneo Fair Reborn 2025 ", 
     videoId: "cPQji5OiN1c", 
   },
-  // --- 2 VIDEO TAMBAHAN BARU ---
   {
-    id: 7,
-    title: "Foodmedia", // Silakan sesuaikan judulnya
+    id: 8,
+    title: "Foodmedia", 
     videoId: "_7fWFXGppG8", 
   },
   {
-    id: 8,
-    title: "Highlight Singkat (Shorts) Borneo Fair Reborn 2025", // Silakan sesuaikan judulnya
+    id: 9,
+    title: "Highlight Singkat (Shorts) Borneo Fair Reborn 2025", 
     videoId: "QiAoeDbS7b0", 
   }
 ];

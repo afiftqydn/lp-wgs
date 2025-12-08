@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom"; // Tambahkan hook navigasi
 
 // IMPORT DATA DARI FILE EKSTERNAL
 import { newsArticles, galleryItems } from "../../data/page5Data";
+import SliderCarousel from "../SliderCarousel/SliderCarousel";
+import Hero from "../Hero/Hero";
+
 
 // --- KOMPONEN IKON SVG (Pengganti ikon library) ---
 const IconBase = ({ size = 24, className, children }) => (
@@ -137,9 +140,10 @@ const Services = () => {
 
   return (
     <section className="bg-[#cae2c0] rounded-t-[50px] min-h-screen overflow-hidden">
+            <Hero />
       
       {/* ==================== PRODUK UNGGULAN SECTION ==================== */}
-      <div className="mx-auto pt-16 pb-12">
+      <div className="mx-auto pt-5 pb-20">
         <div className="container mx-auto">
             <motion.h1
               className="text-4xl font-bold text-left pb-5 text-[#174b1d] text-center"

@@ -102,66 +102,106 @@ const Page5 = () => {
         )}
       </div>
 
-      {/* --- SECTION VIDEO --- */}
-      <div className="container mx-auto px-6 py-12 bg-black/20 backdrop-blur-sm rounded-3xl my-8">
-        <motion.h2
-          variants={FadeUp(0.1)}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          className="text-3xl font-bold mb-10 text-center text-lime-300"
-        >
-          Video <span className="text-white">Kegiatan</span>
-        </motion.h2>
+{/* --- SECTION VIDEO --- */}
+<div className="container mx-auto px-4 py-8 bg-black/20 backdrop-blur-sm rounded-3xl my-8">
+  <motion.h2
+    variants={FadeUp(0.1)}
+    initial="initial"
+    whileInView="animate"
+    viewport={{ once: true }}
+    className="text-3xl font-bold mb-8 text-lime-300 pl-2 text-center" // Rata kiri dikit biar mirip header section Youtube
+  >
+    Video <span className="text-white">Kegiatan</span>
+  </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Ubah videoItems.map menjadi displayedVideos.map */}
-          {displayedVideos.map((video, index) => (
-            <motion.div
-              key={video.id}
-              variants={FadeUp(0.2 + index * 0.1)}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              className="bg-white/5 rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-lime-300/50 transition-all group"
-            >
-              <div className="relative aspect-video w-full">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src={`https://www.youtube.com/embed/${video.videoId}`} 
-                  title={video.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-white group-hover:text-lime-300 transition-colors line-clamp-2">
-                  {video.title}
-                </h3>
-              </div>
-            </motion.div>
-          ))}
+  {/* === 1. VIDEO AUTOPLAY (Gaya Channel Trailer) === */}
+  {/* Ini kita buat agak besar tapi fit, mirip video trailer di halaman profil channel */}
+  {(() => {
+    const heroVideoId = "sKS_h-7kNm8"; 
+    return (
+      <motion.div
+        variants={FadeUp(0.2)}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="flex justify-center mb-12" // Beri jarak agak jauh dengan grid di bawah
+      >
+        <div className="w-full max-w-4xl rounded-xl overflow-hidden shadow-2xl bg-black">
+           <div className="relative aspect-video w-full">
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src={`https://www.youtube.com/embed/${heroVideoId}?autoplay=1&mute=1&loop=1&playlist=${heroVideoId}&controls=1&rel=0`}
+              title="Featured Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </motion.div>
+    );
+  })()}
+
+
+  {/* === 2. GRID VIDEO (GAYA 3 KOLOM) === */}
+  {/* Penjelasan Grid:
+      - grid-cols-1    : Tampilan HP (1 kolom)
+      - sm:grid-cols-2 : Tampilan Tablet (2 kolom)
+      - lg:grid-cols-3 : Tampilan Laptop/PC (3 kolom - Sesuai request formasi 2x3 jika ada 6 video)
+      - gap-6          : Jarak antar video lebih proporsional
+  */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {displayedVideos.map((video, index) => (
+      <motion.div
+        key={video.id}
+        variants={FadeUp(0.2 + index * 0.1)}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="group cursor-pointer flex flex-col gap-3"
+      >
+        {/* Container Video/Thumbnail */}
+        <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-gray-900 shadow-md border border-white/5 group-hover:border-lime-300/50 transition-all duration-300">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src={`https://www.youtube.com/embed/${video.videoId}`} 
+            title={video.title}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
 
-        {/* TOMBOL LOAD MORE VIDEO (BARU) */}
-        {hasMoreVideos && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="mt-12 flex justify-center"
-          >
-            <button
-              onClick={handleLoadMoreVideos}
-              className="px-6 py-3 rounded-full border border-lime-300 text-lime-300 font-medium hover:bg-lime-300 hover:text-black transition-all shadow-lg"
-            >
-              Lihat Lebih Banyak Video
-            </button>
-          </motion.div>
-        )}
-      </div>
-      {/* --- AKHIR SECTION VIDEO --- */}
+        {/* Info Video */}
+        <div className="flex flex-col px-1">
+          <h3 className="text-white font-semibold text-sm leading-snug line-clamp-2 group-hover:text-lime-300 transition-colors">
+            {video.title}
+          </h3>
+          <p className="text-gray-400 text-xs mt-1">
+             WGS Channel • {new Date().getFullYear()}
+          </p>
+        </div>
+      </motion.div>
+    ))}
+  </div>
 
+  {/* TOMBOL LOAD MORE */}
+  {hasMoreVideos && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      className="mt-12 flex justify-center border-t border-white/10 pt-8" // Tambah border atas biar rapi
+    >
+      <button
+        onClick={handleLoadMoreVideos}
+        className="px-8 py-2 rounded-full border border-white/20 text-sm font-medium hover:bg-white/10 text-white transition-all"
+      >
+        Muat lebih banyak
+      </button>
+    </motion.div>
+  )}
+</div>
+{/* --- AKHIR SECTION VIDEO --- */}
       {/* GALERI FOTO */}
       <div className="container mx-auto px-6 py-16">
         <motion.h2
