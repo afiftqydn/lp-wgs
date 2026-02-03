@@ -88,26 +88,26 @@ const SubsidiaryDetailPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/90 z-0"></div>
                 
                 {/* UBAH: text-center DIUBAH jadi text-left sesuai request sebelumnya */}
-<div className="container mx-auto px-6 relative z-10 text-center text-white pb-10 md:pb-8">
-    <motion.div
-        variants={FadeUp(0.2)}
-        initial="initial"
-        animate="whileInView"
-    >
-        <h1 className="text-3xl md:text-5xl font-extrabold mb-5 tracking-wide text-white drop-shadow-lg">
-            {detail.name}
-        </h1>
+            <div className="container mx-auto px-6 relative z-10 text-center text-white pb-10 md:pb-8">
+                <motion.div
+                    variants={FadeUp(0.2)}
+                    initial="initial"
+                    animate="whileInView"
+                >
+                    <h1 className="text-3xl md:text-5xl font-extrabold mb-5 tracking-wide text-white drop-shadow-lg">
+                        {detail.name}
+                    </h1>
 
-        <p className="text-base md:text-xl font-light max-w-3xl leading-relaxed text-[#cae2c0] mx-auto">
-            Bergerak dan berdedikasi penuh dalam bidang
-            <span className="font-semibold text-white">
-                {" "}
-                {detail.items ? detail.items[0] : "Layanan Profesional"}
-            </span>{" "}
-            serta memberikan solusi terbaik bagi mitra kami.
-        </p>
-    </motion.div>
-</div>
+                    <p className="text-base md:text-xl font-light max-w-3xl leading-relaxed text-[#cae2c0] mx-auto">
+                        Bergerak dan berdedikasi penuh dalam bidang
+                        <span className="font-semibold text-white">
+                            {" "}
+                            {detail.items ? detail.items[0] : "Layanan Profesional"}
+                        </span>{" "}
+                        serta memberikan solusi terbaik bagi mitra kami.
+                    </p>
+                </motion.div>
+            </div>
             </div>
             {/* ====== MAIN CONTENT WRAPPER ====== */}
             <div className="flex-grow bg-[#cae2c0] container py-8 rounded-t-[50px] shadow-md">

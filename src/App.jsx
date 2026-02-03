@@ -5,28 +5,31 @@ import Page3 from "./pages/Page3";
 import Page4 from "./pages/Page4";
 import Page5 from "./pages/Page5";
 import Maintenance from "./pages/MaintenanceNavigation";
-
-// 1. IMPORT KOMPONEN DETAIL BARU
 import SubsidiaryDetailPage from "./pages/SubsidiaryDetailPage"; 
 
+// 1. Import komponen yang baru kita buat
+import VisitorCounter from "./components/VisitorCounter/VisitorCounter"; 
+
 const App = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/About-Us" element={<Page2/>} />
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/About-Us" element={<Page2/>} />
         
-        {/* 2. TAMBAHKAN RUTE DINAMIS UNTUK DETAIL ANAK PERUSAHAAN */}
-        {/* Rute ini akan menangani /subsidiary/sub-6, /subsidiary/sub-1, dst. */}
         <Route path="/Subholding/:id" element={<SubsidiaryDetailPage />} />
         
-        <Route path="/Products&Services" element={<Page3/>} />
-        <Route path="/Contact-Us" element={<Page4/>} />
-        <Route path="/Geleri&Berita" element={<Page5/>} />
-        <Route path="/mntc" element={<Maintenance/>} />
-      </Routes>
-    </Router>
-  )
+        <Route path="/Products&Services" element={<Page3/>} />
+        <Route path="/Contact-Us" element={<Page4/>} />
+        <Route path="/Geleri&Berita" element={<Page5/>} />
+        <Route path="/mntc" element={<Maintenance/>} />
+      </Routes>
+
+      {/* 2. Pasang komponen disini agar muncul di semua halaman */}
+      <VisitorCounter />
+      
+    </Router>
+  )
 }
 
 export default App

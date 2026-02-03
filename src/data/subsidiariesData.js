@@ -225,45 +225,48 @@ export const subsidiariesData = [
   },
 
   // =========================================================
-  // 6. Foodmedia (APLIKASI)
+  // 6. EKLB (EKLB)
   // =========================================================
   { 
-    id: "fmedia", 
-    name: "Foodmedia", 
-    tagline: "Platform Online Food Delivery", 
-    logo: "/foodmedia_logo.png", 
-    description: "Aplikasi pesan makanan yang menghubungkan restoran, driver, dan pelanggan. Menghadirkan reservasi meja, pesan-antar, hingga pick up dengan harga transparan.",
+    id: "eklb", 
+    name: "PT. Energi Komoditi Lintas Benua (EKLB)", 
+    tagline: "Integrated Agricultural Commodity Solution", 
+    logo: "/eklb_text.png", // Ambil dari Hal 1
+    description: "Perusahaan yang bergerak di sektor industri komoditas hulu-hilir, mulai dari pabrikasi pupuk, pembinaan petani, hingga pengelolaan pascapanen dan bursa perdagangan internasional.",
     items: [
-        "Reservasi Meja & Delivery Order",
-        "Layanan Pick Up di Restoran",
-        "Harga Transparan Tanpa Hidden Fee"
+        "Pemberdayaan Koperasi Tani & Mentoring",
+        "Integrasi Industri Hulu-Hilir Komoditas",
+        "Ekspor Komoditas ke Pasar Global"
     ],
     // --- DATA SLIDER CAROUSEL ---
     products: [
         { 
-            image: "/slideshow/fdmedia_copy.jpg", // Gambar mockup aplikasi
-            title: "Aplikasi Foodmedia" 
+            image: "/ppuk.jpg", // Referensi Hal 13 (GreenGrow/A-GRO)
+            title: "Komoditas Utama" 
         },
         { 
-            image: "/slideshow/fdmedia.jpg", // Siapkan gambar driver jaket foodmedia
-            title: "Mitra Driver Terpercaya" 
+            image: "/kop_tani.jpg", // Referensi Hal 12 (Peran Koperasi)
+            title: "Sistem Koperasi Tani Terpadu" 
         },
         { 
-            image: "/slideshow/food_merchant.jpg", // Siapkan gambar merchant/resto
-            title: "Merchant-Merchant Foodmedia" 
+            image: "/pabrikasi.jpeg", // Referensi Hal 11 (Proses Mentoring)
+            title: "Pabrikasi Teknologi" 
         }
     ],
-    // legal: {
-    //     // PERHATIAN: Isi data ini jika sudah tersedia
-    //     aktaPendirian: '', 
-    //     skKemenkumham: '-',
-    //     nib: '-',
-    //     npwp: '-',
-    // },
-    activityPhotoBg: 'url(/slideshow/fdmedia.jpg)', 
-    commissionersPhotoBg: 'url(/FOODMEDIA_Kom.jpeg)', 
+    legal: {
+        aktaPendirian: 'Akta No. 18 Notaris Kokoh (24 April 2019)', 
+        skKemenkumham: 'Tersedia',
+        nib: 'Tersedia',
+        npwp: 'Tersedia',
+    },
+    activityPhotoBg: 'url(/slideshow/gmbr5.jpg)', // Referensi Hal 4 (Peta Operasional)
+    commissionersPhotoBg: 'url(/eklb_notext.png)', 
     commissioners: [ 
-        { name: "Nama Komisaris A Foodmedia", photo: "/photos/placeholder_foodmedia.jpg" }
+        { 
+            name: "Dr. H. Hendra Firmansyah, S.E., M.M.", 
+            role: "CEO & Founder",
+            photo: "/photos/hendra_firmansyah.jpg" // Referensi Hal 2
+        }
     ]
   },
 ];
