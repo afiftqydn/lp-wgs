@@ -302,7 +302,7 @@ const Services = () => {
         <div className="flex justify-center mt-10">
             <button 
                 onClick={() => navigate('/Geleri&Berita')}
-                className="group flex items-center gap-2 bg-[#174b1d] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#143d18] hover:shadow-lg hover:scale-105 transition-all duration-300"
+                className="group flex items-center gap-2 bg-gray-900 text-lime-400 px-8 py-3 rounded-full font-semibold hover:bg-[#143d18] hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
                 Lihat Lebih Banyak
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

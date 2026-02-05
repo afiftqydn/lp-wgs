@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const GalleryGrid = ({ items }) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/Contact Us"); // Asumsi "/page4" adalah Contact Us
+    navigate("/Contact-Us"); // Asumsi "/page4" adalah Contact Us
   };
 
   const baseCardClass =
@@ -128,7 +128,7 @@ const GalleryGrid = ({ items }) => {
         </h3>
         <button
           onClick={handleClick}
-          className="flex items-center space-x-2 border border-green-600 text-green-600 py-3 px-6 rounded-full font-medium transition-all hover:bg-green-600 hover:text-white"
+          className="group flex items-center gap-2 bg-gray-900 text-lime-400 px-8 py-3 rounded-full font-semibold hover:bg-[#143d18] hover:shadow-lg hover:scale-105 transition-all duration-300"
         >
           <span>Hubungi Kami</span>
           <svg

@@ -1,36 +1,36 @@
-// src/components/SliderCarousel/SliderCarousel.jsx
-
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { useNavigate } from 'react-router-dom';
-import { subsidiariesData } from "../../data/subsidiariesData"; // Pastikan path ini benar
+import { useNavigate } from "react-router-dom";
+import { subsidiariesData } from "../../data/subsidiariesData";
 
-
+/* ================= CARD ================= */
 const CardView = ({ image, title, alt, onClick }) => (
-  <div 
-
-    className="
-      bg-[#cae4c3] bg-opacity-70 
-      rounded-xl shadow-lg overflow-hidden 
-      transition-transform duration-300 hover:scale-105 cursor-pointer 
-      flex items-center justify-center p-4 
-      h-28 sm:h-32 md:h-36 lg:h-44 xl:h-52
-    "
-
+  <div
     onClick={onClick}
+    className="
+      bg-[#cae4c3]
+      rounded-2xl
+      shadow-xl
+      flex items-center justify-center
+      p-6
+      h-40 sm:h-44
+      cursor-pointer
+      transition-all duration-300
+      mx-2 /* Memberi jarak antar kartu */
+    "
   >
-    <img 
-      src={image} 
-      alt={alt || title} 
-      className="max-w-full max-h-full object-contain"
+    <img
+      src={image}
+      alt={alt || title}
+      className="max-h-full max-w-full object-contain"
     />
   </div>
 );
 
-
-const CenteredCarousel = () => {
+/* ================= CAROUSEL ================= */
+const SliderCarousel = () => {
   const navigate = useNavigate();
 
   const handleCardClick = (id) => {
@@ -38,96 +38,82 @@ const CenteredCarousel = () => {
   };
 
   const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "0px", // Jarak visual antar kartu di desktop
-    slidesToShow: 3,       // Default 3 kartu untuk desktop
-    speed: 500,
-    arrows: false,
+    // === SETTINGAN DEFAULT (DESKTOP) ===
     dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,      // Desktop: 3 kartu
+    slidesToScroll: 1,
+    arrows: false,
     autoplay: true,
-    autoplaySpeed: 2500,
-    // Pengaturan responsif untuk berbagai ukuran layar
+    autoplaySpeed: 3000,
+    centerMode: true,     
+    centerPadding: "0px", // Desktop: Pas 3 kartu tanpa intip pinggir
+
+    // === SETTINGAN RESPONSIVE (MOBILE) ===
     responsive: [
       {
-        // Tablet
-        breakpoint: 1024,
+        breakpoint: 1024, // Tablet
         settings: {
-          slidesToShow: 1,
-          centerPadding: "100px",
+          slidesToShow: 3,
+          centerPadding: "0px",
         }
       },
       {
-        // Mobile Besar
-        breakpoint: 768,
+        breakpoint: 768, // Mobile (HP)
         settings: {
-          slidesToShow: 1,
-          centerPadding: "40px",
-        }
-      },
-      {
-        // Mobile Kecil
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          centerPadding: "25px",
+          slidesToShow: 1,     // PENTING: Cuma 1 kartu
+          centerMode: true,    // Tetap true agar CSS slick-center jalan
+          centerPadding: "30px", // Beri sedikit "napas" (30px) agar kartu tidak terlalu mepet layar, TAPI kalau mau benar-benar full 1 kartu tanpa sisa, ubah jadi "0px"
         }
       }
     ]
   };
 
-  // Mencegah error jika data belum siap/kosong
-  if (!subsidiariesData || subsidiariesData.length === 0) {
-    return null;
-  }
+  if (!subsidiariesData?.length) return null;
 
   return (
-    // Fragment <></> untuk membungkus style dan section
     <>
-      {/* CSS tambahan untuk memoles tampilan dots dan arrows */}
       <style>{`
-        /* Dots container */
+        /* Mengatur style kartu yang sedang aktif (tengah) vs tidak aktif */
+        .slick-slide > div {
+           transform: scale(0.9); /* Kartu samping lebih kecil */
+           transition: transform 0.3s;
+           opacity: 0.5; /* Kartu samping transparan */
+        }
+        
+        .slick-center > div {
+           transform: scale(1); /* Kartu aktif normal */
+           opacity: 1;
+        }
+
+        /* Geser dots ke bawah sedikit agar tidak menumpuk card */
         .slick-dots {
-          bottom: -30px; /* geser ke bawah */
+            bottom: -35px;
         }
-
-        /* Dot normal */
         .slick-dots li button:before {
-          font-size: 8px;       /* kecilkan ukuran */
-          color: #ffffff;       /* abu-abu netral */
-          opacity: 0.5;
-        }
-
-        /* Dot aktif */
-        .slick-dots li.slick-active button:before {
-          color: #000000;       /* hijau sesuai tema */
-          opacity: 0.8;
-        }
-
-        /* Opsional: rapatkan jarak antar dots */
-        .slick-dots li {
-          margin: 0 2px;
+            color: #fff; /* Warna dots putih */
+            font-size: 10px;
         }
       `}</style>
-      
-      <section className="w-full py-7 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4">
-          <Slider {...settings}>
-            {subsidiariesData.map((card) => (
-              <div key={card.id} className="p-2">
-                <CardView 
-                  image={card.logo} 
-                  title={card.name} 
-                  onClick={() => handleCardClick(card.id)}
-                />
-              </div>
-            ))}
-          </Slider>
-        </div>
+
+      <section className="w-full">
+         <div className="max-w-7xl mx-auto px-4">
+            <Slider {...settings}>
+              {subsidiariesData.map((card) => (
+                <div key={card.id} className="py-4"> {/* Padding vertical agar shadow tidak terpotong */}
+                  <CardView
+                    image={card.logo}
+                    title={card.name}
+                    onClick={() => handleCardClick(card.id)}
+                  />
+                </div>
+              ))}
+            </Slider>
+         </div>
       </section>
     </>
   );
 };
 
-export default CenteredCarousel;
+export default SliderCarousel;

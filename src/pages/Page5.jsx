@@ -50,7 +50,7 @@ const Page5 = () => {
       <Navbar />
 
       {/* HERO */}
-      <div className="pt-28 pb-16 text-center bg-gradient-to-b from-black/40 to-transparent">
+      <div className="pt-40 pb-16 text-center bg-gradient-to-b from-black/40 to-transparent">
         <motion.h1
           variants={FadeUp(0.1)}
           initial="initial"
@@ -94,7 +94,7 @@ const Page5 = () => {
           >
             <button
               onClick={handleLoadMoreNews}
-              className="px-6 py-3 rounded-full border border-lime-300 text-lime-300 font-medium hover:bg-lime-300 hover:text-black transition-all shadow-lg"
+              className="group flex items-center gap-2 bg-gray-900 text-lime-400 px-8 py-3 rounded-full font-semibold hover:bg-[#143d18] hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               Lihat Lebih Banyak Berita
             </button>
@@ -194,7 +194,7 @@ const Page5 = () => {
     >
       <button
         onClick={handleLoadMoreVideos}
-        className="px-8 py-2 rounded-full border border-white/20 text-sm font-medium hover:bg-white/10 text-white transition-all"
+        className="group flex items-center gap-2 bg-gray-900 text-lime-400 px-8 py-3 rounded-full font-semibold hover:bg-[#143d18] hover:shadow-lg hover:scale-105 transition-all duration-300"
       >
         Muat lebih banyak
       </button>

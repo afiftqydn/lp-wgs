@@ -28,9 +28,9 @@ const VisitorCounter = () => {
     },
     // TAMBAHAN: Style khusus untuk mematikan link
     disableClick: {
-      pointerEvents: 'none', // INI KUNCINYA: Bikin elemen "tembus pandang" dari mouse
-      cursor: 'default',     // Kursor tetap panah biasa, bukan jari telunjuk
-      display: 'flex'        // Biar rapi
+      pointerEvents: 'none', 
+      cursor: 'default',     
+      display: 'flex'      
     }
   };
 

@@ -85,7 +85,7 @@ const Hero = () => {
               >
                 <button
                   onClick={handleClick}
-                  className="group flex items-center gap-2 rounded-full border-2 border-[#174b1d] px-8 py-3 font-semibold text-[#174b1d] transition-all duration-300 hover:bg-[#174b1d] hover:text-white"
+                  className="group flex items-center gap-2 bg-gray-900 text-lime-400 rounded-full border-2 border-[#174b1d] px-8 py-3 font-semibold text-[#174b1d] transition-all duration-300 hover:bg-[#174b1d] hover:text-lime-400"
                 >
                   Selengkapnya
                   <IoIosArrowRoundForward className="text-2xl duration-300 group-hover:-rotate-45 group-hover:translate-x-2" />

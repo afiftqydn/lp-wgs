@@ -293,30 +293,46 @@ const SubsidiaryDetailPage = () => {
                         )}
 
                         {/* Tombol Navigasi */}
-                        <div className="flex justify-center gap-4 mt-12 pb-8">
-                            <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-8 w-full">
-                                <Link
-                                    to="/About-Us#sub-holding"
-                                    className="flex justify-center items-center px-4 py-2 rounded-full bg-[#cae2c0] border-2 border-[#174b1d] text-[#174b1d] font-bold hover:bg-[#174b1d] hover:text-white transition duration-300 shadow-lg hover:shadow-xl w-full md:w-64 h-16"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                                    </svg>
-                                    <span className="text-center text-sm leading-tight">
-                                        Kembali ke <br /> Ekosistem Bisnis
-                                    </span>
-                                </Link>
+                        <div className="flex justify-center mt-12 pb-8">
+                        <div className="flex flex-col md:flex-row gap-4 w-full max-w-md">
+                            
+                            {/* Kembali */}
+                            <Link
+                            to="/About-Us#sub-holding"
+                            className="relative flex items-center justify-center w-full bg-gray-900 text-lime-400 px-8 py-3 rounded-full font-semibold
+                                        hover:bg-[#143d18] hover:shadow-lg hover:scale-105 transition-all duration-300"
+                            >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="absolute left-6 h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                            </svg>
+                            <span className="text-sm">Kembali</span>
+                            </Link>
 
-                                <Link
-                                    to="/Contact-Us"
-                                    className="flex justify-center items-center px-4 py-2 rounded-full bg-[#cae2c0] border-2 border-[#174b1d] text-[#174b1d] font-bold hover:bg-[#174b1d] hover:text-white transition duration-300 shadow-lg hover:shadow-xl w-full md:w-64 h-16"
-                                >
-                                    Hubungi Kami
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </Link>
-                            </div>
+                            {/* Hubungi Kami */}
+                            <Link
+                            to="/Contact-Us"
+                            className="relative flex items-center justify-center w-full bg-gray-900 text-lime-400 px-8 py-3 rounded-full font-semibold
+                                        hover:bg-[#143d18] hover:shadow-lg hover:scale-105 transition-all duration-300"
+                            >
+                            <span className="text-sm">Hubungi Kami</span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="absolute right-6 h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                            </Link>
+
+                        </div>
                         </div>
                     </div>
                 </div>

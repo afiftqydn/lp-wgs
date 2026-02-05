@@ -106,7 +106,7 @@
   transition: all 0.3s ease;
 }
 .slick-dots li.slick-active button:before {
-  color: #2563EB;       /* Biru Tailwind */
+  color: #00b503;       /* Biru Tailwind */
   font-size: 14px;      /* Lebih besar pas aktif */
   opacity: 1;
   transform: scale(1.3);
