@@ -269,4 +269,51 @@ export const subsidiariesData = [
         }
     ]
   },
+  // =========================================================
+  // 7. PT. Energi Komoditi Internasional (EKI)
+  // =========================================================
+  { 
+    id: "eki", 
+    name: "PT. Energi Komoditi Internasional (EKI)", 
+    tagline: "Global Trading & Energy Commodity Solutions", 
+    logo: "/eki_logo.png", // Pastikan file logo ini tersedia di folder public
+    description: "PT. Energi Komoditi Internasional (EKI) berfokus pada perdagangan komoditas energi di pasar internasional. Kami menjembatani sumber daya energi lokal dengan permintaan global melalui manajemen rantai pasok yang efisien dan kemitraan strategis lintas negara.", 
+    items: [
+      "Perdagangan Komoditas Energi Internasional",
+      "Manajemen Rantai Pasok (Supply Chain) Global",
+      "Kemitraan Strategis Ekspor-Impor",
+      "Konsultasi Investasi Sektor Energi"
+    ],
+    // --- DATA SLIDER CAROUSEL ---
+    // products: [
+    //     { 
+    //         image: "/slideshow/eki_trading.jpg", // Siapkan gambar aktivitas trading/pelabuhan
+    //         title: "Global Commodity Trading" 
+    //     },
+    //     { 
+    //         image: "/slideshow/eki_ship.jpg", // Siapkan gambar logistik/kapal
+    //         title: "International Shipping & Logistics" 
+    //     },
+    //     { 
+    //         image: "/slideshow/eki_energy.jpg", // Siapkan gambar sumber daya energi
+    //         title: "Energy Resource Management" 
+    //     }
+    // ],
+    legal: {
+        // Silakan sesuaikan data legalitas jika sudah ada dokumen resminya
+        aktaPendirian: 'Tersedia', 
+        skKemenkumham: 'Tersedia',
+        nib: 'Tersedia',
+        npwp: 'Tersedia',
+    },
+    activityPhotoBg: 'url(/eki_bg.png)', // Background untuk tampilan depan card
+    commissionersPhotoBg: 'url(/eki_logo.png)', 
+    commissioners: [ 
+        { 
+            name: "Nama Komisaris EKI", 
+            role: "Board of Directors",
+            photo: "/photos/placeholder_eki.jpg" 
+        }
+    ]
+  },
 ];

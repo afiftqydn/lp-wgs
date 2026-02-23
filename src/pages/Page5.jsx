@@ -65,7 +65,7 @@ const Page5 = () => {
           animate="animate"
           className="text-gray-200 max-w-2xl mx-auto text-lg"
         >
-          Jelajahi galeri aktivitas, video dokumentasi, dan berita terbaru dari PT Firmans Khatulistiwa Group.
+          Jelajahi galeri aktivitas, dokumentasi & berita terbaru dari PT Firman's Group.
         </motion.p>
       </div>
 
