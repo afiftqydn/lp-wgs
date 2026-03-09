@@ -253,7 +253,7 @@ const Page4 = () => {
               <p className="flex items-center gap-3"><span className="text-green-700 text-xl">✉️</span> <span className="break-all">ptfirmansyahkhatulistiwagroup@gmail.com</span></p>
             </div>
             <div className="h-[250px] rounded-2xl overflow-hidden border border-gray-900/10 shadow-lg">
-              <iframe src="https://maps.google.com/maps?q=Jl.+Panglima+Aim+No.+74,+Pontianak+Timur&t=&z=15&ie=UTF8&iwloc=&output=embed" className="w-full h-full grayscale hover:grayscale-0 transition duration-500" loading="lazy" title="Lokasi Kantor" />
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10267.116540538467!2d109.36121181190813!3d-0.030731270817463473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d59002f4751e9%3A0xebc19c21d84d371d!2sFirman&#39;s%20Group!5e0!3m2!1sen!2sus!4v1773028915918!5m2!1sen!2sus" className="w-full h-full grayscale hover:grayscale-0 transition duration-500" loading="lazy" title="Lokasi Kantor" />
             </div>
           </motion.div>
         </div>
