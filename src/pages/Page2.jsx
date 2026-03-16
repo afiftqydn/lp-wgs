@@ -273,17 +273,18 @@ const Page2 = () => {
           </div>
 
           {/* Grid Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4"> 
-            {subsidiaries.map((sub, index) => (
-                <motion.div
-                    key={sub.name}
-                    variants={FadeUp(0.3 + index * 0.1)}
-                    initial="initial"
-                    whileInView="whileInView"
-                    viewport={{ once: true }}
-                    onClick={() => handleCardClick(sub)}
-                    className="group h-[350px] w-full perspective-1000 cursor-pointer"
-                >
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6"> 
+            {subsidiaries.map((sub, index) => (
+                <motion.div
+                    key={sub.name}
+                    variants={FadeUp(0.3 + index * 0.1)}
+                    initial="initial"
+                    whileInView="whileInView"
+                    viewport={{ once: true }}
+                    onClick={() => handleCardClick(sub)}
+                    // Sedikit penyesuaian tinggi jika card terlihat terlalu memanjang di layar besar
+                    className="group h-[300px] md:h-[350px] w-full perspective-1000 cursor-pointer"
+                >
                     {/* Inner Flip Container */}
                     <div className="relative w-full h-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] rounded-3xl shadow-xl">
                         

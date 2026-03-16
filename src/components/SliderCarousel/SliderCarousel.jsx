@@ -13,9 +13,9 @@ const CardView = ({ image, title, alt, onClick }) => (
       bg-[#cae4c3]
       rounded-2xl
       shadow-xl
-      flex items-center justify-center
-      p-6
-      h-40 sm:h-44
+      flex flex-col items-center justify-center /* Tambahkan flex-col di sini */
+      p-4 sm:p-6
+      h-48 sm:h-56 /* Tinggikan sedikit card-nya agar muat teks */
       cursor-pointer
       transition-all duration-300
       mx-2 /* Memberi jarak antar kartu */
@@ -24,8 +24,13 @@ const CardView = ({ image, title, alt, onClick }) => (
     <img
       src={image}
       alt={alt || title}
-      className="max-h-full max-w-full object-contain"
+      // Batasi tinggi gambar dan beri margin bawah (mb-3)
+      className="h-20 sm:h-24 max-w-full object-contain mb-3" 
     />
+    {/* Teks nama perusahaan */}
+    <h3 className="text-center font-semibold text-sm sm:text-base text-gray-800 leading-tight">
+      {title}
+    </h3>
   </div>
 );
 
@@ -44,7 +49,7 @@ const SliderCarousel = () => {
     speed: 500,
     slidesToShow: 3,      // Desktop: 3 kartu
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
     autoplay: true,
     autoplaySpeed: 3000,
     centerMode: true,     
@@ -64,7 +69,7 @@ const SliderCarousel = () => {
         settings: {
           slidesToShow: 1,     // PENTING: Cuma 1 kartu
           centerMode: true,    // Tetap true agar CSS slick-center jalan
-          centerPadding: "30px", // Beri sedikit "napas" (30px) agar kartu tidak terlalu mepet layar, TAPI kalau mau benar-benar full 1 kartu tanpa sisa, ubah jadi "0px"
+          centerPadding: "30px", // Beri sedikit "napas" (30px) agar kartu tidak terlalu mepet layar
         }
       }
     ]

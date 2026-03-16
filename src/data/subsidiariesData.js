@@ -8,7 +8,7 @@ export const subsidiariesData = [
     id: "wgs", 
     name: "PT. Win Global Solusitama", 
     tagline: "Sinergi Bisnis & Pemberdayaan Ekonomi", 
-    logo: "/wgs_karousel.png", // Pastikan file ini ada
+    logo: "/wgs_karousel.png",
     description: "PT. Win Global Solusitama (WGS) membangun ekosistem bisnis terintegrasi yang berfokus pada pertumbuhan berkelanjutan dan pemberdayaan ekonomi kerakyatan berbasis syariah di setiap unit usahanya.", 
     items: [
       "Pembiayaan Umroh & Haji",
@@ -17,18 +17,17 @@ export const subsidiariesData = [
       "Pembiayaan Pertanian",
       "Pembiayaan Pendidikan"
     ],
-    // --- DATA SLIDER CAROUSEL (Diisi sesuai layanan WGS) ---
     products: [
         { 
-            image: "/slideshow/gmbr3.jpg", // Gambar kegiatan/umum
+            image: "/slideshow/gmbr3.jpg", 
             title: "Ekosistem Bisnis Terintegrasi" 
         },
         { 
-            image: "/wgs_housing.jpg", // Siapkan gambar perumahan
+            image: "/wgs_housing.jpg", 
             title: "Proyek Perumahan Subsidi & Komersil" 
         },
         { 
-            image: "/wgs_travel.jpg", // Siapkan gambar travel/umroh
+            image: "/wgs_travel.jpg", 
             title: "Layanan Travel Umroh & Haji" 
         }
     ],
@@ -51,33 +50,30 @@ export const subsidiariesData = [
   { 
     id: "pnk", 
     name: "PT. Palm Nusa Khatulistiwa", 
-    tagline: "Solusi Minyak Goreng Higienis & Ramah Lingkungan", // [cite: 121, 122]
+    tagline: "Solusi Minyak Goreng Higienis & Ramah Lingkungan", 
     logo: "/pnk.png",
-    // Deskripsi dirangkum dari Slide 1 & 2 
     description: "PT. Palm Nusa Khatulistiwa adalah perusahaan distribusi minyak goreng yang mengusung konsep modern melalui sistem POMIGOR (POM Mini Minyak Goreng). Kami berkomitmen menyediakan minyak goreng berkualitas yang higienis dan terjangkau, serta mendukung kelestarian lingkungan dengan mengurangi penggunaan plastik sekali pakai.",
     items: [
-      "Layanan Isi Ulang (Refill) POMIGOR Modern", // Slide 5 (Retail)
-      "Distribusi Grosir untuk UMKM & Warung",     // Slide 5 (Grosir)
-      "Suplai Minyak Goreng Skala Industri",       // Slide 5 (Industri)
-      "Kemitraan Usaha & Franchise"                // Slide 5 [cite: 163]
+      "Layanan Isi Ulang (Refill) POMIGOR Modern",
+      "Distribusi Grosir untuk UMKM & Warung",
+      "Suplai Minyak Goreng Skala Industri",
+      "Kemitraan Usaha & Franchise"
     ],
-    // --- DATA SLIDER CAROUSEL (Disesuaikan dengan Slide 5 & 6) ---
     products: [
         { 
-            image: "/pomigor_machine.jpg", // Siapkan foto mesin POMIGOR (Slide 6)
+            image: "/pomigor_machine.jpg", 
             title: "Teknologi POMIGOR Higienis" 
         },
         { 
-            image: "/retail_refill.jpg", // Siapkan foto proses isi ulang (Slide 5 Retail)
+            image: "/retail_refill.jpg", 
             title: "Layanan Isi Ulang Praktis" 
         },
         { 
-            image: "/grosir_supply.jpg", // Siapkan foto jerigen/tangki (Slide 5 Industri)
+            image: "/grosir_supply.jpg", 
             title: "Suplai Grosir & Industri" 
         }
     ],
     legal: {
-        // Data legalitas dari input sebelumnya (karena di PPT hanya berupa header)
         aktaPendirian: 'Akta No. 55, 12 Agustus 2025 oleh Notaris Reno Rizaldi Nalaprana, S.H., M.Kn.',
         skKemenkumham: 'Nomor AHU-0068269.AH.01.01.TAHUN 2025 (13 Agustus 2025)',
         nib: '2908250090444',
@@ -96,36 +92,32 @@ export const subsidiariesData = [
   { 
     id: "agk", 
     name: "PT. Agrikultur Global Khatulistiwa", 
-    // Tagline diambil dari slide 5
     tagline: "Membangun Masa Depan yang Berkelanjutan, Satu Panen pada Satu Waktu", 
     logo: "/agri_logo.png",
-    // Deskripsi diambil dari slide 6 & 7
     description: "PT. Agrikultur Global Khatulistiwa adalah perusahaan agribisnis terpadu yang mencakup peternakan, perikanan, pertanian, dan perkebunan. Kami hadir mendukung ketahanan pangan nasional dengan menyediakan produk unggulan hasil budidaya ayam petelur, ikan, hingga komoditas pertanian berkualitas tinggi.",
     items: [
-      "Peternakan Ayam Petelur (Layer) Terintegrasi", // Fokus utama di slide 49
-      "Produksi Telur Ayam Berkualitas Tinggi",      // Slide 57
-      "Budidaya Perikanan & Pertanian Berkelanjutan", // Slide 34, 36
-      "Pengelolaan Kandang Modern (Open & Close House)" // Slide 84-87
+      "Peternakan Ayam Petelur (Layer) Terintegrasi",
+      "Produksi Telur Ayam Berkualitas Tinggi",
+      "Budidaya Perikanan & Pertanian Berkelanjutan",
+      "Pengelolaan Kandang Modern (Open & Close House)"
     ],
-    // --- DATA SLIDER CAROUSEL (Disesuaikan dengan konten PPT) ---
     products: [
         { 
-            image: "/ayam_petelur.jpg", // Ganti dengan foto ayam dari slide 46/63
+            image: "/ayam_petelur.jpg", 
             title: "Budidaya Ayam Petelur" 
         },
         { 
-            image: "/telur_segar.jpg", // Ganti dengan foto telur dari slide 45
+            image: "/telur_segar.jpg", 
             title: "Produksi Telur Segar" 
         },
         { 
-            image: "/kandang_modern.jpg", // Ganti dengan foto kandang dari slide 81-87
+            image: "/kandang_modern.jpg", 
             title: "Fasilitas Kandang" 
         }
     ],
     legal: {
         aktaPendirian: 'Akta No. 239, 29 September 2025 oleh Notaris Reno Rizaldi Nalaprana, S.H., M.Kn.',
         skKemenkumham: 'Nomor AHU-0084404.AH.01.01.TAHUN 2025 (01 Oktober 2025)',
-        // nib: '—',
         npwp: '1000 0000 0652 8321',
     },
     activityPhotoBg: 'url(/agri.jpg)', 
@@ -141,49 +133,214 @@ export const subsidiariesData = [
   { 
     id: "amn", 
     name: "PT. Alfarizi Media Nusantara", 
-    tagline: "Event Management, Advertising & Production", // Diambil dari Header Cover [cite: 106]
+    tagline: "Event Management, Advertising & Production", 
     logo: "/entertaint.png",
-    // Deskripsi dirangkum dari Slide 2 (About Us) [cite: 111-112]
     description: "PT. Alfarizi Media Nusantara adalah perusahaan kreatif yang berspesialisasi dalam media entertainment dan produksi. Kami hadir sebagai mitra terdepan dalam menciptakan hiburan berkualitas tinggi, event organizer profesional, serta solusi branding dan digital kreatif yang inovatif.",
     items: [
-      "Event Management & Music Promotor", // Slide 8 (WGS Mediatainment) [cite: 188]
-      "Advertising & Media Placement (Billboard/Online)", // Slide 8 (WGS Advertising) [cite: 191]
-      "Production House (TVC, Konten Digital)", // Slide 8 (Digimax Picture) [cite: 196]
-      "Rental Studio (Podcast & Photography)", // Slide 8 (WGS Studios) [cite: 197]
-      "Branding Identity & Digital Design" // Slide 3 [cite: 115]
+      "Event Management & Music Promotor",
+      "Advertising & Media Placement (Billboard/Online)",
+      "Production House (TVC, Konten Digital)",
+      "Rental Studio (Podcast & Photography)",
+      "Branding Identity & Digital Design"
     ],
-    // --- DATA SLIDER CAROUSEL (Disesuaikan Portfolio Slide 7 & 9) ---
     products: [
         { 
-            image: "/concert_event.jpg", // Ganti dengan foto konser dari Slide 7/9 [cite: 165]
+            image: "/concert_event.jpg", 
             title: "Promotor Konser & Event" 
         },
         { 
-            image: "/creative_studio.jpg", // Ganti dengan foto studio/branding Slide 3 [cite: 121]
+            image: "/creative_studio.jpg", 
             title: "Creative Studio & Production" 
         },
         { 
-            image: "/food_media_app.jpg", // Ganti dengan foto aplikasi Food Media Slide 10 [cite: 202]
+            image: "/food_media_app.jpg", 
             title: "Pengembangan Platform Digital" 
         }
     ],
     legal: {
-        // Data legalitas tetap menggunakan data sebelumnya (karena tidak tercantum di PDF)
         aktaPendirian: 'Akta No. 240, 29 September 2025 oleh Notaris Reno Rizaldi Nalaprana, S.H., M.Kn.',
         skKemenkumham: 'Nomor AHU-0084407.AH.01.01.TAHUN 2025 (01 Oktober 2025)',
-        // nib: '—',
         npwp: '1000 0000 0655 8696',
     },
     activityPhotoBg: 'url(/slideshow/borneo_f.jpg)', 
     commissionersPhotoBg: 'url(/AMN_Kom.jpeg)', 
     commissioners: [ 
-        // Diupdate sesuai Slide 5 
         { name: "Dhani Firdy (Director)", photo: "/photos/dhani_firdy.jpg" } 
     ]
   },
 
   // =========================================================
-  // 5. Koperasi Jasa Syariah Bhumi Pasundan Sejahtera
+  // 5. PT. Energi Komoditi Lintas Benua (EKLB)
+  // =========================================================
+  { 
+    id: "eklb", 
+    name: "PT. Energi Komoditi Lintas Benua (EKLB)", 
+    tagline: "Integrated Agricultural Commodity Solution", 
+    logo: "/eklb_text.png",
+    description: "Perusahaan yang bergerak di sektor industri komoditas hulu-hilir, mulai dari pabrikasi pupuk, pembinaan petani, hingga pengelolaan pascapanen dan bursa perdagangan internasional.",
+    items: [
+        "Pemberdayaan Koperasi Tani & Mentoring",
+        "Integrasi Industri Hulu-Hilir Komoditas",
+        "Ekspor Komoditas ke Pasar Global"
+    ],
+    products: [
+        { 
+            image: "/ppuk.jpg", 
+            title: "Komoditas Utama" 
+        },
+        { 
+            image: "/kop_tani.jpg", 
+            title: "Sistem Koperasi Tani Terpadu" 
+        },
+        { 
+            image: "/pabrikasi.jpeg", 
+            title: "Pabrikasi Teknologi" 
+        }
+    ],
+    legal: {
+        aktaPendirian: 'Akta No. 18 Notaris Kokoh (24 April 2019)', 
+        skKemenkumham: 'Tersedia',
+        nib: 'Tersedia',
+        npwp: 'Tersedia',
+    },
+    activityPhotoBg: 'url(/slideshow/gmbr5.jpg)', 
+    commissionersPhotoBg: 'url(/AFG.jpeg)', 
+    commissioners: [ 
+        { 
+            name: "Dr. H. Hendra Firmansyah, S.E., M.M.", 
+            role: "CEO & Founder",
+            photo: "/photos/hendra_firmansyah.jpg"
+        }
+    ]
+  },
+
+  // =========================================================
+  // 6. PT. Energi Komoditi Internasional (EKI)
+  // =========================================================
+  { 
+    id: "eki", 
+    name: "PT. Energi Komoditi Internasional (EKI)", 
+    tagline: "Global Trading & Energy Commodity Solutions", 
+    logo: "/eki_logo.png",
+    description: "PT. Energi Komoditi Internasional (EKI) berfokus pada perdagangan komoditas energi di pasar internasional. Kami menjembatani sumber daya energi lokal dengan permintaan global melalui manajemen rantai pasok yang efisien dan kemitraan strategis lintas negara.", 
+    items: [
+      "Perdagangan Komoditas Energi Internasional",
+      "Manajemen Rantai Pasok (Supply Chain) Global",
+      "Kemitraan Strategis Ekspor-Impor",
+      "Konsultasi Investasi Sektor Energi"
+    ],
+    legal: {
+        aktaPendirian: 'Tersedia', 
+        skKemenkumham: 'Tersedia',
+        nib: 'Tersedia',
+        npwp: 'Tersedia',
+    },
+    activityPhotoBg: 'url(/eki_bg.png)', 
+    commissionersPhotoBg: 'url(/AFG.jpeg)', 
+    commissioners: [ 
+        { 
+            name: "Nama Komisaris EKI", 
+            role: "Board of Directors",
+            photo: "/photos/placeholder_eki.jpg" 
+        }
+    ]
+  },
+
+  // =========================================================
+  // 7. PT. Khatulistiwa Konstruksi Indonesia (KKI)
+  // =========================================================
+  { 
+    id: "kki", 
+    name: "PT. Khatulistiwa Konstruksi Indonesia", 
+    tagline: "Solusi Konstruksi & Infrastruktur Terpercaya", 
+    logo: "/KKI.png", 
+    description: "PT. Khatulistiwa Konstruksi Indonesia bergerak di bidang konstruksi dan pengembangan infrastruktur dengan komitmen pada kualitas, keselamatan, dan ketepatan waktu.", 
+    items: [
+      "Konstruksi Bangunan Komersial & Residensial",
+      "Pengembangan Infrastruktur",
+      "Manajemen Proyek Konstruksi"
+    ],
+    legal: {
+        aktaPendirian: 'Tersedia', 
+        skKemenkumham: 'Tersedia',
+        nib: 'Tersedia',
+        npwp: 'Tersedia',
+    },
+    activityPhotoBg: 'url(/kntrksi.png)', 
+    commissionersPhotoBg: 'url(/AFG.jpeg)', 
+    commissioners: [ 
+        { 
+            name: "Nama Komisaris KKI", 
+            role: "Board of Directors",
+            photo: "/photos/placeholder_kki.jpg" 
+        }
+    ]
+  },
+
+  // =========================================================
+  // 8. PT. Alfa Abadi Nusantara (AAN)
+  // =========================================================
+  { 
+    id: "aan", 
+    name: "PT. Alfa Abadi Nusantara", 
+    tagline: "Penyedia Layanan Outsourcing & SDM Profesional", 
+    logo: "/AAN.png", 
+    description: "PT. Alfa Abadi Nusantara adalah perusahaan penyedia layanan tenaga kerja (outsourcing) terpadu. Kami berkomitmen untuk menyalurkan sumber daya manusia yang terampil, terlatih, dan profesional guna mendukung efisiensi operasional bisnis mitra kami di berbagai sektor.", 
+    items: [
+      "Penyediaan Tenaga Keamanan (Security Guard)",
+      "Layanan Kebersihan (Cleaning Service Profesional)",
+      "Penyaluran Tenaga Administrasi & Operasional"
+    ],
+    legal: {
+        aktaPendirian: 'Tersedia', 
+        skKemenkumham: 'Tersedia',
+        nib: 'Tersedia',
+        npwp: 'Tersedia',
+    },
+    activityPhotoBg: 'url(/os.png)', 
+    commissionersPhotoBg: 'url(/AFG.jpeg)', 
+    commissioners: [ 
+        { 
+            name: "Nama Komisaris AAN", 
+            role: "Board of Directors",
+            photo: "/photos/placeholder_aan.jpg" 
+        }
+    ]
+  },
+
+  // =========================================================
+  // 9. PT. Borneo Nusantara Indonesia (BNI)
+  // =========================================================
+  { 
+    id: "bni", 
+    name: "PT. Borneo Nusantara Indonesia", 
+    tagline: "Solusi Logistik & Ekspedisi Terpercaya", 
+    logo: "/BNI.png", 
+    description: "PT. Borneo Nusantara Indonesia bergerak di bidang layanan ekspedisi dan logistik. Kami menyediakan solusi pengiriman barang yang cepat, aman, dan efisien dengan jangkauan luas untuk memenuhi kebutuhan distribusi komoditas dan barang ke seluruh penjuru Nusantara.", 
+    items: [
+      "Layanan Pengiriman Kargo & Ekspedisi Terpadu",
+      "Manajemen Logistik & Rantai Pasok (Supply Chain)",
+      "Distribusi Darat, Laut, dan Udara Skala Nasional"
+    ],
+    legal: {
+        aktaPendirian: 'Tersedia', 
+        skKemenkumham: 'Tersedia',
+        nib: 'Tersedia',
+        npwp: 'Tersedia',
+    },
+    activityPhotoBg: 'url(/armd.jpg)', 
+    commissionersPhotoBg: 'url(/AFG.jpeg)', 
+    commissioners: [ 
+        { 
+            name: "Nama Komisaris BNI", 
+            role: "Board of Directors",
+            photo: "/photos/placeholder_bni.jpg" 
+        }
+    ]
+  },
+
+  // =========================================================
+  // 10. Koperasi Jasa Syariah Bhumi Pasundan Sejahtera
   // =========================================================
   { 
     id: "bps", 
@@ -196,18 +353,17 @@ export const subsidiariesData = [
       "Pembiayaan haji & umroh",
       "Pemberdayaan UMKM"
     ],
-    // --- DATA SLIDER CAROUSEL ---
     products: [
         { 
-            image: "/umkmsingkawang.jpg", // Gambar kegiatan koperasi
+            image: "/umkmsingkawang.jpg", 
             title: "Pemberdayaan Anggota UMKM" 
         },
         { 
-            image: "/slideshow/akad_syariah.jpg", // Siapkan gambar jabat tangan/akad
+            image: "/slideshow/akad_syariah.jpg", 
             title: "Akad & Pembiayaan Syariah" 
         },
         { 
-            image: "/slideshow/gmbr2.jpg", // Siapkan gambar rapat anggota
+            image: "/slideshow/gmbr2.jpg", 
             title: "Rapat Anggota & Gathering" 
         }
     ],
@@ -222,98 +378,5 @@ export const subsidiariesData = [
     commissioners: [ 
         { name: "Nama Komisaris A KJSBPS", photo: "/photos/placeholder_kjsbps.jpg" }
     ]
-  },
-
-  // =========================================================
-  // 6. EKLB (EKLB)
-  // =========================================================
-  { 
-    id: "eklb", 
-    name: "PT. Energi Komoditi Lintas Benua (EKLB)", 
-    tagline: "Integrated Agricultural Commodity Solution", 
-    logo: "/eklb_text.png", // Ambil dari Hal 1
-    description: "Perusahaan yang bergerak di sektor industri komoditas hulu-hilir, mulai dari pabrikasi pupuk, pembinaan petani, hingga pengelolaan pascapanen dan bursa perdagangan internasional.",
-    items: [
-        "Pemberdayaan Koperasi Tani & Mentoring",
-        "Integrasi Industri Hulu-Hilir Komoditas",
-        "Ekspor Komoditas ke Pasar Global"
-    ],
-    // --- DATA SLIDER CAROUSEL ---
-    products: [
-        { 
-            image: "/ppuk.jpg", // Referensi Hal 13 (GreenGrow/A-GRO)
-            title: "Komoditas Utama" 
-        },
-        { 
-            image: "/kop_tani.jpg", // Referensi Hal 12 (Peran Koperasi)
-            title: "Sistem Koperasi Tani Terpadu" 
-        },
-        { 
-            image: "/pabrikasi.jpeg", // Referensi Hal 11 (Proses Mentoring)
-            title: "Pabrikasi Teknologi" 
-        }
-    ],
-    legal: {
-        aktaPendirian: 'Akta No. 18 Notaris Kokoh (24 April 2019)', 
-        skKemenkumham: 'Tersedia',
-        nib: 'Tersedia',
-        npwp: 'Tersedia',
-    },
-    activityPhotoBg: 'url(/slideshow/gmbr5.jpg)', // Referensi Hal 4 (Peta Operasional)
-    commissionersPhotoBg: 'url(/eklb_notext.png)', 
-    commissioners: [ 
-        { 
-            name: "Dr. H. Hendra Firmansyah, S.E., M.M.", 
-            role: "CEO & Founder",
-            photo: "/photos/hendra_firmansyah.jpg" // Referensi Hal 2
-        }
-    ]
-  },
-  // =========================================================
-  // 7. PT. Energi Komoditi Internasional (EKI)
-  // =========================================================
-  { 
-    id: "eki", 
-    name: "PT. Energi Komoditi Internasional (EKI)", 
-    tagline: "Global Trading & Energy Commodity Solutions", 
-    logo: "/eki_logo.png", // Pastikan file logo ini tersedia di folder public
-    description: "PT. Energi Komoditi Internasional (EKI) berfokus pada perdagangan komoditas energi di pasar internasional. Kami menjembatani sumber daya energi lokal dengan permintaan global melalui manajemen rantai pasok yang efisien dan kemitraan strategis lintas negara.", 
-    items: [
-      "Perdagangan Komoditas Energi Internasional",
-      "Manajemen Rantai Pasok (Supply Chain) Global",
-      "Kemitraan Strategis Ekspor-Impor",
-      "Konsultasi Investasi Sektor Energi"
-    ],
-    // --- DATA SLIDER CAROUSEL ---
-    // products: [
-    //     { 
-    //         image: "/slideshow/eki_trading.jpg", // Siapkan gambar aktivitas trading/pelabuhan
-    //         title: "Global Commodity Trading" 
-    //     },
-    //     { 
-    //         image: "/slideshow/eki_ship.jpg", // Siapkan gambar logistik/kapal
-    //         title: "International Shipping & Logistics" 
-    //     },
-    //     { 
-    //         image: "/slideshow/eki_energy.jpg", // Siapkan gambar sumber daya energi
-    //         title: "Energy Resource Management" 
-    //     }
-    // ],
-    legal: {
-        // Silakan sesuaikan data legalitas jika sudah ada dokumen resminya
-        aktaPendirian: 'Tersedia', 
-        skKemenkumham: 'Tersedia',
-        nib: 'Tersedia',
-        npwp: 'Tersedia',
-    },
-    activityPhotoBg: 'url(/eki_bg.png)', // Background untuk tampilan depan card
-    commissionersPhotoBg: 'url(/eki_logo.png)', 
-    commissioners: [ 
-        { 
-            name: "Nama Komisaris EKI", 
-            role: "Board of Directors",
-            photo: "/photos/placeholder_eki.jpg" 
-        }
-    ]
-  },
+  }
 ];
