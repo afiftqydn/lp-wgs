@@ -38,7 +38,7 @@ export const subsidiariesData = [
         npwp: '61.815.042.9-017.000',
     },
     activityPhotoBg: 'url(/slideshow/gmbr3.jpg)', 
-    commissionersPhotoBg: 'url(/WGS_Kom.jpeg)', 
+    commissionersPhotoBg: 'url(/AFG.jpeg)', 
     commissioners: [ 
         { name: "Nama Komisaris A WGS", photo: "/photos/placeholder_wgs.jpg" }
     ]
@@ -80,7 +80,7 @@ export const subsidiariesData = [
         npwp: '1000 0000 0499 4991',
     },
     activityPhotoBg: 'url(/pnkarmin.jpeg)', 
-    commissionersPhotoBg: 'url(/PALM_Kom.jpeg)', 
+    commissionersPhotoBg: 'url(/AFG.jpeg)', 
     commissioners: [ 
         { name: "Nama Komisaris A PNK", photo: "/photos/placeholder_pnk.jpg" }
     ]
@@ -121,7 +121,7 @@ export const subsidiariesData = [
         npwp: '1000 0000 0652 8321',
     },
     activityPhotoBg: 'url(/agri.jpg)', 
-    commissionersPhotoBg: 'url(/AGK_Kom.jpeg)', 
+    commissionersPhotoBg: 'url(/AFG.jpeg)', 
     commissioners: [ 
         { name: "Nama Komisaris A AGK", photo: "/photos/placeholder_agk.jpg" }
     ]
@@ -163,7 +163,7 @@ export const subsidiariesData = [
         npwp: '1000 0000 0655 8696',
     },
     activityPhotoBg: 'url(/slideshow/borneo_f.jpg)', 
-    commissionersPhotoBg: 'url(/AMN_Kom.jpeg)', 
+    commissionersPhotoBg: 'url(/AFG.jpeg)', 
     commissioners: [ 
         { name: "Dhani Firdy (Director)", photo: "/photos/dhani_firdy.jpg" } 
     ]
@@ -203,7 +203,7 @@ export const subsidiariesData = [
         nib: 'Tersedia',
         npwp: 'Tersedia',
     },
-    activityPhotoBg: 'url(/slideshow/gmbr5.jpg)', 
+    activityPhotoBg: 'url(/kmdi.jpg)', 
     commissionersPhotoBg: 'url(/AFG.jpeg)', 
     commissioners: [ 
         { 
@@ -247,7 +247,39 @@ export const subsidiariesData = [
   },
 
   // =========================================================
-  // 7. PT. Khatulistiwa Konstruksi Indonesia (KKI)
+  // 7. PT. Energi Komoditi Indonesia (EK Indo)
+  // =========================================================
+  { 
+    id: "ek_indo", 
+    name: "PT. Energi Komoditi Indonesia", 
+    tagline: "National Trading & Energy Commodity Solutions", 
+    logo: "/EKIndonesia_2.png",
+    description: "PT. Energi Komoditi Indonesia berfokus pada perdagangan komoditas energi di pasar nasional. Kami mendistribusikan sumber daya energi lokal untuk memenuhi kebutuhan domestik melalui manajemen rantai pasok yang efisien dan kemitraan strategis di seluruh penjuru Nusantara.", 
+    items: [
+      "Perdagangan Komoditas Energi Nasional",
+      "Manajemen Rantai Pasok (Supply Chain) Domestik",
+      "Distribusi Energi Terpadu Antar Pulau",
+      "Kemitraan Strategis Sektor Energi Domestik"
+    ],
+    legal: {
+        aktaPendirian: 'Tersedia', 
+        skKemenkumham: 'Tersedia',
+        nib: 'Tersedia',
+        npwp: 'Tersedia',
+    },
+    activityPhotoBg: 'url(/eki_bg.png)', // Silakan sesuaikan jika ada background khusus
+    commissionersPhotoBg: 'url(/AFG.jpeg)', 
+    commissioners: [ 
+        { 
+            name: "Nama Komisaris EK Indonesia", 
+            role: "Board of Directors",
+            photo: "/photos/placeholder_ek_indo.jpg" 
+        }
+    ]
+  },
+
+  // =========================================================
+  // 8. PT. Khatulistiwa Konstruksi Indonesia (KKI)
   // =========================================================
   { 
     id: "kki", 
@@ -278,7 +310,7 @@ export const subsidiariesData = [
   },
 
   // =========================================================
-  // 8. PT. Alfa Abadi Nusantara (AAN)
+  // 9. PT. Alfa Abadi Nusantara (AAN)
   // =========================================================
   { 
     id: "aan", 
@@ -287,9 +319,9 @@ export const subsidiariesData = [
     logo: "/AAN.png", 
     description: "PT. Alfa Abadi Nusantara adalah perusahaan penyedia layanan tenaga kerja (outsourcing) terpadu. Kami berkomitmen untuk menyalurkan sumber daya manusia yang terampil, terlatih, dan profesional guna mendukung efisiensi operasional bisnis mitra kami di berbagai sektor.", 
     items: [
-      "Penyediaan Tenaga Keamanan (Security Guard)",
-      "Layanan Kebersihan (Cleaning Service Profesional)",
-      "Penyaluran Tenaga Administrasi & Operasional"
+      "Penyediaan Tenaga Ahli Profesional",
+      "Manajemen Kebersihan Fasilitas",
+      "Dukungan Administrasi & Operasional"
     ],
     legal: {
         aktaPendirian: 'Tersedia', 
@@ -309,7 +341,7 @@ export const subsidiariesData = [
   },
 
   // =========================================================
-  // 9. PT. Borneo Nusantara Indonesia (BNI)
+  // 10. PT. Borneo Nusantara Indonesia (BNI)
   // =========================================================
   { 
     id: "bni", 
@@ -340,7 +372,7 @@ export const subsidiariesData = [
   },
 
   // =========================================================
-  // 10. Koperasi Jasa Syariah Bhumi Pasundan Sejahtera
+  // 11. Koperasi Jasa Syariah Bhumi Pasundan Sejahtera
   // =========================================================
   { 
     id: "bps", 
@@ -374,7 +406,7 @@ export const subsidiariesData = [
         npwp: '10.000.000.0-204.3353',
     },
     activityPhotoBg: 'url(/umkmsingkawang.jpg)', 
-    commissionersPhotoBg: 'url(/BPS_Kom.jpeg)', 
+    commissionersPhotoBg: 'url(/AFG.jpeg)', 
     commissioners: [ 
         { name: "Nama Komisaris A KJSBPS", photo: "/photos/placeholder_kjsbps.jpg" }
     ]
