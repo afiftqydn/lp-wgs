@@ -267,7 +267,7 @@ export const subsidiariesData = [
         nib: 'Tersedia',
         npwp: 'Tersedia',
     },
-    activityPhotoBg: 'url(/eki_bg.png)', // Silakan sesuaikan jika ada background khusus
+    activityPhotoBg: 'url(/ekindo.jfif)', // Silakan sesuaikan jika ada background khusus
     commissionersPhotoBg: 'url(/AFG.jpeg)', 
     commissioners: [ 
         { 
